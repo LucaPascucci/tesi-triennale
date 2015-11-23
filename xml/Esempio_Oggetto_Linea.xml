@@ -1,0 +1,21 @@
+<Lines>
+    <Styles>
+        <style Name="Cavo"...>...</style>
+    </Styles>
+    <Objects>
+        <Object Style="Cavo">
+            <PointsItems>
+                <PointItem CoordX="1810501.0" CoordY="4869303.0"/>
+                <PointItem CoordX="1810681.0" CoordY="4869488.0"/>
+            </PointsItems>
+            <tab>
+                <field Name="costruttore" Default="telecom" Type="text" ExternalName="Costruttore"/>
+                <field Name="fibre" Default="45" Type="number" ExternalName="Numero fibre"/>
+                <field Name="note" Default="Non in tensione" Type="text" ExternalName="Note"/>
+            </tab>
+            <Photos>
+                <Photo Path="/storage/emulated/0/GisAndroid/lavori/Pesaro_25000_vettoriale/progetti/progetto3/media/0_20151119_122451.jpg"/>
+            </Photos>
+        </Object>
+    </Objects>
+</Lines>

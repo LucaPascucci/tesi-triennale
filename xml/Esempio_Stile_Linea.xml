@@ -1,0 +1,15 @@
+<Lines>
+    <Styles>
+        <style Name="Cavo" Pattern="" Color="0,0,255" Width="3">
+            <tab>
+                <field Default="" Name="costruttore" Type="text" ExternalName="Costruttore"/>
+                <field Default="" Name="fibre" Type="number" ExternalName="Numero fibre"/>
+                <field Default="" Name="note" Type="text" ExternalName="Note"/>
+            </tab>
+        </style>
+    </Styles>
+    <Objects>
+        <Object>...</Object>
+        <Object>...</Object>
+    </Objects>
+</Lines>

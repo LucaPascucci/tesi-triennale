@@ -1,0 +1,1188 @@
+% 12pt: grandezza carattere
+% a4paper: formato a4
+% openright: apre i capitoli a destra
+% twoside: serve per fare un documento fronteretro
+% report: stile tesi (oppure book)
+\documentclass[12pt,a4paper,openright,twoside]{report}
+
+\author{Luca Pascucci}
+
+%libreria per scrivere in italiano
+\usepackage[italian]{babel}
+
+%libreria per utilizzare font particolari ad esempio \textsc{}
+\usepackage{newlfont}
+
+%libreria per accettare i caratteri digitati da tastiera come è à si può usare anche \usepackage[T1]{fontenc} però con questa libreria il tempo di compilazione aumenta
+\usepackage[latin1]{inputenc}
+
+%libreria per impostare il documento
+\usepackage{fancyhdr}
+
+%libreria per avere l'indentazione all'inizio dei capitoli, ...
+\usepackage{indentfirst}
+
+%libreria per mostrare le etichette
+%\usepackage{showkeys}
+
+%libreria per inserire grafici
+\usepackage{graphicx}
+
+%librerie matematiche
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{amsthm}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{caption}
+
+\definecolor{maroon}{rgb}{0.5,0,0}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+
+\lstdefinestyle{XML}{
+language=java,
+numbers=left, 
+stepnumber=1, 
+numberstyle=\tiny, 
+numbersep=5pt,
+frame=bottomline,
+basicstyle=\footnotesize\ttfamily,
+tabsize=2,
+breaklines=true,
+identifierstyle=\color{maroon},
+moredelim=[s][\color{black}]{>}{<},
+moredelim=[s][\color{red}]{\ }{=},
+morestring=[s]{"}{"},
+stringstyle=\color{blue}
+}
+
+\lstdefinestyle{JAVA}{
+language=Java,
+numbers=left, 
+stepnumber=1, 
+numberstyle=\tiny, 
+numbersep=5pt,
+frame=bottomline,
+basicstyle=\footnotesize,
+tabsize=2,
+breaklines=true,
+commentstyle=\color{darkgreen},
+keywordstyle=\color{blue},
+stringstyle=\color{red}
+}
+
+%Modifica il caption sopra il codice
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{darkgray}{\parbox[c][0.4cm]{\textwidth}{#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white,singlelinecheck=on,justification=centering}
+
+%impostano i margini
+\oddsidemargin=30pt \evensidemargin=20pt 
+
+%serve per la sillabazione: tra parentesi vanno inserite come nell'esempio le parole che latex non riesce a tagliare nel modo giusto andando a capo.
+\hyphenation{sil-la-ba-zio-ne pa-ren-te-si} 
+
+%comandi per l'impostazione della pagina, vedi il manuale della libreria fancyhdr per ulteriori delucidazioni
+\pagestyle{fancy}\addtolength{\headwidth}{20pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection \ #1}{}}
+\rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\thepage}}
+\cfoot{}
+
+%comando per impostare l'interlinea
+\linespread{1.3}
+
+\begin{document}
+
+%serve per mettere i numeri romani
+\pagenumbering{roman}
+
+\begin{titlepage}
+
+%Inizio frontespizio da sostituire
+\begin{center}
+{{\Large{\textsc{Alma Mater Studiorum $\cdot$ Universit\`a di Bologna\\Campus di Cesena}}}} 
+\rule[0.1cm]{15.8cm}{0.1mm}
+\rule[0.5cm]{15.8cm}{0.6mm}
+{\small SCUOLA DI SCIENZE\\
+Corso di Laurea in Ingegneria e Scienze Informatiche}
+\end{center}
+\vspace{15mm}
+\begin{center}
+{\LARGE{\bf SINCRONIZZAZIONE DI UNA}}\\
+\vspace{3mm}
+{\LARGE{\bf APPLICAZIONE OFFLINE}}\\
+\vspace{3mm}
+{\LARGE{\bf CON I SISTEMI DI BACK-END}}\\
+\vspace{3mm}
+{\LARGE{\bf E ALLINEAMENTO DELLE}}\\
+\vspace{3mm}
+{\LARGE{\bf INFORMAZIONI ACQUISITE IN CAMPO}}\\
+\vspace{10mm}
+{\it Relazione finale in}\\
+PROGRAMMAZIONE DI SISTEMI MOBILE
+\end{center}
+\vspace{15mm}
+\par
+\noindent
+\begin{minipage}[t]{0.47\textwidth}
+{\large {\it Relatore}\\
+Dott. MIRKO RAVAIOLI}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\textwidth}\raggedleft
+{\large {\it Presentata da}\\
+LUCA PASCUCCI}
+\end{minipage}
+\vspace{10mm}
+\begin{center}
+\rule[0.1cm]{15.8cm}{0.1mm}
+{\large Terza Sessione di Laurea\\
+Anno Accademico 2014 - 2015}
+\end{center}
+%fine frontespizio da sostituire
+
+%non numera l'ultima pagina sinistra
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+\thispagestyle{empty}             	%elimina il numero della pagina
+
+\topmargin=6.5cm                    	%imposta il margina superiore a 6.5cm
+\raggedleft                             	%incolonna la scrittura a destra
+\large					%aumenta la grandezza del carattere a 14pt
+\begin{Huge}
+{\bf{PAROLE CHIAVE}}
+\end{Huge}
+\vspace{10mm}
+\\EBWorld
+\vspace{3mm}
+\\Java
+\vspace{3mm}
+\\Offline
+\vspace{3mm}
+\\XML
+\vspace{3mm}
+\\GIS      
+\vspace{3mm}
+\\                 	
+\newpage 
+
+%non numera l'ultima pagina sinistra
+\clearpage{\pagestyle{empty}\cleardoublepage}   
+
+\thispagestyle{empty}             	%elimina il numero della pagina
+
+\topmargin=6.5cm                    	%imposta il margina superiore a 6.5cm
+\raggedleft                             	%incolonna la scrittura a destra
+\large                                  	%aumenta la grandezza del carattere a 14pt
+\em                                     	%emfatizza (corsivo) il carattere
+Alla mia famiglia\\
+%Questa \`e la \textsc{Dedica}:\\
+%ognuno pu\`o scrivere quello che vuole, \\
+%anche nulla \ldots                      %\ldots lascia tre puntini
+\newpage           
+
+\end{titlepage}
+
+%non numera l'ultima pagina sinistra
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+%crea l'indice
+\tableofcontents
+                  
+%imposta l'intestazione di pagina
+\rhead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\thepage}}
+\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries INDICE}}
+
+%non numera l'ultima pagina sinistra
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+\chapter*{Introduzione} %crea l'introduzione (un capitolo non numerato)
+
+%imposta l'intestazione di pagina
+\rhead[\fancyplain{}{\bfseries INTRODUZIONE}]{\fancyplain{}{\bfseries\thepage}}
+\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries INTRODUZIONE}}
+
+%aggiunge la voce Introduzione nell'indice
+\addcontentsline{toc}{chapter}{Introduzione}
+
+Il 9 gennaio 2007 ha segnato l'inizio di un'enorme cambiamento in numerosi ambiti e settori partendo ovviamente dalle tecnologie mobili fino ad arrivare alla pi\`u semplice quotidianità, migliorando la cooperazione, lo scambio di informazioni e l'interazione tra persone.
+Durante lo sviluppo dei nuovi scenari creati da quel particolare evento, il mondo del lavoro è notevolmente cambiato, gli smartphone si sono diffusi per la loro praticità, affidabilità, velocità e semplicità di utilizzo. Impiegati in svariati modi, possono ad esempio essere utilizzati da un rappresentante per rimanere in contatto con la propria azienda, con clienti e fornitori oppure da un tecnico esterno per memorizzare gli interventi effettuati e poi presentarli in sede centrale.
+\\\\Quest'ultimo caso rappresenta al meglio ciò che verrà spiegato nella tesi ed illustrato attraverso il progetto collegato, difatti lo scopo è di sviluppare due applicativi, uno desktop ed uno mobile che permettano ad un tecnico di preparare un dispositivo mobile contenente i dati necessari alla sua attività esterna, la possibilità di creare e salvare nuovi dati riguardanti i lavori svolti ed una volta concluse le operazioni di poterli importare in sede centrale.
+\\\\La possibilità di effettuare questo percorso è stata concessa dall'azienda EBWorld s.r.l., che dal 1983 supporta lo sviluppo di grandi e piccole aziende fornendo piattaforme e applicazioni semplici ma potenti che sfruttano le informazioni geografiche dell'organizzazione per progettare e gestire reti tecnologiche sul territorio.
+Dato il grande sviluppo che l'azienda sta avendo, ricevendo anche la nomina di Cool Vendor 2015 in "Communications Service Provider Operational and Business Infrastructure" da Gartner, società internazionale leader nella consulenza strategica, nella ricerca e nell'analisi nel settore hi-tech; EBWorld ha espresso l'esigenza di un applicazione che sostituisse una precedente versione realizzata su Windows Mobile ed utilizzasse i moderni dispositivi mobile disponibili sul mercato. Attraverso un'analisi svolta assieme a quest'ultima si è deciso di utilizzare un dispositivo Android, come piattaforma per l'applicazione mobile, prendendo in considerazione la sua notevole diffusione e di sviluppare il progetto desktop su Java rendendolo multipiattaforma.
+\\\\Il software desktop richiesto deve fornire una interfaccia grafica semplice ed intuitiva che visualizzi i dispositivi collegati tramite USB, i dati locali da importare sui dispositivi e quelli presenti sui dispositivi da esportare in locale. L'applicazione mobile deve fornire gli strumenti adatti per visualizzare ed interagire con i dati locali al dispositivo e crearne nuovi che identifichino l'operato dell'utente. 
+\\\\La sfida più importante era sicuramente quella di rendere l'applicativo desktop capace di visualizzare e gestire un dispositivo mobile collegato al PC, infatti non tutti i sistemi operativi, come ad esempio MAC OS X, riescono ad individuare un dispositivo Android e quindi garantire un collegamento stabile anche in presenza di una grossa mole di dati da interscambiare
+\\\\Per evitare problemi prestazionali ed interattivi è stato fatto uso della tecnologia multithread, ormai largamente diffusa in tutti i sistemi operativi. Questo ha permesso di eseguire le operazioni di trasferimento dati in thread secondari rendendo così libero il thread principale ed evitando un possibile rallentamento o congelamento dell'interfaccia grafica.
+\\\\\\Gli applicativi realizzati soddisfano tutti i requisiti richiesti dall'azienda nella fase iniziale, riuscendo a gestire senza alcun problema tutti i dispositivi Android collegati senza subire rallentamenti o perdite durante il trasferimento dati e dando la possibilità all'utente dell'applicativo mobile di visualizzare e creare i dati riguardanti gli interventi effettuati.
+\\\\Il progetto desktop è stato realizzato interamente dal sottoscritto invece la parte mobile è stata sviluppata in team con il mio collega Filippo Nicolini, suddividendo attentamente i compiti tra i due. Questo elaborato di tesi tratta quindi dell'intera progettazione e implementazione dell'applicativo desktop e nella parte mobile dello sviluppo riguardante i dati creati dall'utente. Il mio collega si è occupato invece della realizzazione dell'interfaccia grafica con analisi della usability, dei workflow e del contesto operativo dell'utente.
+\\\\La tesi è suddivisa in cinque capitoli:
+%crea un elenco puntato
+\begin{itemize}                         
+\item Nel primo capitolo verrà introdotta l'azienda EBWorld s.r.l. e fatta un'analisi sulle precedenti soluzioni sviluppate evidenziando in linea generale le loro caratteristiche.
+\item Il secondo capitolo espone le tecnologie utilizzate dagli applicativi e nello sviluppo software.
+\item Il terzo capitolo tratta l'analisi del problema, definendo le operazioni principali e mettendo in discussione la tematica dell'offline.
+\item La progettazione è descritta nel quarto capitolo, dove viene esposta la struttura finale dei progetti da sviluppare.
+\item Il quinto capitolo contiene i dettagli implementativi delle soluzioni sviluppate, focalizzandosi su alcune parti di codice molto importanti nei progetti.
+\end{itemize}
+Segue poi una breve conclusione.
+\clearpage{\pagestyle{empty}\cleardoublepage} %non numera l'ultima pagina sinistra
+
+\chapter{EBWorld e gli applicativi esistenti}                %crea il capitolo
+%imposta l'intestazione di pagina
+\rhead[\fancyplain{}{\bfseries EBWORLD E GLI APPLICATIVI ESISTENTI}]{\fancyplain{}{\bfseries\thepage}}
+\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries EBWORLD E GLI APPLICATIVI ESISTENTI}}
+
+%mette i numeri arabi
+\pagenumbering{arabic}                  
+Questo capitolo introduce l'azienda EBWorld s.r.l., descrive sinteticamente gli applicativi prodotti e mostra le precedenti soluzioni sviluppate per comprendere meglio il progetto che si intende sviluppare.
+%crea la sezione
+\section{EBWorld s.r.l.}
+EBWorld opera dal 1983 nel settore dell'informatica applicata all'impiego di informazioni geografiche e tecnologiche correlate ai processi di acquisizione, elaborazione e gestione di dati georiferiti. La consolidata competenza ed esperienza nella realizzazione di Sistemi Informativi Territoriali (GIS) e nell'integrazione di piattaforme GIS con sistemi ed applicazione, fanno di EBWorld il partner ideale per chi gestisce reti tecnologiche.
+\\\\Importanti Aziende e Pubbliche Amministrazioni Italiane hanno scelto EBWorl per l'integrazione, la manutenzione e lo sviluppo dei loro sistemi IT. Dal 1995 EBWorld è Distributore e VAR per l'Italia dei prodotti Smallworld attualmente prodotti e distribuiti da GE Energy. \`E una dinamica azienda ICT capace di dare forma e sostanza al più grande patrimonio di ogni Azienda: {\bf{l'informazione}}.
+
+\section{Le soluzioni prodotte}
+Le soluzioni software EBWorld sono fruibili su molteplici piattaforme e dispositivi: da postazioni desktop a leggeri client web, tablet e smartphone e assicurano l'interoperabilità data l'aderenza ai più avanzati standard e la massima apertura. Si differenziano due tipi di soluzioni:
+%crea un elenco puntato
+\begin{itemize}                        
+\item SmallWorld
+\item Google Maps
+\end{itemize}
+
+\subsection{GeoSpatial Analysis\textsuperscript{TM}}
+\begin{center}
+\`E la soluzione di business intelligence di GE Smallworld.
+\end{center}
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=8cm]{immagini/Geo_Spatial_Analysis.jpg} %inserisce una figura larga 8cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Esempio di GeoSpatial Analysis\textsuperscript{TM}]{Esempio di GeoSpatial Analysis\textsuperscript{TM}}%\label{fig:prima}
+\end{center}
+\end{figure}
+Smallworld GeoSpatial Analysis\textsuperscript{TM} offre un accesso facile ed efficiente ai dati spaziali e non-spaziali gestiti nei diversi sistemi aziendali. Le informazioni possono essere condivise in tutta l'azienda, consentendo ad un'ampia platea di utenti capacità di visualizzazione, interrogazione, analisi e reporting. L'accesso ai dati avviene attraverso una semplice e intuitiva interfaccia web. Smallworld GeoSpatial Analysis\textsuperscript{TM} introduce il concetto di business collections, oggetti che riuniscono le informazioni spaziali e non-spaziali, mappe, fotografie, documenti e siti web in un modo unico e flessibile.
+
+\subsection{Field Force Automation\textsuperscript{TM}}
+Completa gestione della forza lavoro mobile per le utilities e gli operatori di telecomunicazioni.
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=7cm]{immagini/Field_Force_Automation.jpg} %inserisce una figura larga 7cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Esempio di Field Force Automation\textsuperscript{TM}]{Esempio di Field Force Automation\textsuperscript{TM}}%\label{fig:prima}
+\end{center}
+\end{figure}
+\\Field Force Automation\textsuperscript{TM} (FFA) di GE è una piattaforma di Work Force Management web-based che aiuta a organizzare i servizi e contribuisce a garantirne la qualità conformemente agli obiettivi prefissati, in modo che l'operatore idoneo, con le competenze necessarie, arrivi nel posto giusto al momento giusto. FFA consente alle aziende di ottimizzare l'intero ciclo di vita delle operazioni di assistenza sul campo.
+
+\section{Gli applicativi esistenti}
+Gli applicativi realizzati in precedenza dall'azienda sono stati mostrati prima di iniziare il percorso di analisi, progettazione e sviluppo necessario alla realizzazione degli obiettivi prefissati consentendo una migliore comprensione del lavoro da svolgere. 
+\\\\La motivazione principale che ha convinto EBWorld ad intraprendere questo percorso, è stata la modernizzazione di applicativi sempre maggiormente utilizzati per renderli compatibili con i moderni dispositivi disponibili sul mercato.\\
+
+\subsection{MapYou}
+MapYou, la soluzione mobile ideata da EBWorld nel 2008, è stata sviluppata per la piattaforma Windows Mobile rendendo disponibile uno strumento per la consultazione e la gestione di dati georeferenziati.
+\\\\Le principali funzionalità riguardano:
+\begin{itemize}
+\item {\bf{Selezione Mappa}} abilitando l'utente alla selezione della mappa da visualizzare, scegliendola tra quelle disponibili sul dispositivo.
+\item {\bf{Creazione Progetti}} consentendo all'utente di inserire nuovi elementi sulla mappa che identifichino il suo operato o un futuro intervento da effettuare in quella determinata posizione
+\item {\bf{Ricerca Elementi}} con la quale l'utente può cercare ed evidenziare uno o più oggetti presenti sulla mappa.
+\item {\bf{Utilizzo GPS o coordinate manuali}} consentendo di posizionare in automatico la mappa nel punto in cui si trova o desidera l'utente.
+\end{itemize}
+\newpage
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=11cm]{immagini/MapYou_SchermataPrincipale.jpg} %inserisce una figura larga 7cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Schermata principale MapYou]{Schermata principale MapYou}%\label{fig:prima}
+\end{center}
+\end{figure}
+La schermata principale dell'applicazione è costituita da cinque elementi principali:
+\begin{enumerate}
+\item {\bf{Mappa}}, sulla quale è visualizzata l'area d'interesse;
+\item {\bf{Toolbar superiore}} contenete strumenti utili per la navigazione e l'interazione con la mappa;
+\item {\bf{Pannello laterale}}, a destra della mappa, le cui icone e collegate funzioni variano a seconda dello strumento selezionato nella toolbar superiore;
+\item {\bf{Campi di informazioni}} sotto la mappa, nei quali sono riportate le informazioni relative alla mappa visualizzata, ovvero la scala di visualizzazione e la scala nominale;
+\item {\bf{Pannello inferiore}} contenente i diversi TAB corrispondenti alle diverse sezioni dell'applicazione.
+\end{enumerate}
+Durante la progettazione e lo sviluppo è stata tenuta in considerazione l'importanza di realizzare strumenti semplici garantendo pieno supporto alle funzionalità di navigazione e consultazione come anche di disegno e di progettazione, il tutto in presenza e in assenza di connettività internet.
+\subsection{Gestore MapYou}
+In contemporanea allo sviluppo di MapYou è stata ideato il Gestore MapYou necessario alla preparazione del dispositivo mobile per il primo utilizzo.
+\\\\L'applicazione si propone quale strumento di gestione di MapYou, in quanto consente:
+\begin{itemize}
+\item Il caricamento e l'aggiornamento dei dati che risiedono sul dispositivo mobile.
+\item L'esportazione degli aggiornamenti e dei progetti eseguiti sul campo dagli operatori.
+\item Il rinnovo della licenza d'uso installata sul dispositivo mobile.
+\end{itemize}
+I prerequisiti richiesti dall'applicativo riguardano il sistema operativo, utilizzabile su Windows XP o Windows 2000, la dotazione di una porta USB per il collegamento al dispositivo mobile e la possibilità di accedere ai dati delle mappe per il loro caricamento sul dispositivo mobile.
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=12cm]{immagini/Gestore_MapYou.jpg} %inserisce una figura larga 7cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Esempio schermata Gestore MapYou]{Esempio schermata Gestore MapYou}%\label{fig:prima}
+\end{center}
+\end{figure}
+\newpage
+L'applicativo presenta cinque diverse schede:
+\begin{enumerate}
+\item {\bf{Generale}} riportante alcune informazioni relative all'applicazione;
+\item {\bf{Destinazioni}}, in cui sono elencate le possibili destinazioni dei dati sul dispositivo mobile;
+\item {\bf{Mappe caricate}} contente l'elenco di tutti le mappe presenti sul dispositivo mobile. Le funzionalità disponibili consentono all'utente di aggiungere o rimuovere mappe, di aggiornarle e modificarne le proprietà. Da questo pannello è possibile anche accedere alla funzionalità che consente di scaricare dal dispositivo mobile gli aggiornamenti effettuati sul campo e i progetti;
+\item {\bf{Mappe disponibili}}, in cui sono elencate le mappe disponibili per il caricamento sul dispositivo mobile;
+\item {\bf{Aggiornamenti}} attraverso il quale l'utente può rinnovare la licenza d'uso o installare la versione più recente dell'applicazione.
+\end{enumerate}
+
+\clearpage{\pagestyle{empty}\cleardoublepage} %non numera l'ultima pagina sinistra
+
+\chapter{Tecnologie Utilizzate}                %crea il capitolo
+%imposta l'intestazione di pagina
+\rhead[\fancyplain{}{\bfseries TECNOLOGIE UTILIZZATE}]{\fancyplain{}{\bfseries\thepage}}
+\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries TECNOLOGIE UTILIZZATE}}
+In questo capitolo vengono descritte le tecnologie e librerie utilizzate nel corso dello sviluppo dei progetti.
+\section{Libreria JMTP}                 %crea la sezione
+Per le ragioni progettuali che verranno esplicate nell'opportuno capitolo è stata di grande importanza nello sviluppo software la libreria JMTP, integrata con il linguaggio di programmazione Java.
+\\\\JMTP è un progetto finalizzato a consentire un accesso di tipo MTP (Media Transfer Protocol) compatibile con lettori multimediali portatili ed è stato progettato con l'obiettivo di supportare i principali ambienti come Windows, Linux e Mac OS X utilizzando la stessa API.
+\\\\Nato nel 2008 attraverso il primo rilascio di una beta, ora il progetto risulta archiviato senza ricevere ulteriori sviluppi ed aggiornamenti. L'ultima release, sempre in versione beta, risale al 2010. La libreria priva di una valida documentazione e di istruzioni per il corretto utilizzo ha creato un notevole impegno per il suo impiego nella realizzazione del progetto.
+\\\\Le principali funzionalità fornite agli sviluppatori sono:
+\begin{itemize}                     %crea un elenco descrittivo
+\item Rilevazione dei dispositivi multimediali collegati.
+\item Navigazione dentro il filesystem della memoria del dispositivo.
+\item Inserimento di file multimediali nel dispositivo. 
+\end{itemize}
+Questa libreria è stata largamente utilizzata nell'applicativo desktop per la parte di gestione di un dispositivo Android ad esso collegato.
+
+\section{Android Debug Bridge}                 %crea la sezione
+Android Debug Bridge (ADB) è uno strumento a riga di comando che permette di comunicare con un dispositivo collegato o un'emulatore Android attivo. Si tratta di un programma client-server formato da tre componenti:
+\begin{enumerate}
+\item Un client, che viene eseguito sul computer che intende comunicare col dispositivo. \`E possibile richiamarlo attraverso una shell utilizzando un comando adb;
+\item Un server eseguito come processo in background sul computer che gestisce la comunicazione tra il client e il demone adb in esecuzione su un emulatore o dispositivo;
+\item Un demone eseguito come processo in background su ogni istanza di emulatore o dispositivo. 
+\end{enumerate}
+\newpage
+\subsection{Sintassi}
+\`E possibile utilizzare i comandi adb da riga di comando o su di uno scritp. La sintassi generica è:
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=8cm]{immagini/Sintassi_ADB.jpg} %inserisce una figura larga 8cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Sintassi generica comando ADB]{Sintassi generica comando ADB}%\label{fig:prima}
+\end{center}
+\end{figure}
+\\In presenza di un solo emulatore in esecuzione oppure un solo dispositivo collegato, il comando adb viene inviato di default a quel dispositivo; in caso contrario è necessario utilizzare l'opzione -d, -e oppure -s per specificare il dispositivo di destinazione.
+\subsection{Principali funzionalità}
+La gamma di comandi a disposizione degli sviluppatori, rende possibile numerose operazioni, tra le più importanti sono presenti:
+\begin{itemize}                     %crea un elenco
+  \item {\bf{Rilevazione dei dispositivi Android connessi}} Genera una lista di dispositivi collegati al server ADB, specificando due diverse informazioni, il numero seriale del dispositivo ed il suo stato.
+  \item {\bf{Installazione di una applicazione}} Rende possibile l'installazione forzata di un file in formato apk, su un dispositivo specifico.
+  \item {\bf{Gestione dei file del dispositivo}} Attraverso i comandi pull e push è possibile copiare file dal computer al dispositivo o viceversa, quindi permettendo.
+  \item {\bf{Utilizzo Wireless}} Solitamente ADB è utilizzato attraverso un collegamento USB, tuttavia è possibile effettuare le stesse operazioni su Wi-Fi utilizzando la stessa rete. 
+\end{itemize}
+Questi comandi sono stati utilizzati nell'applicativo desktop per ovviare alle mancanze della libreria JMTP.
+
+\section{Libreria JTattoo}                 %crea la sezione
+JTattoo è stata sviluppata con l'intento di modificare l'interfaccia grafica standard offerta da JDK (Java Development Kit). La prima release pubblica è rilasciata nel Gennaio 2006 e ricevendo in seguito numerosi aggiornamenti sono stati sistemati vari problemi presenti in fase iniziale.\\\\
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=12cm]{immagini/Swing_Java.jpg} %inserisce una figura larga 8cm
+
+\caption[Esempio Swing, standard GUI Java]{Esempio Swing, standard GUI Java}%\label{fig:prima}
+\end{center}
+\end{figure}
+\\\\Consente ad uno sviluppatore il miglioramento dell'aspetto degli elementi grafici disponibili su Swing\footnote{Libreria ufficiale per la realizzazione di interfacce grafiche in Java} utilizzando temi predefiniti composti da diversi aspetti grafici, offrendo anche la possibilità di personalizzare liberamente le proprietà della GUI inglobando successivamente queste modifiche nei temi già offerti da JTattoo.
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=12cm]{immagini/TextureScreenShot.jpg} %inserisce una figura larga 8cm
+
+\caption[Tema predefinito TextureLookAndFeel]{Tema predefinito TextureLookAndFeel}%\label{fig:prima}
+\end{center}
+\end{figure}
+\\Questa libreria è stata utilizzata nell'applicativo desktop per modificare l'aspetto dell'interfaccia grafica standard di Java.
+
+\section{Mercurial}                 %crea la sezione
+Mercurial è un software di controllo della versione del codice sorgente versatile e performante, distribuito gratuitamente ed efficientemente gestisce progetti di qualsiasi dimensione. \`E stato sviluppato quasi completamente in Python, con parti in C per motivi prestazionali, così rendendolo multipiattaforma difatti è disponibile su tutte le principali piattaforme.
+\\\\Nello sviluppo software è stato necessario utilizzarlo questo perché, trattandosi di un lavoro in team, era fondamentale condividere il codice in modo corretto e tenere continuamente traccia di tutte le modifiche.
+\\\\Tutto il codice sorgente dei due progetti è stato memorizzato su due repository Mercurial di www.bitbucket.org
+\subsubsection{Bitbucket}
+Bitbucket è un servizio di hosting web-based che permette di memorizzare in internet progetti che utilizzano Mercurial o Git. Fornisce la possibilità di creare repository pubbliche, che tutti possono vedere e nelle quali, normalmente, è possibile contribuire al codice, e repository private, come quelle utilizzate per questi progetti, dove soltanto chi ha l'accesso può leggere e modificare i file.
+\clearpage{\pagestyle{empty}\cleardoublepage} %non numera l'ultima pagina sinistra
+
+\chapter{Analisi}                %crea il capitolo
+%imposta l'intestazione di pagina
+\rhead[\fancyplain{}{\bfseries ANALISI}]{\fancyplain{}{\bfseries\thepage}}
+\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries ANALISI}}
+In questo capitolo verranno descritti i requisiti che le applicazioni devono rispettare e le funzionalità che queste devono implementare.
+\section{Descrizione generale}                 %crea la sezione
+\subsection{Prospettiva del prodotto desktop}
+Il software progettato e sviluppato è un'applicazione per la preparazione e gestione di dispositivi Android collegati e dei dati utilizzati dall'applicazione mobile spiegata in seguito.
+
+\subsection{Funzioni del prodotto desktop}
+\begin{itemize}                     %crea un elenco
+  \item Visualizzazione dei dispositivi mobile collegati
+  \item Installazione dell'applicazione mobile
+  \item Preparazione della directory di lavoro per l'applicazione mobile
+  \item Gestione delle mappe presenti sul dispositivo mobile
+  \item Esportazione dei progetti disponibili sul dispositivo mobile
+\end{itemize}
+
+\subsection{Prospettiva del prodotto mobile}
+Il progetto sviluppato in team con il collega Filippo Nicolini consiste in un'applicazione mobile per la visualizzazione ed interazione con dati georiferiti locali al dispositivo. Di seguito verranno elencate tutte le funzionalità del sistema, nonostante alcune di esse siano state implementate dal collega. Nel paragrafo 3.5 verranno analizzate nel dettaglio le funzionalità attinenti alla tesi.
+
+\subsection{Funzioni del prodotto mobile}
+\begin{itemize}                     %crea un elenco
+  \item Visualizzazione della mappa contente i dati georiferiti
+  \item Ricerca e visualizzazione di elementi contenuti nei dati georiferiti
+  \item Inserimento di elementi grafici per misurazione e progettazione
+  \item Visualizzazione di progetti esistenti sul dispositivo
+  \item Creazione e salvataggio di progetti
+\end{itemize}
+
+\subsection{Caratteristiche dell'utente finale}
+L'utente finale è generalmente un tecnico che effettua interventi esterni utilizzando l'applicativo mobile per interagire con le informazioni contenute e l'applicativo desktop per esportare progetti e lavori effettuati durante la giornata lavorativa.
+Dato che l'utente è gia abituato all'utilizzo delle precedenti soluzioni prodotte da EBWorld, è necessario implementare le principali funzionalità in modo analogo alla versione precedente dell'applicazione desktop e mobile.
+
+\subsection{Ambiente d'utilizzo dei progetti}
+Il software desktop deve essere eseguibile, con buone prestazioni, su computer di fascia media di mercato che eseguono un sistema operativo Windows, Mac o Linux. L'ambiente d'utilizzo per l'applicativo mobile dev'essere uno smartphone o un tablet Android di fascia media.
+
+\subsection{Linguaggio e ambienti di sviluppo}
+La scelta del linguaggio di programmazione è stata vincolata dalle richieste e dalla piattaforma di sviluppo utilizzata per l'applicativo mobile. Questo perché era necessario utilizzare un linguaggio che coincidesse ad entrambe fornendo anche il requisito di multi-piattaforma all'applicativo desktop.
+\\\\Il linguaggio di programmazione scelto per implementare i progetti è Java con l'utilizzo di librerie esterne per migliorare e velocizzare lo sviluppo degli applicativi.
+\\\\Per quanto riguarda la scelta degli ambienti di sviluppo si sono considerati gli IDE con maggiore diffusione ed ufficialità facendo ricadere la scelta su Android Studio risultante ambiente di sviluppo ufficiale per la piattaforma Android ed Eclipse per il progetto desktop in quanto principalmente utilizzato per lo sviluppo di applicativi Java.
+
+\section{Applicativi online o offline}                 %crea la sezione
+Sempre un maggior numero di applicazioni sia desktop che mobile vengono portate online grazie all'enorme diffusione di Internet ed alla semplicità di connettersi ad esso. La tematica di applicativi online o offline è stata affrontata prima di avviare la progettazione e lo sviluppo. Di seguito vengono analizzati vantaggi e svantaggi dei due casi sopra citati.
+
+\subsection{Vantaggi e svantaggi online}
+Lo sviluppo di un applicazione collegata alla rete rende possibile l'inserimento di un vasto numero di funzionalità, dal più semplice collegamento ai social network al più complesso sviluppo di un protocollo per interscambio dati. Un ambito da tenere in considerazione è la sicurezza, difatti un'applicativo in rete che ha l'accesso ai dati dell'utente potrebbe causare notevoli danni in caso di utilizzo da utenti non autorizzati. Un ulteriore elemento a favore è la gestione dei dati che può avvenire real-time rendendoli disponibilii per ulteriori applicativi online sfruttando il collegamento alla rete. Queste possibilità possono sicuramente migliorare la sua utilità ma allo stesso tempo obbligano ad un aumento del tempo di progettazione, di implementazione e del relativo costo di sviluppo. 
+
+%aggiungere riepilogo
+\subsection{Vantaggi e svantaggi offline}
+Le caratteristiche del dispositivo sul quale si sviluppa un applicativo offline limitano notevolmente le funzionalità implementabili. Per la gestione dei dati tra differenti dispositivi è necessario instaurare un collegamento fisico e creare un protocollo di rilevazione e comunicazione in caso di presenza di differenti sistemi utilizzati dai dispositivi. L'ambito della sicurezza in un applicativo offline risulta allo stesso modo importante tuttavia va considerato che, a differenza di applicativi online, i soli dati contenuti sono locali e quindi in caso di utilizzo dello stesso da parte di un utente non autorizzato i danni risulterebbero limitati. La riduzione del numero di funzionalità disponibili per un'applicazione offline generalmente equivale ad un minor tempo di progettazione ed implementazione riducendo così il costo di realizzazione.
+
+\subsection{Scelta per applicativi sviluppati}
+L'analisi effettuata sulle condizioni di utilizzo dell'applicativo mobile ha fatto ricadere la scelta sullo sviluppo di applicativi offline. La principale motivazione difatti riguarda gli ambienti nei quali il tecnico esterno opera, normalmente sono scantinati di edifici, interventi sotto il manto stradale oppure anche luoghi fuori città. In queste situazioni è raramente assicurata la presenza di una connessione stabile alla rete e quindi la sincronizzazione dei dati attraverso essa risulterebbe precaria. Oltre all'invio, anche il caricamento potrebbe avere rallentamenti o blocchi lasciando l'operatore senza dati da visualizzare bloccando così l'intervento. Attraverso l'utilizzo di un'applicativo offline con la persistenza dei dati in locale, le operazioni effettuate possono essere salvate in qualsiasi condizione con il solo obbligo di esportarle in sede centrale per inserirle nella sorgente dati.
+
+\section{Funzionalità del sistema desktop}              %crea la sezione
+Verrà analizzato il software desktop descrivendo nel dettaglio le funzionalità a cui deve provvedere, esplicando i requisiti funzionali che queste implicano.
+
+\subsection{Visualizzazione e selezione dispositivi}
+{\bf{Descrizione}}: Il software deve essere in grado di controllare all'avvio quali sono i dispositivi connessi specificando quali sono già stati preparati al primo utilizzo, mostrarne la lista ed abilitare l'utente alla selezione di un dispositivo.
+\subsubsection{Requisiti funzionali}
+\begin{enumerate}
+\item All'avvio il sistema deve provvedere alla verifica dei dispositivi connessi.
+\item Il sistema deve controllare quali dispositivi risultano già pronti per il primo utilizzo
+\item Il sistema deve fornire all'utente una lista di dispositivi connessi.
+\item Il sistema deve fornire all'utente un'interfaccia per selezionare il dispositivo desiderato.
+\end{enumerate}
+
+\subsection{Preparazione dispositivo}
+{\bf{Descrizione}}: Il sistema deve connettersi al dispositivo selezionato ed avviare l'installazione dell'applicazione mobile creando successivamente il workspace utilizzato dallo stesso applicativo.
+\subsubsection{Requisiti funzionali}
+\begin{enumerate}
+\item Il sistema deve installare l'applicativo mobile presente in locale sul dispositivo selezionato.
+\item Il sistema deve creare le cartelle principale all'interno della memoria interna del dispositivo selezionato.
+\item Il sistema deve copiare i file fondamentali utilizzati dall'applicativo mobile dentro il dispositivo selezionato.
+\end{enumerate}
+
+\subsection{Gestione file di configurazione}
+{\bf{Descrizione}}: Il sistema deve essere in grado di gestire interamente il file di configurazione in formato xml utilizzato dall'applicazione mobile per la corretta lettura dei dati archiviati sul dispositivo.
+\subsubsection{Requisiti funzionali}
+\begin{enumerate}
+\item Il sistema deve caricare in modo corretto tutti i dati contenuti dal file di configurazione situato all'interno del dispositivo mobile.
+\item Il sistema deve poter modificare suddetto file in base alle operazioni effettuate dall'utente.
+\item Il sistema deve sostituire all'interno del dispositivo in gestione il precedente file di configurazione con quello modificato.
+\end{enumerate}
+
+\subsection{Visualizzazione e selezione mappe del computer desktop e del dispositivo mobile}
+{\bf{Descrizione}}: Il sistema deve essere in grado di verificare quali mappe sono contenute localmente nel computer e nel dispositivo in gestione mostrandone una lista ed abilitare l'utente alla selezione di una o più mappe.
+\subsubsection{Requisiti funzionali}
+\begin{enumerate}
+\item Il sistema deve provvedere autonomamente a verificare le mappe presenti sul computer in utilizzo e sul dispositivo in gestione.
+\item Il sistema deve fornire all'utente una lista di mappe disponibili.
+\item Il sistema deve fornire all'utente un'interfaccia per selezionare la mappa desiderata.
+\end{enumerate}
+
+\subsection{Inserimento e rimozione mappe}
+{\bf{Descrizione}}: Il software deve essere in grado di inserire e rimuovere le mappe, selezionate dall'utente, dalla memoria del dispositivo mobile in gestione.
+\subsubsection{Requisiti funzionali}
+\begin{enumerate}
+\item Il sistema deve memorizzare le mappe in inserimento ed in rimozione selezionate dall'utente.
+\item Il sistema deve mostrare a schermo tutte le operazioni di modifica effettuate dall'utente.
+\item Il sistema deve rimuovere il contenuto delle mappe selezionate dal dispositivo mobile.
+\item Il sistema deve copiare il contenuto delle mappe selezionate all'interno del dispositivo mobile.
+\end{enumerate}
+
+\subsection{Gestione file di definizione progetti}
+{\bf{Descrizione}}: Il sistema deve essere in grado di gestire interamente il file di definizione dei progetti in formato xml utilizzato dall'applicazione mobile per la corretta lettura dei progetti.
+\subsubsection{Requisiti funzionali}
+\begin{enumerate}
+\item Il sistema deve caricare in modo corretto tutti i dati contenuti dal file xml situato all'interno del dispositivo mobile.
+\item Il sistema deve poter modificare suddetto file in base alle operazioni riguardanti i progetti, effettuate dall'utente.
+\item Il sistema deve sostituire all'interno del dispositivo, il precedente file xml con quello modificato.
+\end{enumerate}
+
+\subsection{Visualizzazione e selezione progetti}
+{\bf{Descrizione}}: Il sistema deve essere in grado di controllare quali progetti sono contenuti dal dispositivo in gestione, mostrarne una lista ed abilitare l'utente alla selezione di uno o più progetti.
+\subsubsection{Requisiti funzionali}
+\begin{enumerate}
+\item Il sistema deve provvedere autonomamente a verificare i progetti presenti sul dispositivo in gestione.
+\item Il sistema deve fornire all'utente una lista di progetti disponibili.
+\item Il sistema deve fornire all'utente un'interfaccia per selezionare il progetto desiderato.
+\end{enumerate}
+
+\subsection{Esportazione o rimozione progetto}
+{\bf{Descrizione}}: Il software deve essere in grado di esportare o rimuovere progetti, selezionati dall'utente, prelevandoli dal dispositivo mobile in gestione. 
+\subsubsection{Requisiti funzionali}
+\begin{enumerate}
+\item Il sistema deve memorizzare i progetti in esportazione ed in rimozione selezionate dall'utente.
+\item Il sistema deve mostrare a schermo tutte le operazioni di modifica effettuate dall'utente.
+\item Il sistema deve rimuovere il contenuto dei progetti selezionati dal dispositivo mobile in gestione.
+\item Il sistema deve esportare il contenuto dei progetti selezionati sul computer in uso.
+\end{enumerate}
+
+\section{Moduli del sistema desktop}
+Attraverso l'analisi delle funzionalità offerte dall'applicativo desktop è stato deciso uno sviluppo modulare, per permettere la massima scalabilità rendendo possibile future implementazioni di nuove funzioni. I moduli individuati sono tre:
+\begin{itemize}                     %crea un elenco
+  \item Dispositivi
+  \item Mappe
+  \item Progetti
+\end{itemize}
+
+\subsection{Modulo Dispositivi}
+Lo scopo di questo modulo è di contenere tutte le funzionalità di gestione dei dispositivi. Si occupa quindi di rilevare i dispositivi mobile collegati, di analizzare il loro contenuto, di prepararli al primo utilizzo e fornire la visualizzazione della lista di dispositivi tra i quali scegliere quello desiderato.
+\subsubsection{Casi d'uso}
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=14cm]{immagini/Modulo_Dispositivi.jpg} %inserisce una figura larga 8cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Diagramma dei casi d'uso del modulo dispositivi]{Diagramma dei casi d'uso del modulo dispositivi}%\label{fig:prima}
+\end{center}
+\end{figure}
+Definite le funzionalità presenti nel modulo, il diagramma dei casi d'uso mostra graficamente le operazioni disponibili all'utente e le relative operazioni eseguite dall'applicativo desktop sui dispositivi mobile collegati.
+\subsection{Modulo Mappe}
+Questo modulo si occupa della gestione delle mappe. Qui sono disponibili tutte le funzionalità di lettura del file di configurazione contenuto dal dispositivo in gestione, la ricerca delle mappe disponibili sul dispositivo e sul computer in utilizzo, l'inserimento o la rimozione di nuove mappe nel dispositivo. Si occupa quindi di tutte le modifiche apportate sulla lista delle mappe disponibili visualizzata a schermo comprendendo la modifica del file di configurazione necessario all'applicazione e del suo inserimento nel dispositivo.
+\subsubsection{Casi d'uso}
+
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=14.5cm]{immagini/Modulo_Mappe.jpg} %inserisce una figura larga 8cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Diagramma dei casi d'uso del modulo mappe]{Diagramma dei casi d'uso del modulo mappe}%\label{fig:prima}
+\end{center}
+\end{figure}
+Definite le funzionalità presenti nel modulo, il diagramma dei casi d'uso mostra graficamente le operazioni disponibili all'utente e le relative operazioni eseguite dall'applicativo desktop sul dispositivo mobile in gestione ed introduce la presenza di un deposito di estrazioni il cui contenuto e struttura verrà esplicato nel capitolo di progettazione.
+\subsection{Modulo Progetti}
+Questo è il modulo che permette la gestione dei progetti. Deve analizzare il file di definizione dei progetti contenuto dal dispositivo in gestione, visualizzare la lista dei progetti disponibili, esportare o rimuovere i progetti soggetti alle operazioni dell'utente dal dispositivo ed inserire il file di definizione dei progetti modificato nel dispositivo.
+\subsubsection{Casi d'uso}
+
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=14.5cm]{immagini/Modulo_Progetti.jpg} %inserisce una figura larga 8cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Diagramma dei casi d'uso del modulo progetti]{Diagramma dei casi d'uso del modulo progetti}%\label{fig:prima}
+\end{center}
+\end{figure}
+
+Definite le funzionalità presenti nel modulo il diagramma dei casi d'uso mostra graficamente le operazioni disponibili all'utente e le relative operazioni eseguite dall'applicativo desktop sul dispositivo mobile in gestione ed introduce la presenza di un deposito di progetti il cui contenuto e struttura verrà esplicato nel capitolo di progettazione.
+
+\section{Funzionalità del sistema mobile}                 %crea la sezione
+Verranno descritte di seguito nel dettaglio le funzionalità, implementate per questa tesi, a cui l'applicativo mobile deve provvedere, esplicando i requisiti funzionali che queste implicano.
+
+\subsection{Gestione file dei progetti}
+{\bf{Descrizione}}: Il sistema deve essere in grado di gestire interamente il file dei progetti in formato .xml utilizzati dall'applicazione mobile.
+\subsubsection{Requisiti funzionali}
+\begin{enumerate}
+\item Il sistema deve caricare in modo corretto tutti i dati contenuti dal file xml situato all'interno del dispositivo mobile.
+\item Il sistema deve poter modificare suddetto file in base alle operazioni riguardanti i progetti, effettuate dall'utente.
+\item Il sistema deve sostituire il precedente file con quello aggiornato.
+\end{enumerate}
+
+\subsection{Visualizzazione e selezione progetti}
+{\bf{Descrizione}}: L'utente deve poter visualizzare quali progetti sono presenti all'interno del dispositivo e selezionare il progetto desiderato.
+\subsubsection{Requisiti funzionali}
+\begin{enumerate}
+\item Il sistema deve provvedere a verificare i progetti memorizzati sul dispositivo.
+\item Il sistema deve fornire all'utente una lista di progetti disponibili.
+\item Il sistema deve fornire all'utente un'interfaccia per selezionare il progetto desiderato.
+\end{enumerate}
+
+\subsection{Caricamento e salvataggio progetto}
+{\bf{Descrizione}}: Il sistema deve essere in grado di caricare correttamente il file xml contente la struttura del progetto selezionato e salvarlo dopo ulteriori modifiche da parte dell'utente.
+\subsubsection{Requisiti funzionali}
+\begin{enumerate}
+\item Il sistema deve caricare in modo corretto tutti i dati contenuti nella struttura del progetto in caricamento.
+\item Il sistema deve poter modificare suddetto file in base alle operazioni effettuate dall'utente.
+\item Il sistema deve sostituire il precedente file con quelli aggiornati.
+\end{enumerate}
+
+\section{Moduli del sistema mobile}                 %crea la sezione
+A seguito della suddivisione del lavoro con il collega Filippo Nicolini, per lo sviluppo dell'applicativo mobile è stato identificato un solo modulo da implementare:
+\begin{itemize}                     %crea un elenco
+  \item Progetti
+\end{itemize}
+\subsection{Modulo Progetti}                 %crea la sezione
+Questo modulo si occupa della gestione dei progetti. Qui sono disponibili tutte le funzionalità di caricamento dei progetti disponibili nel dispositivo mobile, di caricamento e salvataggio della struttura del progetto in gestione. Si occupa quindi della memorizzazione di tutte le modifiche effettuate dall'utente ai progetti creati durante l'utilizzo dell'applicativo mobile.
+\newpage
+\subsubsection{Casi d'uso}
+
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=14.5cm]{immagini/Modulo_Progetti_Mobile.jpg} %inserisce una figura larga 8cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Diagramma dei casi d'uso del modulo progetti dell'applicativo mobile]{Diagramma dei casi d'uso del modulo progetti dell'applicativo mobile}%\label{fig:prima}
+\end{center}
+\end{figure}
+Definite le funzionalità presenti nel modulo il diagramma dei casi d'uso mostra graficamente le operazioni disponibili all'utente e le relative operazioni eseguite dall'applicativo mobile sulla memoria interna la cui struttura e contenuto verrà esplicato nel capitolo di progettazione.
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+\chapter{Progettazione}                %crea il capitolo
+\rhead[\fancyplain{}{\bfseries PROGETTAZIONE}]{\fancyplain{}{\bfseries\thepage}}
+\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries PROGETTAZIONE}}
+
+In questo capitolo verranno esposte le strutture dei progetti, indicando le scelte progettuali che hanno portato alla loro definizione.
+\section{Applicativo desktop}
+\subsection{Architettura principale}                 %crea la sezione
+L'architettura principale applicata è stata realizzata attraverso l'utilizzo del pattern Model-View-Controller molto diffuso nello sviluppo di sistemi software, in particolare nell'ambito della programmazione ad oggetti. La struttura del MVC è basata sulla separazione dei compiti fra i componenti software che interpretano tre ruoli:
+\begin{itemize}                     %crea un elenco
+  \item {\bf{MODEL}}: fornisce i metodi per accedere ai dati utili all'applicazione.
+  \item {\bf{VIEW}}: visualizza i dati contenuti nel model e si occupa dell'interazione con utenti ed agenti.
+  \item {\bf{CONTROLLER}}: riceve i comandi dell'utente e li attua modificando lo stato degli altri due componenti.
+\end{itemize}
+\newpage
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=8cm]{immagini/MVC_Process.jpg} %inserisce una figura larga 8cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Interazione tra componenti del MVC]{Interazione tra componenti del MVC}%\label{fig:prima}
+\end{center}
+\end{figure}
+Il pattern MVC aumenta la complessità architetturale perché introduce classi aggiuntive dovute alla separazione tra model, view e controller; tuttavia i vantaggi risultano maggiormente d'impatto, difatti è possibile il ri-uso dei componenti del modello utilizzabili in differenti view, una semplice implementazione, testing e mantenibilità dei dati contenuti dal modello ed un facile supporto per nuovi tipi di client dato dal fatto che è sufficiente implementare nuove view e controller utilizzando i già presenti oggetti del modello. \\\\Le motivazioni sull'utilizzo di questo pattern architetturale coincidono con i vantaggi descritti in precedenza dato che soddisfano il requisito di scalabilità richiesto dall'azienda.
+\newpage
+\subsubsection{Applicazione ai moduli}
+La suddivisione in moduli dell'applicativo, illustrata nella sezione 3.4, combinata all'utilizzo di questo pattern architetturale ha reso possibile una veloce strutturazione dell'applicativo illustrata nella figura seguente.
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=12cm]{immagini/MVC_Moduli.jpg} %inserisce una figura larga 8cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[MVC applicato ai moduli]{MVC applicato ai moduli}%\label{fig:prima}
+\end{center}
+\end{figure}
+\subsubsection{Classi ricavate}
+Le principali classi ricavate successive alla creazione dell'architettura principale sono le seguenti:
+\begin{itemize}                     %crea un elenco
+\item {\bf{Model}}: contenente i dati utilizzati dall'applicativo.
+\item {\bf{DevicesView}}: interfaccia grafica che rende visibile all'utente la lista di dispositivi collegati con la possibilità di selezione e di preparazione di un dispositivo al primo utilizzo oppure il passaggio ai successivi moduli dell'applicativo\footnote{Il flusso di utilizzo dell'applicativo desktop verrà illustrato nel paragrafo successivo.}.
+\item {\bf{ExportsView\footnote{Il nome export equivale ad estrazione. EBWorld utilizza questo termine per indicare la porzione della mappa presente in azienda estratta per un determinato cliente. D'ora in avanti il termine mappa ed estrazione si equivarranno.}}}: interfaccia grafica che rende visibili la lista di mappe contenute nel dispositivo in gestione, la lista di mappe contenute dal computer in utilizzo con la possibilità di selezione ed inserimento nel dispositivo o rimozione dal dispositivo di una mappa. 
+\item {\bf{ProjectsView}}: interfaccia grafica che rende visibili la lista di progetti contenuti nel dispositivo in gestione con la possibilità di selezione ed esportazione o rimozione dal dispositivo di un progetto. 
+\item {\bf{DevicesController}}: classe che riceve gli input dell'utente passati dalla corrispondente view ed avvia le funzionalità di ricarica della lista dei dispositivi collegati, di preparazione al primo utilizzo installando l'applicazione mobile e creando il workspace sul dispositivo selezionato oppure avvia il successivo modulo selezionato dall'utente.
+\item {\bf{ExportsController}}: controller che memorizza le operazioni effettuate dall'utente ed alla conferma avvia il trasferimento delle nuove mappe inserite dall'utente e la rimozione delle mappe eliminate dall'utente sul dispositivo in gestione.
+\item {\bf{ProjectsController}}: controller che memorizza le operazioni effettuate dall'utente ed alla conferma avvia l'esportazione in locale dei progetti selezionati dall'utente e la rimozione dei progetti eliminati dall'utente sul dispositivo in gestione.
+\end{itemize}
+\newpage
+\subsubsection{Diagramma classi}
+Di seguito viene proposto il diagramma delle classi del modulo Dispositivi. I moduli mancanti presentano schemi simili strutturati sempre utilizzando il pattern architetturale MVC.
+
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=15cm]{immagini/Classi_MVC.jpg} %inserisce una figura larga 8cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Diagramma classi del modulo Dispositivi]{Diagramma classi del modulo Dispositivi}%\label{fig:prima}
+\end{center}
+\end{figure}
+\newpage
+\subsection{Flusso di utilizzo dell'applicativo}
+I moduli ricavati dall'analisi dell'applicativo desktop necessitano un collegamento anche se gestiscono ambiti diversi così da offrire all'utente un'esperienza di utilizzo lineare. Il seguente schema illustra il flusso di utilizzo dell'applicativo descrivendo in linea generale le operazioni effettuate per il passaggio tra i moduli.
+
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=13cm]{immagini/Flusso_Utilizzo.jpg} %inserisce una figura larga 8cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Flusso utilizzo dei moduli]{Flusso utilizzo dei moduli}%\label{fig:prima}
+\end{center}
+\end{figure}
+Come si può notare dallo schema, il primo modulo utilizzabile dall'utente è il Modulo Dispositivi. La decisione è obbligata dal fatto che un dispositivo non può essere gestito in ambito mappe o progetti senza essere preparato al primo utilizzo perché risulterebbe mancante del workspace adatto alla memorizzazione di questi ultimi. Un ulteriore aspetto da tenere in considerazione riguarda la richiesta di un singolo dispositivo in gestione da parte dei moduli Mappe e Progetti. Per soddisfare questo requisito senza mostrare nuovamente l'intera lista dei dispositivi nei moduli Mappe e Progetti è stato implementato il passaggio del dispositivo mobile selezionato dal modulo Dispositivi agli altri.
+
+\subsection{Comunicazione tra applicativo desktop e dispositivo mobile}
+La principale e fondamentale funzionalità progettata e realizzata è la comunicazione tra l'applicativo desktop e il dispositivo mobile. Nelle fasi iniziali sono sorti problemi riguardanti l'impossibilità di lavorare su un dispositivo Android collegato attraverso un'applicativo java dato che non risultava visibile a quest'ultimo. Una parziale soluzione è stata ottenuta attraverso l'utilizzo dei comandi ADB illustrati nel paragrafo 2.2 ed inseriti all'interno dell'applicativo java, con i quali è possibile gestire in maniera completa un dispositivo Android collegato al computer. L'obbligo di tradurre ed estrarre informazioni utilizzabili dai risultati delle operazioni a riga di comando utilizzate, avrebbe complicato e rallentato eccessivamente lo sviluppo dei progetti, tuttavia attraverso l'inserimento della libreria JMTP descritta nel paragrafo 2.1, è stato raggiunto un buon compromesso. La mancanza di funzionalità nella libreria JMTP ha vincolato l'utilizzo di alcuni comandi ADB ripartendo le funzionalità in questa maniera.
+\subsubsection{Funzionalità utilizzate di JMTP}
+\begin{itemize}                     %crea un elenco
+\item Rilevazione dei dispositivi collegati
+\item Navigazione nel filesystem del dispositivo
+\item Creazione ed eliminazione di directory
+\item Trasferimento di file o cartelle dal computer al dispositivo
+\end{itemize}
+\subsubsection{Funzionalità utilizzate di ADB}
+\begin{itemize}                     %crea un elenco
+\item Rilevazione dei dispositivi Android collegati
+\item Installazione del file contente l'applicativo mobile sviluppato
+\item Trasferimento di file o cartelle dal dispositivo al computer
+\end{itemize}
+L'utilizzo combinato ha portato alla creazione della classe MobileDevice contente il numero seriale estratto da ADB e l'oggetto della libreria JMTP che rappresenta il dispositivo mobile collegato. Questa necessità deriva dall'obbligo di inserire nel comando ADB il seriale del dispositivo sul quale va effettuata l'operazione. Il seguente diagramma rappresenta la definizione della classe MobileDevice.
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=7cm]{immagini/Classe_MobileDevice.jpg} %inserisce una figura larga 8cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Diagramma della classe MobileDevice]{Diagramma della classe MobileDevice}%\label{fig:prima}
+\end{center}
+\end{figure}
+\newpage
+\subsection{Manager}
+L'analisi delle funzionalità presenti in ogni modulo ha riscontrato diversi funzioni in comune come ad esempio la lettura ed il salvataggio di file xml e la navigazione nel filesystem della memoria dei dispositivi collegati. Per questo motivo e per facilitare future funzionalità implementabili sono state create le seguenti classi per evitare la duplicazione del codice:
+\begin{itemize}                     %crea un elenco
+\item {\bf{DeviceManger}}: contenente tutti i metodi necessari alla comunicazione con un dispositivo mobile collegato al computer, alla navigazione nel filesystem del dispositivo, all'estrazione, rimozione o inserimento di file nel dispositivo.
+\item {\bf{FileXMLManger}}: contenente i metodi necessari alla lettura di file xml utilizzati dall'applicativo desktop per analizzare il contenuto del dispositivo mobile ed al salvataggio dei file xml aggiornati in seguito alle modifiche apportate dall'utente.
+\item {\bf{ConfigManger}}: classe contenente i metodi per gestire il file config.xml\footnote{Nel sezione successiva verrà illustrata la struttura di tutti i file XML utilizzati dal applicativo desktop} del dispositivo in gestione permettendo all'applicativo di memorizzare le modifiche effettuate dall'utente ed applicarle alla conclusione delle operazioni.
+\item {\bf{ProjectManger}}: contenente i metodi per gestire il file progetti.xml del dispositivo in gestione permettendo all'applicativo di memorizzare le modifiche effettuate dall'utente ed applicarle alla conclusione delle operazioni.
+\item {\bf{LocalExportManger}}: classe contenente i metodi necessari gestire le mappe contenute dal computer in uso. 
+\end{itemize}
+\subsection{Struttura dei file XML}
+L'analisi dell'applicativo desktop Gestore MapYou prodotto da EBWorld ha rivelato l'utilizzo di numerosi file xml utilizzati per la memorizzazione di diversi tipi di  dati. XML (sigla di eXtensible Markup Language) è un metalinguaggio per la definizione di linguaggi di markup che consente di definire e controllare il significato degli elementi contenuti in un documento o testo.
+
+\lstinputlisting[caption=Esempio.xml, style=XML]{xml/Esempio.xml}
+Il nome indica che si tratta di un linguaggio marcatore (markup language) estensibile in quanto permette di creare tag personalizzati come si può notare dal esempio sopra illustrato.
+\\\\Nella progettazione sono stati creati file xml simili a quelli del precedente applicativo perché risultavano comprensibili e di facile utilizzo. Di seguito verranno illustrate e descritte le strutture dei file xml letti dall'applicativo desktop e la definizione delle classi java associate ad essi.
+\newpage
+\subsubsection{Current\_export.xml}
+Current\_export.xml è il file di definizione di una mappa, utilizzato dall'applicativo per determinare le estrazioni presenti nel computer in uso.
+\lstinputlisting[caption=Current\_export.xml, style=XML]{xml/current_export.xml}
+La struttura ed il contenuto del file è stato definito in precedenza da EBWorld ed è presente in ogni estrazione con valori differenti per ogni mappa. L'applicativo utilizza i valori dei tag Time e Name e Base\_Versione\_Id per identificare una estrazione memorizzandoli all'interno della classe LocalExport. 
+\newpage
+\subsubsection{Config.xml}
+Config.xml è il principale file utilizzato dall'applicativo mobile per ricavare dati utili alla lettura delle mappe presenti nel dispositivo e dati generici utilizzati dall'applicativo per configurarsi.
+
+\lstinputlisting[caption=Config.xml, style=XML]{xml/config.xml}
+
+Il file raffigurato contiene tre diversi tag:
+\begin{itemize}                     %crea un elenco
+\item {\bf{Config}}: Radice principale del file xml contenente attributi che identificano ad esempio la versione dell'applicativo mobile in utilizzo ed ulteriori valori utilizzati in fase di configurazione.
+\item {\bf{Exports}}: Tag utilizzato come contenitore.
+\item {\bf{Export}}: Tag rappresentativo di una estrazione o mappa all'interno del dispositivo mobile. Gli attributi al suo interno rappresentano tutti i dati necessari all'applicativo per conoscere il nome, la data di creazione e di aggiornamento, il percorso in memoria dei dati della mappa ed il percorso in memoria della cartella contente i lavori e progetti riferirti alla stessa mappa.
+\end{itemize}
+
+\subsubsection{Classi ricavate}
+Come definito dall'analisi, l'applicativo desktop deve essere in grado di gestire il contenuto del file descritto in precedenza, con le modifiche apportate dall'utente durante l'utilizzo del modulo Mappe. A conclusione della gestione delle mappe l'applicativo deve essere in grado di creare il nuovo file Config.xml e sostituirlo al precedente. Per rendere possibile queste operazioni sono state create le seguenti classi Java:
+\begin{itemize}   
+\item {\bf{ConfigXML}}: classe che raffigura l'intero file xml e contenente la lista di mappe contenute ed i valori degli attributi del tag Config.
+\item {\bf{ExportTag}}: classe che raffigura il tag Export contenendo tutti i valori dei suoi attributi.
+\end{itemize}
+\subsubsection{Diagramma Classi}
+Di seguito viene proposto il diagramma delle classi definite in precedenza.
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=14cm]{immagini/Classi_Config.jpg} %inserisce una figura larga 8cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Diagramma delle classi ConfigXML e ExportTag]{Diagramma delle classi ConfigXML e ExportTag}%\label{fig:prima}
+\end{center}
+\end{figure}
+
+%controllare numero paragrafo
+\subsubsection{Progetti.xml}
+Progetti.xml è il file utilizzato dall'applicativo desktop per estrarre le informazioni dei progetti presenti all'interno del dispositivo mobile. Come illustrerà il paragrafo 4.2.3 all'interno del dispositivo mobile esiste un file xml di definizione dei progetti diverso collegato ad ogni mappa presente nel dispositivo.
+
+\lstinputlisting[caption=Progetti.xml, style=XML]{xml/Progetti.xml}
+Il file raffigurato contiene due tag:
+\begin{itemize}   
+\item {\bf{Projects}}: Radice principale del file xml che contiene il nome dell'ultimo progetto attivo utilizzato dall'applicativo mobile.
+\item {\bf{Project}}: Tag rappresentativo di un progetto contenente il nome e la data corrispondente all'ultima modifica apportata da parte dell'utente.
+\end{itemize}
+
+\subsubsection{Classi ricavate}
+Come definito dall'analisi, l'applicativo desktop deve essere in grado di gestire il contenuto del file descritto in precedenza, con le modifiche apportate dall'utente durante l'utilizzo del modulo Progetti. A conclusione della gestione dei progetti l'applicativo deve essere in grado di creare il nuovo file Progetti.xml e sostituirlo al precedente. Per rendere possibile queste operazioni sono state create le seguenti classi Java:
+\begin{itemize}   
+\item {\bf{ProjectsXML}}: classe che raffigura l'intero file xml e contenente la lista di progetti contenuti ed il valori dell'attributo ProgettoAttivo del tag Projects.
+\item {\bf{ProjectTag}}: classe che raffigura il tag Project contenendo tutti i valori dei suoi attributi.
+\end{itemize}
+\subsubsection{Diagramma Classi}
+Di seguito viene proposto il diagramma delle classi definite in precedenza.
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=14cm]{immagini/Classi_Progetti.jpg} %inserisce una figura larga 8cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Diagramma delle classi ProjectsXML e ProjectTag]{Diagramma delle classi ProjectsXML e ProjectTag}%\label{fig:prima}
+\end{center}
+\end{figure}
+\newpage
+\subsection{Workspace}
+Data la presenza di diversi file gestiti dall'applicativo è stata necessaria la creazione di un workspace locale utilizzato per differenti finalità spiegate in seguito.
+
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=8cm]{immagini/Workspace_Locale.jpg} %inserisce una figura larga 8cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Struttura workspace locale]{Struttura workspace locale}%\label{fig:prima}
+\end{center}
+\end{figure}
+All'avvio dell'applicativo viene realizzato il workspace strutturato come in figura, nella cartella principale dell'utente collegato al computer in utilizzo. Nella cartella "apk" è presente il file di installazione dell'applicativo mobile che verrà utilizzato alla preparazione di un dispositivo mobile collegato. La cartella "basicFiles" contiente tutti i file che si vogliono inserire nella cartella principale del workspace dell'applicativo mobile, la cui copia verrà eseguita successivamente alla creazione dello stesso. La directory "defaultAppConfig" contiene i file xml definiti nel paragrafo precedente, utilizzati dall'applicativo nel caso risultino mancanti nel dispositivo mobile in gestione. L'ultima directory conterrà i file temporanei prelevati e creati per ogni dispositivo gestito dall'applicativo, organizzati in cartelle univoche nominate con il numero seriale del dispositivo.
+
+\subsubsection{Sorgente dati}
+Per completare la progettazione del workspace dell'applicativo desktop è necessario illustrare la struttura della directory utilizzata come sorgente dati delle estrazioni o mappe disponibili. \`E stata presa la decisione di dividerla dal workspace principale descritto in precedenza, perché generalmente la clientela di EBWorld utilizza una cartella di rete raggiungibile da tutti i computer in rete, come contenitore di mappe.
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=7cm]{immagini/Sorgente_Dati_Esempio.jpg} %inserisce una figura larga 8cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Struttura sorgente dati]{Struttura sorgente dati}%\label{fig:prima}
+\end{center}
+\end{figure}
+\\Come si nota dall'esempio in figura, all'interno della directory principale sono presenti due cartelle. "Estrazioni" contiene i dati di tutte le mappe possedute dall'utente e la directory "Lavori" utilizzata dall'applicativo come cartella di destinazione dei progetti esportati dal dispositivo suddividendoli in cartelle nominate come la mappa nella quale sono stati realizzati. Sempre in figura viene mostrato il file current\_export.xml definito nel paragrafo 4.1.5 grazie al quale l'applicativo definisce quali mappe sono presenti nella cartella "Estrazioni".
+
+\subsection{Progettazione GUI}
+La definizione dei view ossia interfacce grafiche utilizzate dall'utente per interagire con i dati contenuti dall'applicativo ed i dispositivi mobile collegati, ha avviato la realizzazione di numerosi mockup sempre più concreti fino ad arrivare alla soluzione ritenuta maggiormente chiara nell'esposizione dei dati e facilmente utilizzabile da parte dell'utente. Di seguito verranno mostrati i risultati.
+
+\subsubsection{Mockup DevicesView}
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=12cm]{immagini/MockupDispositivi.jpg} 
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Mockup interfaccia grafica modulo Dispositivi]{Mockup interfaccia grafica modulo Dispositivi}%\label{fig:prima}
+\end{center}
+\end{figure}
+Il mockup in questione fa risaltare una disposizione molto chiara dei vari elementi che compongono la finestra mettendo subito in evidenzia la lista dei dispositivi collegati e dando la possibilità all'utente di avviare la preparazione di un dispositivo oppure di entrare nei moduli successivi dell'applicativo attraverso l'utilizzo di bottoni posizionati a destra delle lista.
+\subsubsection{Mockup ExportsView}
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=14cm]{immagini/MockupMappe.jpg}
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Mockup interfaccia grafica modulo Mappe]{Mockup interfaccia grafica modulo Mappe}%\label{fig:prima}
+\end{center}
+\end{figure}
+
+Il mockup superiore mette in evidenzia la presenza di due liste, la prima a destra contente le mappe presenti sul dispositivo e la seconda a sinistra contenente le mappe presenti sul computer in uso. Sono stati utilizzati due pannelli marcati con bordi evidenti per separare le due liste e gli associati bottoni collegati a specifiche funzionalità in modo da non confondere l'utente. Per agevolare l'utente, le due liste vengono aggiornate automaticamente visualizzando sempre lo stato successivo ad ogni operazione di inserimento o rimozione. All'esterno dei due pannelli sono stati risposti due bottoni con i quali è possibile annullare o confermare le modifiche effettuate.
+\subsubsection{Mockup ProjectsView}
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=14cm]{immagini/MockupProgetti.jpg} 
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Mockup interfaccia grafica modulo Progetti]{Mockup interfaccia grafica modulo Progetti}%\label{fig:prima}
+\end{center}
+\end{figure}
+Il mockup in questione è composto da due pannelli delineati con bordi evidenti per separare la lista delle mappe presenti sul dispositivo alla lista dei progetti presenti nella mappa selezionata. Questa suddivisione avviene anche per le funzioni associate alle liste ad esempio i bottoni relativi all'eliminazione o esportazione dei progetti sono situati all'interno del pannello che contiene la lista dei progetti. Sono presenti due bottoni con i quali è possibile annullare o confermare le modifiche effettuate all'esterno dei due pannelli.
+\newpage
+
+\section{Applicativo mobile}
+
+\subsection{Definizione modulo Progetti}
+L'analisi del modulo Progetti illustrato nel paragrafo  3.6.1 ha comportato la suddivisione delle principali funzionalità in tre settori:
+\begin{itemize}
+\item {\bf{Gestione lista progetti}}
+\item {\bf{Gestione workspace di un progetto}}
+\item {\bf{Gestione file struttura di un progetto}}
+\end{itemize}
+\subsubsection{Package Project\_Manager}
+La definizione dei settori sopra illustrati ha generato le seguenti classi presenti nel package Project\_Manager dell'applicativo mobile:
+\begin{itemize}
+\item {\bf{ProjectsXML}}: contenente i metodi necessari alla lettura della lista dei progetti disponibili nella mappa attiva sull'applicativo ed il salvataggio della stessa lista in caso vengano creati nuovi progetti.
+\item {\bf{ProjectWorkspace}}: classe contenente i metodi necessari alla creazione del workspace locale di un progetto così da consentire il salvataggio della struttura ed ulteriori file allegati al progetto in gestione.
+\item {\bf{ProjectStructureXML}}: contenente i metodi necessari al caricamento della struttura di un progetto ricreando gli elementi presenti al suo interno e del salvataggio della stessa struttura con le modifiche apportate dall'utente. 
+\end{itemize}
+Nella pagina seguente è presente il diagramma delle classi sopra elencate.
+
+\begin{figure}[!]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=14cm]{immagini/Classi_Project_Manager.jpg} 
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Diagramma classi del package Project\_Manager]{Diagramma classi del package Project\_Manager}%\label{fig:prima}
+\end{center}
+\end{figure}
+\newpage
+\subsection{Struttura dei file XML}
+L'analisi dell'applicativo mobile MapYou come nell'applicativo desktop, ha rivelato la presenza di diversi file xml utilizzati dall'applicativo mobile per le seguenti finalità:
+\begin{itemize}
+\item {\bf{Config.xml}}: dal quale vengono prelevati dati di configurazione per l'applicativo e le informazioni riguardanti le mappe presenti nella memoria del dispositivo. 
+\item {\bf{Progetti.xml}}: contiene la lista di progetti presenti nel dispositivo, specificando il nome e la data di ultima modifica.
+\item {\bf{Sketches\_config.xml}}: contiene la lista degli elementi disegnabili dall'utente definendo la loro struttura geometrica, il colore ed i valori attribuibili ad essi. 
+\item {\bf{Sketches.xml}}: rappresenta la struttura di un progetto contenendo la definizione degli elementi grafici utilizzati, la lista degli elementi disegnati specificando le coordinate ed i valori attribuiti dall'utente. 
+\end{itemize}
+Il file sketches\_config.xml non verrà illustrato perché utilizzato dal collega Filippo Nicolini per realizzare gli elementi grafici utilizzabili dall'utente
+e la struttura dei primi due file è stata descritta nel paragrafo 4.1.5.
+\subsubsection{Sketches.xml}
+Sketches.xml è il file utilizzato dall'applicativo per memorizzare la struttura di un progetto creato dall'utente e come spiegato in precedenza oltre a contenere la lista degli elementi presenti, definisce anche la loro struttura geometrica utilizzando la stessa struttura presente nel file Sketches\_config.xml. La motivazione collegata a quest'ultima è la possibilità di rimozione di elementi grafici disegnabili, difatti l'utente durante l'utilizzo dell'applicativo potrebbe richiedere ad EBWolrd la creazione, la modifica o la rimozione di elementi di disegno. In caso di caricamento di un'elemento di disegno non più presente nel file degli elementi grafici di default, la presenza della sua definizione nel file di struttura del progetto rende possibile ugualmente la sua visualizzazione ed utilizzo. Di seguito verrà definita la struttura del file Sketches.xml.
+
+\lstinputlisting[caption=Struttura principale, style=XML]{xml/Struttura_Sketches.xml}
+L'immagine superiore rappresenta la struttura principale del file xml dove il tag "Sketches" conterrà l'intera definizione di un progetto. All'interno sono elencati quattro diversi tag che rappresentano le tipologie degli elementi disegnabili dall'utente definite in punti, linee, aree e testi.
+
+\lstinputlisting[caption=Struttura interna generale elemento disegno, style=XML]{xml/Struttura_Interna_Points.xml}
+Ogni tipologia di elemento di disegno conterrà il tag Styles dove verranno inseriti gli stili degli elementi utilizzati nel progetto definendoli con la stessa struttura presente in Sketches\_config.xml. Il tag Objects accoglierà ogni singola istanza di elemento inserito dall'utente.
+
+\lstinputlisting[caption=Esempio di definizione dello stile di una linea, style=XML]{xml/Esempio_Stile_Linea.xml}
+L'esempio in figura rappresenta la struttura utilizzata per memorizzare lo stile di un elemento di disegno di tipo linea dove sono presenti i tag field che corrispondono agli attributi modificabili dall'utente in ogni elemento dello stesso stile. In questo particolare caso l'utente può attribuire una stringa al campo costruttore, un valore numerico al campo identificato come fibre ed una stinga al campo note. Ad ogni elemento disegnabile dall'utente è collegato uno stile che obbligatoriamente contiene tag field simili a quelli in figura. Durante il salvataggio del progetto l'applicativo si occuperà di inserire univocamente gli stili utilizzati evitando la loro ripetizione anche in presenza di più elementi grafici con lo stesso stile. Al caricamento della struttura del progetto selezionato dall'utente, l'applicativo provvederà all'estrazione degli stili presenti aggiungendoli a quelli già presenti nel caso risultassero mancanti.
+
+\lstinputlisting[caption=Esempio di oggetto inserito nel progetto, style=XML]{xml/Esempio_Oggetto_Linea.xml}
+Come si può notare dall'immagine superiore ogni elemento inserito dall'utente corrisponderà ad un tag Object avente l'attributo Style che conterrà il nome dello stile dell'oggetto salvato. 
+\\All'interno del tag Object sono presenti i tag:
+\begin{itemize}
+\item {\bf{PointsItems}}: utilizzato per definire la sezione dei punti che compongono l'elemento disegnato.
+\item {\bf{PointItem}}: definisce le coordinate di ogni punto. Nel salvataggio di un elemento di tipo Punto le coordinate verranno direttamente inserite nel tag Object descritto in precedenza.
+\item {\bf{tab}}: utilizzato per contenere gli attributi dell'elemento disegnato.
+\item {\bf{field}}: definiscono gli attributi collegati all'oggetto.
+\item {\bf{Photos}}: utilizzato per definire la sezione delle foto collegate all'elemento disegnato.
+\item {\bf{Photo}}: contente il percorso all'interno della memoria del dispositivo della foto collegata all'elemento disegnato.
+\end{itemize}
+Dalla lista si può notare il riutilizzo di tab e field corrispondenti agli stessi tag presenti nella definizione dello stile. L'unica differenza è l'attributo default che all'interno dei tag Styles conterrà i valori di default invece all'interno dei tag Objects conterrà i valori attribuiti dall'utente agli oggetti inseriti nel progetto. \`E stata effettuata questa scelta perché durante il caricamento di un progetto risulta più facile ricavare i valori specifici di ogni oggetto.
+\newpage
+\subsection{Workspace}
+Dato l'utilizzo da parte dell'applicativo mobile di differenti file è stata necessaria la progettazione di un workspace nella memoria interna del dispositivo. La creazione di tale workspace è eseguita come illustrato in precedenza dall'applicativo desktop durante la preparazione al primo utilizzo del dispositivo mobile collegato al computer.
+
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=8cm]{immagini/Workspace_Mobile.jpg}
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Struttura workspace dispositivo mobile]{Struttura workspace dispositivo mobile}%\label{fig:prima}
+\end{center}
+\end{figure}
+Come si può notare dall'immagine superiore è stata creata una cartella principale nominata GisAndroid contente il file di configurazione "config.xml" utilizzato dall'applicativo per ricavare dati di configurazione e informazioni riguardanti le mappe disponibili in memoria presenti nella cartella "estrazioni" del workspace. La directory "lavori" conterrà i progetti creati dall'utente suddividendoli per mappa di appartenenza difatti al suo interno saranno presenti cartelle aventi lo stesso nome delle estrazioni disponibili.
+\newpage
+\subsubsection{Workspace progetti}
+
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=9cm]{immagini/Workspace_Mobile_Lavori.jpg}
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Struttura workspace progetti]{Struttura workspace progetti}%\label{fig:prima}
+\end{center}
+\end{figure}
+L'esempio in figura rappresenta nello specifico il contenuto della directory "lavori" contente i progetti creati dall'utente attraverso l'applicativo mobile. Come spiegato in precedenza è presente il file progetti.xml contenente la lista di progetti, per ogni cartella che rappresenta una mappa, all'interno di "lavori". All'interno della directory "progetti" vengono memorizzati i dati di ogni progetto creando inizialmente un cartella con il nome del progetto creato che conterrà il file Sketches.xml illustrato nel paragrafo 4.2.2 ed una cartella media dove salvare le foto collegate agli elementi del progetto.
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+\chapter{Implementazione}                %crea il capitolo
+%imposta l'intestazione di pagina
+\rhead[\fancyplain{}{\bfseries IMPLEMENTAZIONE}]{\fancyplain{}{\bfseries\thepage}}
+\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries IMPLEMENTAZIONE}}
+In questo capitolo verranno descritte alcune implementazioni delle principali parti degli applicativi.
+\section{Rilevamento dispositivi mobile collegati}
+La maggior parte delle funzionalità dell'applicativo desktop riguardano la gestione della memoria di un dispositivo Android collegato al computer. Attraverso un semplice applicativo java in esecuzione risultava impossibile rilevare e quindi comunicare con essi. Come già spiegato nel paragrafo 4.1.3 con l'utilizzo combinato della libreria JMTP e i comandi ADB è stato possibile risolvere il problema descritto. Di seguito verrà illustrata nello specifico la soluzione utilizzata, evidenziando le differenze tra le due tecnologie.
+
+\subsection{Rilevamento attraverso JMTP}
+La libreria JMTP permette il rilevamento dei dispositivi multimediali collegati al computer attraverso una porta USB. Tra i dispositivi rilevabili sono compresi lettori MP3, videocamere, fotocamere, smartphone e qualsiasi altro dispositivo riconosciuto dal sistema operativo come multimediale.
+\\
+\lstinputlisting[caption=Rilevamento con JMTP, style=JAVA]{java/Rilevazione_JMTP.java}
+JMTP mette a disposizione la classe \lstinline[columns=fixed]{PortableDeviceManager} capace di gestire tutti i dispositivi multimediali collegati ed attraverso una iterazione su di essa è possibile accedere ad ogni singola istanza di \lstinline[columns=fixed]{PortableDevice}, classe che rappresenta un dispositivo. Prima di richiedere informazioni oppure accedere al contenuto di un dispositivo è importante aprire una connessione con esso attraverso il metodo \textit{open()} e chiuderla utilizzando il metodo \textit{close()}. Il codice in figura rappresenta il metodo utilizzato per rilevare attraverso JMTP solo i dispositivi multimediali Android collegati al computer.
+
+\subsection{Rilevazione attraverso ADB}
+Android Debug Bridge, illustrato nel paragrafo 2.2, ha differenza di JMTP è uno strumento specifico per la sola gestione di dispositivi Android. L'utilizzo è stato obbligato dalla mancanza di alcune funzionalità nella libreria JMTP come l'installazione di un applicativo Android su un dispositivo collegato al computer ed ha portato alla costruzione runtime dei comandi ADB specifici ad ogni dispositivo in gestione. Utilizzando comandi da terminale è stato necessario riuscire ad analizzare il risultati ottenuti contenenti dati utili all'applicazione desktop.
+\newpage
+\lstinputlisting[caption=Rilevamento con ADB, style=JAVA]{java/Rilevazione_ADB.java}
+I metodi presenti nel frammento di codice in figura, vengono utilizzati per rilevare i dispositivi Android collegati al computer attraverso l'uso di comandi ADB che sono stati suddivisi tra parti statiche, memorizzate in variabili all'interno del progetto, e parti dinamiche passate ai metodi durante l'utilizzo dell'applicativo. \`E possibile vedere il filtraggio dei risultati ottenuti dai comandi ADB, difatti in entrambi i metodi sono presenti dei \lstinline[columns=fixed]{BufferReader} che attraverso il metodo \textit{readLine()} gli estraggono. La finalità del secondo metodo verrà spiegato nella sezione successiva.
+
+\subsection{Utilizzo combinato di JMTP e ADB}
+JMTP e ADB presentano un importante limite al loro utilizzo congiunto che riguarda il collegamento dei dispositivi rilevati con il primo a quelli del secondo. Per l'applicativo desktop è obbligatorio riuscire ad effettuare questo collegamento visto che in sua mancanza, non riuscirebbe a soddisfare le principali funzionalità assegnategli. Le informazioni rese disponibili dalla classe \lstinline[columns=fixed]{PortableDevice} come ad esempio il modello ed il codice seriale del dispositivo rappresentato hanno facilitato l'accoppiamento. Di seguito viene inserito il metodo che unisce la lista di \lstinline[columns=fixed]{PortableDevice} ricavati tramite JMTP ai dispositivi rilevati attraverso ADB.
+\newpage
+\lstinputlisting[caption=Abbinamento rilevamenti, style=JAVA]{java/ConnectedDevices.java}
+Dal codice in figura è possibile notare che l'abbinamento avviene tramite i numeri seriali dei dispositivi, però durante l'implementazione di tale metodo è stato riscontrato un diverso numero seriale ottenuto tramite JMTP da quello fornito con i comandi ADB, questo perché il valore del secondo rappresenta il numero seriale utilizzabile nei comandi ADB. La soluzione è stata raggiunta attraverso l'acquisizione del numero seriale di rilascio del dispositivo ADB prelevato in precedenza attraverso il metodo \textit{getRilSerialADB(String ADBserial)}, corrispondente al valore ritornato dal metodo \textit{getSerialNumber()} della classe \lstinline[columns=fixed]{PortableDevice}. Il valore di ritorno del metodo in figura è una lista di \lstinline[columns=fixed]{MobileDevice}, classe introdotta nel paragrafo 4.1.3, che rappresenta la lista dei dispositivi mobile collegati al computer.
+
+\newpage
+
+\section{Gestione file XML}
+Entrambi gli applicativi sviluppati implementano funzionalità per leggere, modificare e creare file XML. Esistono di numerose API per la gestione di questi file ma la scelta è ricaduta su DOM\footnote{Document Object Model} perché permette la lettura, la scrittura e la manipolazione dell'intero file XML e preserva l'ordine degli elementi, molto utile durante la lettura dei punti che compongono aree e linee. 
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=12cm]{immagini/Schema_DOM.jpg}
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[File xml con rappresentazione DOM]{File xml con rappresentazione DOM}%\label{fig:prima}
+\end{center}
+\end{figure}
+\\L'immagine raffigura un semplice documento xml e la sua rappresentazione DOM: come si può notare la rappresentazione ad albero prevede un nodo per ogni tag del documento e per ogni nodo tanti nodi-figlio quanti sono i tag nidificati all'interno dello stesso. Le classi coinvolte nell'elaborazione mediante DOM sono contenute nei seguenti package:
+\begin{itemize}
+\item {\bf{javax.xml.parsers}}: contiene le classi DocumentBuilder e DocumentBuilderFactory che permettono di creare un parser DOM ed utilizzare quest'ultimo per ottenere una struttura ad albero rappresentativa del contenuto di un documento XML.
+\item {\bf{org.w3c.dom}}: definisce tutte le interfacce coinvolte nella rappresentazione di un documento XML.
+\item {\bf{javax.xml.transform}}:  per effettuare trasformazioni sul documento XML mediante XSLT\footnote{EXtensible Stylesheet Language Trasformations che rendere possibile la trasformazione di un documento XML in un altro documento}.
+\end{itemize}
+\lstinputlisting[caption=Creazione e salvataggio progetti.xml, style=JAVA]{java/XML_DOM.java}
+Il metodo in figura presente in entrambi gli applicativi, permette la creazione del file progetti.xml ed è possibile suddividerlo in tre fasi. La prima istanzia un oggetto \lstinline[columns=fixed]{Document} che rappresenta il file XML in creazione. La seconda realizza la struttura del XML e la riempie utilizzando i dati dei progetti contenuti dalla variabile \textit{projects\_data}. L'ultima fase attraverso il metodo \textit{transform(Source xmlSource, Result outputTarget)} salva documento creato sul file creato nel percorso passato al metodo. Entrambi gli applicativi contengono metodi simili a quello in figura specifici per ogni file XML gestito.
+\section{Realizzazione interfacce grafiche}
+La presenza di mockup, realizzati durante la fase di progettazione, ha velocizzato la costruzione delle view dell'applicativo desktop composte dagli elementi grafici disponibili nella libreria Swing, appartenente alle Java Foundation Classes\footnote{Caratteristiche percepite dall'utente di una interfaccia grafica, sia in termini di apparenza visiva che di modalità di interazione.}. Data la possibilità di personalizzare il \textit{look and fell}\footnote{Framework grafico per sviluppare interfacce grafiche multipiattaforma.} degli elementi grafici, grazie al controllo da parte di Swing sul rendering grafico dei propri componenti, è stata utilizzata la libreria JTattoo per applicare uno stile differente all'applicativo.
+\lstinputlisting[caption=Modifica aspetto componenti Swing, style=JAVA]{java/JTattoo.java}
+Il metodo in figura permette la modifica dell'aspetto dei componenti grafici di Swing attraverso l'applicazione del tema \textit{AcrylLookAndFeel} reso disponibile dalla libreria JTattoo. Dopo il suo utilizzo, il disegno e lo stile grafico dei componenti verranno emulati utilizzando valori presenti nel tema scelto. Di seguito verrà mostrata una view dell'applicativo successiva all'applicazione del tema utilizzato nel frammento di codice superiore.
+
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=14cm]{immagini/Dispositivi_JTattoo.jpg}
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Risultato interfaccia grafica modulo Dispositivi]{Risultato interfaccia grafica modulo Dispositivi}%\label{fig:prima}
+\end{center}
+\end{figure}
+
+%\clearpage{\pagestyle{empty}\cleardoublepage}
+
+%\chapter{Robaccia}                %crea il capitolo
+%imposta l'intestazione di pagina
+%\rhead[\fancyplain{}{\bfseries Robaccia}]{\fancyplain{}{\bfseries\thepage}}
+%\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries Robaccia}}
+%Questo \`e il capitolo pieno di robaccia.
+%\section{Esempi Sezione}
+
+%Ora vediamo un elenco numerato:         %crea un elenco numerato
+%\begin{enumerate}
+%\item primo oggetto
+%\item secondo oggetto
+%\item terzo oggetto
+%\item quarto oggetto
+%\end{enumerate}
+
+%\section{Altra Sezione}
+%Ora vediamo un elenco puntato:
+%\begin{itemize}                         %crea un elenco puntato
+%\item primo oggetto
+%\item secondo oggetto
+%\end{itemize}
+
+%\section{Altra Sezione}
+%Vediamo un elenco descrittivo:
+%\begin{description}                     %crea un elenco descrittivo
+%  \item[OGGETTO1] prima descrizione;
+%  \item[OGGETTO2] seconda descrizione;
+%  \item[OGGETTO3] terza descrizione.
+%\end{description}
+
+%crea una sottosezione
+%\subsection{Altra SottoSezione}
+
+%crea una sottosottosezione
+%\subsubsection{SottoSottoSezione}Questa sottosottosezione non viene
+%numerata, ma \`e solo scritta in grassetto.
+%\section{Altra Sezione}                 %crea una sottosezione
+%Vediamo la creazione di una tabella; la tabella \ref{tab:uno}
+%(richiamo il nome della tabella utilizzando la label che ho messo sotto):
+%la facciamo di tre righe e tre colonne, la prima colonna
+%``incolonnata'' a destra (r) e le altre centrate (c):\\
+%\begin{table}[h]                        %ambiente tabella (serve per avere la legenda)
+%\begin{center}                          %centra nella pagina la tabella
+%\begin{tabular}{r|c|c}                  %tre colonne con righe verticalimprodotte con |
+%\hline \hline                           %inserisce due righe orizzontali
+%$(1,1)$ & $(1,2)$ & $(1,3)$\\           %& separa le colonne e con
+%\hline                                  %inserisce una riga orizzontale
+%$(2,1)$ & $(2,2)$ & $(2,3)$\\           %  \\ va a capo
+%\hline                                  %inserisce una riga orizzontale
+%$(3,1)$ & $(3,2)$ & $(3,3)$\\
+%\hline \hline                           %inserisce due righe orizzontali
+%\end{tabular}
+%\caption[legenda elenco tabelle]{legenda tabella}\label{tab:uno}
+%\end{center}
+%\end{table}
+%\section{Altra Sezione}\label{sec:prova}%posso mettere le label anche alle section
+%\subsection{Listati dei programmi}
+%\subsubsection{Primo Listato}
+%\begin{verbatim}
+%        In questo ambiente     posso scrivere      come voglio,
+%lasciare gli spazi che voglio e non % commentare quando voglio
+%e ci sarà scritto tutto.
+%Quando lo uso è meglio che disattivi il Wrap del WinEdt
+%\end{verbatim}
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+%per fare le conclusioni
+\chapter*{Conclusioni}
+
+%imposta l'intestazione di pagina
+\rhead[\fancyplain{}{\bfseries CONCLUSIONI}]{\fancyplain{}{\bfseries\thepage}}
+\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries CONCLUSIONI}}
+
+%aggiunge la voce Conclusioni nell'indice
+\addcontentsline{toc}{chapter}{Conclusioni}
+\`E stato veramente interessante ed istruttivo analizzare, progettare e implementare questi applicativi soprattutto durante la strutturazione dell'applicativo desktop. I problemi che si sono dovuti affrontare sin dal principio creati dai limiti delle mie conoscenze hanno permesso di ampliare il mio bagaglio culturale per trovare soluzioni adeguate.
+\\\\La possibilità di lavorare in azienda è stata stimolante in quanto ha permesso il confronto con altri colleghi, la risoluzione di problematiche più o meno complesse, lo sviluppo di abilità e capacità non apprendibili con corsi universitari e di avere un impatto con il mondo del lavoro e delle dinamiche di un'azienda.
+\\\\Il team composto con il collega Filippo Nicolini è stato immediatamente produttivo attraverso un continuo scambio di opinioni, idee e domande rendendo possibile uno sviluppo senza interruzioni.
+\\I sistemi creati hanno soddisfatto le aspettative ed hanno posto le basi per eventuali sviluppi futuri descritti nella sezione seguente.
+
+%\\\\In queste conclusioni voglio fare un riferimento alla
+%bibliografia: questo \`e il mio riferimento \cite{K3,K4}.
+
+\section*{Sviluppi futuri}
+I due applicativi sviluppati sono una prima versione di base, che comunque riescono a soddisfare tutte le operazioni fondamentali e sono stati creati con l'intenzione di aggiungere in futuro nuove funzionalità accrescendo progressivamente la loro utilità per l'utente finale.
+Per esempio l'applicativo desktop potrebbe fornire la possibilità di inserire un progetto locale nel dispositivo mobile collegato e l'applicativo mobile potrebbe rendere disponibile l'eliminazione di una o più mappe oppure uno o più progetti per liberare la memoria occupata.
+\\\\Oltre a queste più semplici modifiche è necessario distinguere due prospettive maggiormente incisive in un futuro sviluppo, ovvero il collegamento dell'applicazione mobile ad Internet e la realizzazione di una parte di realtà aumentata.
+\\\\Per quanto riguarda il primo caso, il funzionamento dell'applicazione potrebbe essere disponibile in presenza e in assenza di connettività internet. Numerose aziende supportano queste due modalità di utilizzo nelle loro applicazioni rendendo disponibili servizi e funzionalità in precedenza non possibili. In riferimento all'applicazione sviluppata, attraverso l'utilizzo di file scaricati e di una cache contente parti scaricate in precedenza sarebbe  possibile la visualizzazione di mappe archiviate in rete escludendo il problema della datazione dei dati archiviati in locale che potrebbero risultare non aggiornati. Nel caso l'applicazione risultasse mancante di un collegamento stabile si potrebbero utilizzare i dati locali disponibili sul dispositivo completando la mappa visualizzata. Un'ulteriore funzionalità sviluppabile attraverso questa prospettiva futura è la creazione di progetti e la loro sincronizzazione in rete rendendoli velocemente disponibili alla sede centrale ed altri tecnici esterni e consentendo una migliore interazione tra loro.
+\\\\Per quanto riguarda la realizzazione di una realtà aumentata, questa prospettiva potrebbe risultare estremamente interessante. Infatti questo nuovo ambito si sta progressivamente diffondendo arricchendo la percezione umana della realtà mediante informazioni generalmente
+manipolate e convogliate elettronicamente. Per esempio si potrebbe pensare di fornire all'utente la possibilità di visualizzare i dati georiferiti, contenuti nel dispositivo, attraverso l'utilizzo della fotocamera in combinazione con le informazioni rese disponibili dal giroscopio e la posizione geografica del dispositivo. Il risultato renderebbe possibile ad esempio la visualizzazione di elementi presenti nel sottosuolo oppure all'interno di mura ed attraverso il movimento del dispositivo e lo spostamento della posizione sarebbe possibile ricreare in 3D la precedente visualizzazione in 2D della mappa.
+\\\\I possibili sviluppi futuri sono molteplici e possono aprire la strada a scenari molto interessanti ed estremamente innovativi.
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+\chapter*{Ringraziamenti}
+\addcontentsline{toc}{chapter}{Ringraziamenti}
+\thispagestyle{empty}
+Ringrazio innanzitutto i miei genitori, per essermi stato vicino durante l'ultimo intenso periodo di questo percorso di studi e  senza i quali non sarei mai arrivato fino a questo punto. 
+\\Ci tengo a ringraziare i compagni di corso Alessandro Bagnoli e Filippo Nicolini, con i quali ho affrontato numerosi esami sia lavorando in team per progetti che sopportandoci a vicenda durante la preparazione alle prove più impegnative.
+\\Un grazie in particolare va all'azienda EBWorld per avermi permesso di sviluppare assieme a loro questo elaborato di tesi contribuendo alla crescita delle mie capacità spronandomi a dare sempre il meglio.
+
+\clearpage{\pagestyle{empty}\cleardoublepage}
+
+\rhead[\fancyplain{}{\bfseries ELENCO DELLE FIGURE}]{\fancyplain{}{\bfseries\thepage}}
+\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries ELENCO DELLE FIGURE}}
+
+%crea l'elenco delle figure
+\listoffigures                          
+
+%crea l'elenco delle tabelle
+%\listoftables    
+%\clearpage{\pagestyle{empty}\cleardoublepage} %non numera l'ultima pagina sinistra
+
+\begin{thebibliography}{90}             %crea l'ambiente bibliografia
+\rhead[\fancyplain{}{\bfseries \leftmark}]{\fancyplain{}{\bfseries\thepage}}
+%aggiunge la voce Bibliografia nell'indice
+\addcontentsline{toc}{chapter}{Bibliografia}
+%provare anche questo comando:
+%\addcontentsline{toc}{chapter}{\numberline{}{Bibliografia}}
+\bibitem{K1} http://www.ebw.it
+\bibitem{K2} https://docs.oracle.com/javase/8/docs/api/
+\bibitem{K3} http://developer.android.com/tools/help/adb.html
+\bibitem{K4} https://code.google.com/p/jmtp/
+\bibitem{K5} http://www.jtattoo.net
+\bibitem{K6} https://www.wikipedia.org
+\bibitem{K7} https://bitbucket.org
+\end{thebibliography}
+
+\end{document}
