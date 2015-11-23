@@ -22,8 +22,11 @@
 %libreria per avere l'indentazione all'inizio dei capitoli, ...
 \usepackage{indentfirst}
 
-%libreria per mostrare le etichette
-%\usepackage{showkeys}
+\usepackage{afterpage}
+\newcommand\blankpage{%
+ \null
+ \thispagestyle{empty}%\addtocounter{page}{-1}%
+ \newpage}
 
 %libreria per inserire grafici
 \usepackage{graphicx}
@@ -180,9 +183,6 @@ Anno Accademico 2014 - 2015}
 \large                                  	%aumenta la grandezza del carattere a 14pt
 \em                                     	%emfatizza (corsivo) il carattere
 Alla mia famiglia\\
-%Questa \`e la \textsc{Dedica}:\\
-%ognuno pu\`o scrivere quello che vuole, \\
-%anche nulla \ldots                      %\ldots lascia tre puntini
 \newpage           
 
 \end{titlepage}
@@ -211,13 +211,13 @@ Alla mia famiglia\\
 
 Il 9 gennaio 2007 ha segnato l'inizio di un'enorme cambiamento in numerosi ambiti e settori partendo ovviamente dalle tecnologie mobili fino ad arrivare alla pi\`u semplice quotidianità, migliorando la cooperazione, lo scambio di informazioni e l'interazione tra persone.
 Durante lo sviluppo dei nuovi scenari creati da quel particolare evento, il mondo del lavoro è notevolmente cambiato, gli smartphone si sono diffusi per la loro praticità, affidabilità, velocità e semplicità di utilizzo. Impiegati in svariati modi, possono ad esempio essere utilizzati da un rappresentante per rimanere in contatto con la propria azienda, con clienti e fornitori oppure da un tecnico esterno per memorizzare gli interventi effettuati e poi presentarli in sede centrale.
-\\\\Quest'ultimo caso rappresenta al meglio ciò che verrà spiegato nella tesi ed illustrato attraverso il progetto collegato, difatti lo scopo è di sviluppare due applicativi, uno desktop ed uno mobile che permettano ad un tecnico di preparare un dispositivo mobile contenente i dati necessari alla sua attività esterna, la possibilità di creare e salvare nuovi dati riguardanti i lavori svolti ed una volta concluse le operazioni di poterli importare in sede centrale.
+\\\\Quest'ultimo caso rappresenta al meglio ciò che verrà spiegato nella tesi ed illustrato attraverso i progetti collegati, difatti lo scopo è di sviluppare due applicativi, uno desktop ed uno mobile che permettano ad un tecnico di preparare un dispositivo mobile contenente i dati necessari alla sua attività esterna, la possibilità di creare e salvare nuovi dati riguardanti i lavori svolti ed una volta concluse le operazioni di poterli importare in sede centrale.
+\\\\Il software desktop richiesto deve fornire una interfaccia grafica semplice ed intuitiva che visualizzi i dispositivi collegati, i dati locali da importare sui dispositivi e quelli presenti sui dispositivi da esportare in locale. L'applicazione mobile deve fornire gli strumenti adatti per visualizzare ed interagire con i dati locali al dispositivo e crearne nuovi che identifichino l'operato dell'utente. 
+\\\\Gli aspetti visti sopra saranno descritti attraverso un'analisi del problema ed una progettazione architetturale. In particolare verranno evidenziati aspetti riguardanti la comunicazione tra l'applicativo desktop ed un dispositivo mobile collegato al computer che permetteranno la sincronizzazione dei contenuti.
 \\\\La possibilità di effettuare questo percorso è stata concessa dall'azienda EBWorld s.r.l., che dal 1983 supporta lo sviluppo di grandi e piccole aziende fornendo piattaforme e applicazioni semplici ma potenti che sfruttano le informazioni geografiche dell'organizzazione per progettare e gestire reti tecnologiche sul territorio.
-Dato il grande sviluppo che l'azienda sta avendo, ricevendo anche la nomina di Cool Vendor 2015 in "Communications Service Provider Operational and Business Infrastructure" da Gartner, società internazionale leader nella consulenza strategica, nella ricerca e nell'analisi nel settore hi-tech; EBWorld ha espresso l'esigenza di un applicazione che sostituisse una precedente versione realizzata su Windows Mobile ed utilizzasse i moderni dispositivi mobile disponibili sul mercato. Attraverso un'analisi svolta assieme a quest'ultima si è deciso di utilizzare un dispositivo Android, come piattaforma per l'applicazione mobile, prendendo in considerazione la sua notevole diffusione e di sviluppare il progetto desktop su Java rendendolo multipiattaforma.
-\\\\Il software desktop richiesto deve fornire una interfaccia grafica semplice ed intuitiva che visualizzi i dispositivi collegati tramite USB, i dati locali da importare sui dispositivi e quelli presenti sui dispositivi da esportare in locale. L'applicazione mobile deve fornire gli strumenti adatti per visualizzare ed interagire con i dati locali al dispositivo e crearne nuovi che identifichino l'operato dell'utente. 
-\\\\La sfida più importante era sicuramente quella di rendere l'applicativo desktop capace di visualizzare e gestire un dispositivo mobile collegato al PC, infatti non tutti i sistemi operativi, come ad esempio MAC OS X, riescono ad individuare un dispositivo Android e quindi garantire un collegamento stabile anche in presenza di una grossa mole di dati da interscambiare
-\\\\Per evitare problemi prestazionali ed interattivi è stato fatto uso della tecnologia multithread, ormai largamente diffusa in tutti i sistemi operativi. Questo ha permesso di eseguire le operazioni di trasferimento dati in thread secondari rendendo così libero il thread principale ed evitando un possibile rallentamento o congelamento dell'interfaccia grafica.
-\\\\\\Gli applicativi realizzati soddisfano tutti i requisiti richiesti dall'azienda nella fase iniziale, riuscendo a gestire senza alcun problema tutti i dispositivi Android collegati senza subire rallentamenti o perdite durante il trasferimento dati e dando la possibilità all'utente dell'applicativo mobile di visualizzare e creare i dati riguardanti gli interventi effettuati.
+Dato il grande sviluppo che l'azienda sta avendo, ricevendo anche la nomina di Cool Vendor 2015 in "Communications Service Provider Operational and Business Infrastructure" da Gartner, società internazionale leader nella consulenza strategica, nella ricerca e nell'analisi nel settore hi-tech; EBWorld ha espresso l'esigenza di un applicazione che sostituisse una precedente versione realizzata su Windows Mobile ed utilizzasse i moderni dispositivi mobile disponibili sul mercato. 
+\\\\La sfida più importante é sicuramente quella di rendere l'applicativo desktop capace di visualizzare e gestire un dispositivo mobile collegato al PC, infatti non tutti i sistemi operativi, come ad esempio MAC OS X, riescono ad individuare un dispositivo Android e quindi garantire un collegamento stabile anche in presenza di una grossa mole di dati da interscambiare. Lo sviluppo di questo aspetto corrisponde al punto di forza dell'applicativo desktop.
+\\\\Gli applicativi realizzati soddisfano tutti i requisiti iniziali richiesti dall'azienda, riuscendo a gestire senza alcun problema tutti i dispositivi Android collegati senza subire rallentamenti o perdite durante il trasferimento dati e dando la possibilità all'utente dell'applicativo mobile di visualizzare e creare i dati riguardanti gli interventi effettuati.
 \\\\Il progetto desktop è stato realizzato interamente dal sottoscritto invece la parte mobile è stata sviluppata in team con il mio collega Filippo Nicolini, suddividendo attentamente i compiti tra i due. Questo elaborato di tesi tratta quindi dell'intera progettazione e implementazione dell'applicativo desktop e nella parte mobile dello sviluppo riguardante i dati creati dall'utente. Il mio collega si è occupato invece della realizzazione dell'interfaccia grafica con analisi della usability, dei workflow e del contesto operativo dell'utente.
 \\\\La tesi è suddivisa in cinque capitoli:
 %crea un elenco puntato
@@ -238,52 +238,37 @@ Segue poi una breve conclusione.
 
 %mette i numeri arabi
 \pagenumbering{arabic}                  
-Questo capitolo introduce l'azienda EBWorld s.r.l., descrive sinteticamente gli applicativi prodotti e mostra le precedenti soluzioni sviluppate per comprendere meglio il progetto che si intende sviluppare.
+Questo capitolo introduce l'azienda EBWorld s.r.l., descrive sinteticamente le precedenti soluzioni sviluppate per comprendere meglio il progetto che si intende sviluppare.
 %crea la sezione
 \section{EBWorld s.r.l.}
-EBWorld opera dal 1983 nel settore dell'informatica applicata all'impiego di informazioni geografiche e tecnologiche correlate ai processi di acquisizione, elaborazione e gestione di dati georiferiti. La consolidata competenza ed esperienza nella realizzazione di Sistemi Informativi Territoriali (GIS) e nell'integrazione di piattaforme GIS con sistemi ed applicazione, fanno di EBWorld il partner ideale per chi gestisce reti tecnologiche.
+EBWorld opera dal 1983 nel settore dell'informatica applicata all'impiego di informazioni geografiche e tecnologiche correlate ai processi di acquisizione, elaborazione e gestione di dati georiferiti. La consolidata competenza ed esperienza nella realizzazione di Sistemi Informativi Territoriali (SIT) e nell'integrazione di piattaforme GIS con sistemi ed applicazione, fanno di EBWorld il partner ideale per chi gestisce reti tecnologiche.
 \\\\Importanti Aziende e Pubbliche Amministrazioni Italiane hanno scelto EBWorl per l'integrazione, la manutenzione e lo sviluppo dei loro sistemi IT. Dal 1995 EBWorld è Distributore e VAR per l'Italia dei prodotti Smallworld attualmente prodotti e distribuiti da GE Energy. \`E una dinamica azienda ICT capace di dare forma e sostanza al più grande patrimonio di ogni Azienda: {\bf{l'informazione}}.
 
-\section{Le soluzioni prodotte}
-Le soluzioni software EBWorld sono fruibili su molteplici piattaforme e dispositivi: da postazioni desktop a leggeri client web, tablet e smartphone e assicurano l'interoperabilità data l'aderenza ai più avanzati standard e la massima apertura. Si differenziano due tipi di soluzioni:
-%crea un elenco puntato
-\begin{itemize}                        
-\item SmallWorld
-\item Google Maps
+\section{Geographic Information System}
+Il GIS\footnote{Geographic Information System} è un sistema informativo computerizzato che permette l'acquisizione, la registrazione, l'analisi, la visualizzazione e la rappresentazione di informazioni derivanti da dati geografici (geo-referenziati) solitamente memorizzandole in strutture del tipo DBMS\footnote{Database Management System} che gestiscono anche la spazialità, o in singoli file.
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=8cm]{immagini/Schema_Piattaforma_GIS.jpg} %inserisce una figura larga 7cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Componenti di un GIS]{Componenti di un GIS}%\label{fig:prima}
+\end{center}
+\end{figure}
+\\L'immagine raffigura le principali componenti di un sistema GIS:
+\begin{itemize}
+\item {\bf{Hardware}}: costituito da computer, periferiche grafiche come plotter per la stampa di carte tematiche prodotte dalle elaborazioni GIS e server per la condivisione online di mappe. Le prestazioni hardware influiscono sulla capacità e velocità di elaborazione dei dati e variano a seconda della dimensione geografica del territorio che si intende memorizzare.
+\item {\bf{Software}}: Esistono vari software GIS. La scelta di quale pacchetto utilizzare dipende dalle esigenze del progetto, dalla necessità di avere delle interfacce più o meno "user-friendly" come anche da vincoli di spesa.
+\item {\bf{Dati}}: Elementi fondamentali del sistema, devono essere completi, possibilmente senza errori e forniti con una scala dimensionale.  I dati maneggiabili con un sistema GIS possono essere di natura diversa difatti si possono introdurre dati vettoriali, dati raster, immagini da satellite ed anche documenti digitalizzati.
+\item {\bf{Persone}}: L'utilizzatore del sistema GIS deve farsi carico di trovare i dati, deve progettare l'ambiente in cui costruire le mappe e l'analisi, deve progettare le metodologie e le procedure per analizzare i dati e deve scegliere il modo migliore per rappresentarle e comunicarle.
+\item {\bf{Procedure}}: Utilizzo o creazione di linee guida al fine di trattare correttamente ed efficacemente i dati disponibili.
+\item {\bf{Analisi}}: Risultato dell'aggregazione e trattamento dei dati.
 \end{itemize}
-
-\subsection{GeoSpatial Analysis\textsuperscript{TM}}
-\begin{center}
-\`E la soluzione di business intelligence di GE Smallworld.
-\end{center}
-\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
-\begin{center}                          %centra nel mezzo della pagina la figura
-
-\includegraphics[width=8cm]{immagini/Geo_Spatial_Analysis.jpg} %inserisce una figura larga 8cm
-
-%inserisce la legenda ed etichetta la figura con \label{fig:prima}
-\caption[Esempio di GeoSpatial Analysis\textsuperscript{TM}]{Esempio di GeoSpatial Analysis\textsuperscript{TM}}%\label{fig:prima}
-\end{center}
-\end{figure}
-Smallworld GeoSpatial Analysis\textsuperscript{TM} offre un accesso facile ed efficiente ai dati spaziali e non-spaziali gestiti nei diversi sistemi aziendali. Le informazioni possono essere condivise in tutta l'azienda, consentendo ad un'ampia platea di utenti capacità di visualizzazione, interrogazione, analisi e reporting. L'accesso ai dati avviene attraverso una semplice e intuitiva interfaccia web. Smallworld GeoSpatial Analysis\textsuperscript{TM} introduce il concetto di business collections, oggetti che riuniscono le informazioni spaziali e non-spaziali, mappe, fotografie, documenti e siti web in un modo unico e flessibile.
-
-\subsection{Field Force Automation\textsuperscript{TM}}
-Completa gestione della forza lavoro mobile per le utilities e gli operatori di telecomunicazioni.
-\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
-\begin{center}                          %centra nel mezzo della pagina la figura
-
-\includegraphics[width=7cm]{immagini/Field_Force_Automation.jpg} %inserisce una figura larga 7cm
-
-%inserisce la legenda ed etichetta la figura con \label{fig:prima}
-\caption[Esempio di Field Force Automation\textsuperscript{TM}]{Esempio di Field Force Automation\textsuperscript{TM}}%\label{fig:prima}
-\end{center}
-\end{figure}
-\\Field Force Automation\textsuperscript{TM} (FFA) di GE è una piattaforma di Work Force Management web-based che aiuta a organizzare i servizi e contribuisce a garantirne la qualità conformemente agli obiettivi prefissati, in modo che l'operatore idoneo, con le competenze necessarie, arrivi nel posto giusto al momento giusto. FFA consente alle aziende di ottimizzare l'intero ciclo di vita delle operazioni di assistenza sul campo.
-
+\subsection{Modello dei dati}
+Il modello dei dati rappresenta tutti gli oggetti che esistono nel mondo fisico (punti, linee, superficie, volumi, etc) ed è in grado di elaborare le loro combinazioni.Vengono memorizzate anche le informazioni riguardanti le relazioni tra gli oggetti (adiacenza, inclusioni, sovrapposizioni, etc.) ovvero la loro topologia. La caratteristica fondamentale di un GIS è la capacità di geo-referenziale i dati quindi ad ogni elemento vengono associate le sue coordinate spaziali reali del sistema di riferimento in cui realmente è situato l'oggetto.
 \section{Gli applicativi esistenti}
 Gli applicativi realizzati in precedenza dall'azienda sono stati mostrati prima di iniziare il percorso di analisi, progettazione e sviluppo necessario alla realizzazione degli obiettivi prefissati consentendo una migliore comprensione del lavoro da svolgere. 
-\\\\La motivazione principale che ha convinto EBWorld ad intraprendere questo percorso, è stata la modernizzazione di applicativi sempre maggiormente utilizzati per renderli compatibili con i moderni dispositivi disponibili sul mercato.\\
-
+\\\\La motivazione principale che ha convinto EBWorld ad intraprendere questo percorso, è stata la modernizzazione di applicativi sempre maggiormente utilizzati per renderli compatibili con i moderni dispositivi disponibili sul mercato.
 \subsection{MapYou}
 MapYou, la soluzione mobile ideata da EBWorld nel 2008, è stata sviluppata per la piattaforma Windows Mobile rendendo disponibile uno strumento per la consultazione e la gestione di dati georeferenziati.
 \\\\Le principali funzionalità riguardano:
@@ -416,7 +401,18 @@ Mercurial è un software di controllo della versione del codice sorgente versatil
 \\\\Tutto il codice sorgente dei due progetti è stato memorizzato su due repository Mercurial di www.bitbucket.org
 \subsubsection{Bitbucket}
 Bitbucket è un servizio di hosting web-based che permette di memorizzare in internet progetti che utilizzano Mercurial o Git. Fornisce la possibilità di creare repository pubbliche, che tutti possono vedere e nelle quali, normalmente, è possibile contribuire al codice, e repository private, come quelle utilizzate per questi progetti, dove soltanto chi ha l'accesso può leggere e modificare i file.
-\clearpage{\pagestyle{empty}\cleardoublepage} %non numera l'ultima pagina sinistra
+
+\clearpage
+
+%\newpage
+%\thispagestyle{empty}
+%\mbox{}
+
+%\mbox{}
+%\thispagestyle{empty}
+%\newpage
+%\afterpage{\null\newpage}
+%\clearpage{\pagestyle{empty}\cleardoublepage} %non numera l'ultima pagina sinistra
 
 \chapter{Analisi}                %crea il capitolo
 %imposta l'intestazione di pagina
@@ -1036,7 +1032,7 @@ Entrambi gli applicativi sviluppati implementano funzionalità per leggere, modif
 \begin{itemize}
 \item {\bf{javax.xml.parsers}}: contiene le classi DocumentBuilder e DocumentBuilderFactory che permettono di creare un parser DOM ed utilizzare quest'ultimo per ottenere una struttura ad albero rappresentativa del contenuto di un documento XML.
 \item {\bf{org.w3c.dom}}: definisce tutte le interfacce coinvolte nella rappresentazione di un documento XML.
-\item {\bf{javax.xml.transform}}:  per effettuare trasformazioni sul documento XML mediante XSLT\footnote{EXtensible Stylesheet Language Trasformations che rendere possibile la trasformazione di un documento XML in un altro documento}.
+\item {\bf{javax.xml.transform}}:  per effettuare trasformazioni sul documento XML mediante XSLT\footnote{EXtensible Stylesheet Language Trasformations che rendere possibile la trasformazione di un documento XML in un altro documento.}.
 \end{itemize}
 \lstinputlisting[caption=Creazione e salvataggio progetti.xml, style=JAVA]{java/XML_DOM.java}
 Il metodo in figura presente in entrambi gli applicativi, permette la creazione del file progetti.xml ed è possibile suddividerlo in tre fasi. La prima istanzia un oggetto \lstinline[columns=fixed]{Document} che rappresenta il file XML in creazione. La seconda realizza la struttura del XML e la riempie utilizzando i dati dei progetti contenuti dalla variabile \textit{projects\_data}. L'ultima fase attraverso il metodo \textit{transform(Source xmlSource, Result outputTarget)} salva documento creato sul file creato nel percorso passato al metodo. Entrambi gli applicativi contengono metodi simili a quello in figura specifici per ogni file XML gestito.
@@ -1054,75 +1050,6 @@ Il metodo in figura permette la modifica dell'aspetto dei componenti grafici di 
 \caption[Risultato interfaccia grafica modulo Dispositivi]{Risultato interfaccia grafica modulo Dispositivi}%\label{fig:prima}
 \end{center}
 \end{figure}
-
-%\clearpage{\pagestyle{empty}\cleardoublepage}
-
-%\chapter{Robaccia}                %crea il capitolo
-%imposta l'intestazione di pagina
-%\rhead[\fancyplain{}{\bfseries Robaccia}]{\fancyplain{}{\bfseries\thepage}}
-%\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries Robaccia}}
-%Questo \`e il capitolo pieno di robaccia.
-%\section{Esempi Sezione}
-
-%Ora vediamo un elenco numerato:         %crea un elenco numerato
-%\begin{enumerate}
-%\item primo oggetto
-%\item secondo oggetto
-%\item terzo oggetto
-%\item quarto oggetto
-%\end{enumerate}
-
-%\section{Altra Sezione}
-%Ora vediamo un elenco puntato:
-%\begin{itemize}                         %crea un elenco puntato
-%\item primo oggetto
-%\item secondo oggetto
-%\end{itemize}
-
-%\section{Altra Sezione}
-%Vediamo un elenco descrittivo:
-%\begin{description}                     %crea un elenco descrittivo
-%  \item[OGGETTO1] prima descrizione;
-%  \item[OGGETTO2] seconda descrizione;
-%  \item[OGGETTO3] terza descrizione.
-%\end{description}
-
-%crea una sottosezione
-%\subsection{Altra SottoSezione}
-
-%crea una sottosottosezione
-%\subsubsection{SottoSottoSezione}Questa sottosottosezione non viene
-%numerata, ma \`e solo scritta in grassetto.
-%\section{Altra Sezione}                 %crea una sottosezione
-%Vediamo la creazione di una tabella; la tabella \ref{tab:uno}
-%(richiamo il nome della tabella utilizzando la label che ho messo sotto):
-%la facciamo di tre righe e tre colonne, la prima colonna
-%``incolonnata'' a destra (r) e le altre centrate (c):\\
-%\begin{table}[h]                        %ambiente tabella (serve per avere la legenda)
-%\begin{center}                          %centra nella pagina la tabella
-%\begin{tabular}{r|c|c}                  %tre colonne con righe verticalimprodotte con |
-%\hline \hline                           %inserisce due righe orizzontali
-%$(1,1)$ & $(1,2)$ & $(1,3)$\\           %& separa le colonne e con
-%\hline                                  %inserisce una riga orizzontale
-%$(2,1)$ & $(2,2)$ & $(2,3)$\\           %  \\ va a capo
-%\hline                                  %inserisce una riga orizzontale
-%$(3,1)$ & $(3,2)$ & $(3,3)$\\
-%\hline \hline                           %inserisce due righe orizzontali
-%\end{tabular}
-%\caption[legenda elenco tabelle]{legenda tabella}\label{tab:uno}
-%\end{center}
-%\end{table}
-%\section{Altra Sezione}\label{sec:prova}%posso mettere le label anche alle section
-%\subsection{Listati dei programmi}
-%\subsubsection{Primo Listato}
-%\begin{verbatim}
-%        In questo ambiente     posso scrivere      come voglio,
-%lasciare gli spazi che voglio e non % commentare quando voglio
-%e ci sarà scritto tutto.
-%Quando lo uso è meglio che disattivi il Wrap del WinEdt
-%\end{verbatim}
-
-\clearpage{\pagestyle{empty}\cleardoublepage}
 
 %per fare le conclusioni
 \chapter*{Conclusioni}
