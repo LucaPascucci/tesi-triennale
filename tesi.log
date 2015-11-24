@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.8)  24 NOV 2015 18:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.8)  24 NOV 2015 22:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -839,13 +839,20 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 959--959
  [][][][][][][] 
  []
 
-(./xml/Esempio_Stile_Linea.xml) [57]
+(./xml/Esempio_Stile_Linea.xml)
+Underfull \vbox (badness 1226) has occurred while \output is active []
+
+ [57]
 Overfull \hbox (6.0pt too wide) in paragraph at lines 962--962
  [][][][][][][] 
  []
 
-(./xml/Esempio_Oggetto_Linea.xml) [58] [59]
-<immagini/Workspace_Mobile.jpg, id=271, 246.9225pt x 171.64125pt>
+(./xml/Esempio_Oggetto_Linea.xml)
+Underfull \hbox (badness 10000) in paragraph at lines 963--965
+
+ []
+
+[58] [59] <immagini/Workspace_Mobile.jpg, id=271, 246.9225pt x 171.64125pt>
 File: immagini/Workspace_Mobile.jpg Graphic file (type jpg)
 
 <use immagini/Workspace_Mobile.jpg>
@@ -991,13 +998,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ] (./tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 7085 strings out of 493089
- 100554 string characters out of 6134842
+ 7098 strings out of 493089
+ 100743 string characters out of 6134842
  263408 words of memory out of 5000000
- 10370 multiletter control sequences out of 15000+600000
+ 10383 multiletter control sequences out of 15000+600000
  16518 words of font info for 67 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 38i,12n,50p,1082b,1778s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,12n,50p,1083b,1778s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
@@ -1010,7 +1017,7 @@ pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></
 usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on tesi.pdf (95 pages, 2263523 bytes).
+Output written on tesi.pdf (95 pages, 2264083 bytes).
 PDF statistics:
  388 PDF objects out of 1000 (max. 8388607)
  247 compressed objects within 3 object streams
