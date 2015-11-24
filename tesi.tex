@@ -519,7 +519,7 @@ Verrà analizzato il software desktop descrivendo nel dettaglio le funzionalità a
 \subsubsection{Requisiti funzionali}
 \begin{enumerate}
 \item Il sistema deve memorizzare le mappe in inserimento ed in rimozione selezionate dall'utente.
-\item Il sistema deve mostrare a schermo tutte le operazioni di modifica effettuate dall'utente.
+\item Il sistema deve mostrare a schermo le modifiche apportate dalle operazioni effettuate dall'utente.
 \item Il sistema deve rimuovere il contenuto delle mappe selezionate dal dispositivo mobile.
 \item Il sistema deve copiare il contenuto delle mappe selezionate all'interno del dispositivo mobile.
 \end{enumerate}
@@ -574,7 +574,7 @@ Lo scopo di questo modulo è di contenere tutte le funzionalità di gestione dei d
 \end{figure}
 Definite le funzionalità presenti nel modulo, il diagramma dei casi d'uso mostra graficamente le operazioni disponibili all'utente e le relative operazioni eseguite dall'applicativo desktop sui dispositivi mobile collegati.
 \subsection{Modulo Mappe}
-Questo modulo si occupa della gestione delle mappe. Qui sono disponibili tutte le funzionalità di lettura del file di configurazione contenuto dal dispositivo in gestione, la ricerca delle mappe disponibili sul dispositivo e sul computer in utilizzo, l'inserimento o la rimozione di nuove mappe nel dispositivo. Si occupa quindi di tutte le modifiche apportate sulla lista delle mappe disponibili visualizzata a schermo comprendendo la modifica del file di configurazione necessario all'applicazione e del suo inserimento nel dispositivo.
+Questo modulo si occupa della gestione delle mappe. Qui sono disponibili tutte le funzionalità di lettura del file di configurazione contenuto dal dispositivo in gestione, la ricerca delle mappe disponibili sul dispositivo e sul computer in utilizzo, l'inserimento o la rimozione di nuove mappe nel dispositivo. Si occupa quindi di tutte le modifiche apportate sulla lista delle mappe disponibili visualizzata a schermo, comprendendo la modifica del file di configurazione necessario all'applicazione e del suo inserimento nel dispositivo.
 \subsubsection{Casi d'uso}
 
 \begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
@@ -586,7 +586,7 @@ Questo modulo si occupa della gestione delle mappe. Qui sono disponibili tutte l
 \caption[Diagramma dei casi d'uso del modulo mappe]{Diagramma dei casi d'uso del modulo mappe}%\label{fig:prima}
 \end{center}
 \end{figure}
-Definite le funzionalità presenti nel modulo, il diagramma dei casi d'uso mostra graficamente le operazioni disponibili all'utente e le relative operazioni eseguite dall'applicativo desktop sul dispositivo mobile in gestione ed introduce la presenza di un deposito di estrazioni il cui contenuto e struttura verrà esplicato nel capitolo di progettazione.
+Definite le funzionalità presenti nel modulo, il diagramma dei casi d'uso mostra graficamente le operazioni disponibili all'utente e le relative operazioni eseguite dall'applicativo desktop sul dispositivo mobile in gestione ed introduce la presenza di un deposito di estrazioni, il cui contenuto e struttura verrà esplicato nel capitolo di progettazione.
 \subsection{Modulo Progetti}
 Questo è il modulo che permette la gestione dei progetti. Deve analizzare il file di definizione dei progetti contenuto dal dispositivo in gestione, visualizzare la lista dei progetti disponibili, esportare o rimuovere i progetti soggetti alle operazioni dell'utente dal dispositivo ed inserire il file di definizione dei progetti modificato nel dispositivo.
 \subsubsection{Casi d'uso}
@@ -601,13 +601,13 @@ Questo è il modulo che permette la gestione dei progetti. Deve analizzare il fil
 \end{center}
 \end{figure}
 
-Definite le funzionalità presenti nel modulo il diagramma dei casi d'uso mostra graficamente le operazioni disponibili all'utente e le relative operazioni eseguite dall'applicativo desktop sul dispositivo mobile in gestione ed introduce la presenza di un deposito di progetti il cui contenuto e struttura verrà esplicato nel capitolo di progettazione.
+Definite le funzionalità presenti nel modulo il diagramma dei casi d'uso mostra graficamente le operazioni disponibili all'utente e le relative operazioni eseguite dall'applicativo desktop sul dispositivo mobile in gestione ed introduce la presenza di un deposito di progetti, il cui contenuto e struttura verrà esplicato nel capitolo di progettazione.
 
 \section{Funzionalità del sistema mobile}                 %crea la sezione
 Verranno descritte di seguito nel dettaglio le funzionalità, implementate per questa tesi, a cui l'applicativo mobile deve provvedere, esplicando i requisiti funzionali che queste implicano.
 
 \subsection{Gestione file dei progetti}
-{\bf{Descrizione}}: Il sistema deve essere in grado di gestire interamente il file dei progetti in formato .xml utilizzati dall'applicazione mobile.
+{\bf{Descrizione}}: Il sistema deve essere in grado di gestire interamente il file dei progetti in formato xml utilizzati dall'applicazione mobile.
 \subsubsection{Requisiti funzionali}
 \begin{enumerate}
 \item Il sistema deve caricare in modo corretto tutti i dati contenuti dal file xml situato all'interno del dispositivo mobile.
@@ -630,7 +630,7 @@ Verranno descritte di seguito nel dettaglio le funzionalità, implementate per qu
 \begin{enumerate}
 \item Il sistema deve caricare in modo corretto tutti i dati contenuti nella struttura del progetto in caricamento.
 \item Il sistema deve poter modificare suddetto file in base alle operazioni effettuate dall'utente.
-\item Il sistema deve sostituire il precedente file con quelli aggiornati.
+\item Il sistema deve sostituire il precedente file con quello aggiornato.
 \end{enumerate}
 
 \section{Moduli del sistema mobile}                 %crea la sezione
@@ -679,7 +679,7 @@ L'architettura principale applicata è stata realizzata attraverso l'utilizzo del
 \caption[Interazione tra componenti del MVC]{Interazione tra componenti del MVC}%\label{fig:prima}
 \end{center}
 \end{figure}
-Il pattern MVC aumenta la complessità architetturale perché introduce classi aggiuntive dovute alla separazione tra model, view e controller; tuttavia i vantaggi risultano maggiormente d'impatto, difatti è possibile il ri-uso dei componenti del modello utilizzabili in differenti view, una semplice implementazione, testing e mantenibilità dei dati contenuti dal modello ed un facile supporto per nuovi tipi di client dato dal fatto che è sufficiente implementare nuove view e controller utilizzando i già presenti oggetti del modello. \\\\Le motivazioni sull'utilizzo di questo pattern architetturale coincidono con i vantaggi descritti in precedenza dato che soddisfano il requisito di scalabilità richiesto dall'azienda.
+Il pattern MVC aumenta la complessità architetturale poiché introduce classi aggiuntive dovute alla separazione tra model, view e controller; tuttavia i vantaggi risultano maggiormente d'impatto, difatti è possibile il ri-uso dei componenti del modello utilizzabili in differenti view, una semplice implementazione, testing e mantenibilità dei dati contenuti dal modello ed un facile supporto per nuovi tipi di client dato dal fatto che è sufficiente implementare nuove view e controller utilizzando i già presenti oggetti del modello. \\\\Le motivazioni sull'utilizzo di questo pattern architetturale coincidono con i vantaggi descritti in precedenza dato che soddisfano il requisito di scalabilità richiesto dall'azienda.
 \newpage
 \subsubsection{Applicazione ai moduli}
 La suddivisione in moduli dell'applicativo, illustrata nella sezione 3.4, combinata all'utilizzo di questo pattern architetturale ha reso possibile una veloce strutturazione dell'applicativo illustrata nella figura seguente.
@@ -696,10 +696,10 @@ La suddivisione in moduli dell'applicativo, illustrata nella sezione 3.4, combin
 Le principali classi ricavate successive alla creazione dell'architettura principale sono le seguenti:
 \begin{itemize}                     %crea un elenco
 \item {\bf{Model}}: contenente i dati utilizzati dall'applicativo.
-\item {\bf{DevicesView}}: interfaccia grafica che rende visibile all'utente la lista di dispositivi collegati con la possibilità di selezione e di preparazione di un dispositivo al primo utilizzo oppure il passaggio ai successivi moduli dell'applicativo\footnote{Il flusso di utilizzo dell'applicativo desktop verrà illustrato nel paragrafo successivo.}.
-\item {\bf{ExportsView\footnote{Il nome export equivale ad estrazione. EBWorld utilizza questo termine per indicare la porzione della mappa presente in azienda estratta per un determinato cliente. D'ora in avanti il termine mappa ed estrazione si equivarranno.}}}: interfaccia grafica che rende visibili la lista di mappe contenute nel dispositivo in gestione, la lista di mappe contenute dal computer in utilizzo con la possibilità di selezione ed inserimento nel dispositivo o rimozione dal dispositivo di una mappa. 
+\item {\bf{DevicesView}}: interfaccia grafica che rende visibile all'utente la lista di dispositivi collegati con la possibilità di selezione e di preparazione di un dispositivo al primo utilizzo oppure di passaggio ai successivi moduli dell'applicativo\footnote{Il flusso di utilizzo dell'applicativo desktop verrà illustrato nel paragrafo successivo.}.
+\item {\bf{ExportsView\footnote{Il termine export equivale ad estrazione. EBWorld utilizza questo termine per indicare la porzione della mappa presente in azienda estratta per un determinato cliente. D'ora in avanti il termine mappa ed estrazione si equivarranno.}}}: interfaccia grafica che rende visibili la lista di mappe contenute nel dispositivo in gestione, la lista di mappe contenute dal computer in utilizzo con la possibilità di selezione ed inserimento nel dispositivo o rimozione dal dispositivo di una mappa. 
 \item {\bf{ProjectsView}}: interfaccia grafica che rende visibili la lista di progetti contenuti nel dispositivo in gestione con la possibilità di selezione ed esportazione o rimozione dal dispositivo di un progetto. 
-\item {\bf{DevicesController}}: classe che riceve gli input dell'utente passati dalla corrispondente view ed avvia le funzionalità di ricarica della lista dei dispositivi collegati, di preparazione al primo utilizzo installando l'applicazione mobile e creando il workspace sul dispositivo selezionato oppure avvia il successivo modulo selezionato dall'utente.
+\item {\bf{DevicesController}}: classe che riceve gli input dell'utente passati dalla corrispondente view ed avvia le funzionalità di ricarica della lista dei dispositivi collegati, di preparazione al primo utilizzo installando l'applicazione mobile e creando il workspace sul dispositivo selezionato oppure di avvio del successivo modulo selezionato dall'utente.
 \item {\bf{ExportsController}}: controller che memorizza le operazioni effettuate dall'utente ed alla conferma avvia il trasferimento delle nuove mappe inserite dall'utente e la rimozione delle mappe eliminate dall'utente sul dispositivo in gestione.
 \item {\bf{ProjectsController}}: controller che memorizza le operazioni effettuate dall'utente ed alla conferma avvia l'esportazione in locale dei progetti selezionati dall'utente e la rimozione dei progetti eliminati dall'utente sul dispositivo in gestione.
 \end{itemize}
@@ -718,7 +718,7 @@ Di seguito viene proposto il diagramma delle classi del modulo Dispositivi. I mo
 \end{figure}
 \newpage
 \subsection{Flusso di utilizzo dell'applicativo}
-I moduli ricavati dall'analisi dell'applicativo desktop necessitano un collegamento anche se gestiscono ambiti diversi così da offrire all'utente un'esperienza di utilizzo lineare. Il seguente schema illustra il flusso di utilizzo dell'applicativo descrivendo in linea generale le operazioni effettuate per il passaggio tra i moduli.
+I moduli ricavati dall'analisi dell'applicativo desktop, necessitano un collegamento anche se gestiscono ambiti diversi per offrire all'utente un'esperienza di utilizzo lineare. Il seguente schema illustra il flusso di utilizzo dell'applicativo descrivendo in linea generale le operazioni effettuate per il passaggio tra i moduli.
 
 \begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
 \begin{center}                          %centra nel mezzo della pagina la figura
@@ -729,10 +729,10 @@ I moduli ricavati dall'analisi dell'applicativo desktop necessitano un collegame
 \caption[Flusso utilizzo dei moduli]{Flusso utilizzo dei moduli}%\label{fig:prima}
 \end{center}
 \end{figure}
-Come si può notare dallo schema, il primo modulo utilizzabile dall'utente è il Modulo Dispositivi. La decisione è obbligata dal fatto che un dispositivo non può essere gestito in ambito mappe o progetti senza essere preparato al primo utilizzo perché risulterebbe mancante del workspace adatto alla memorizzazione di questi ultimi. Un ulteriore aspetto da tenere in considerazione riguarda la richiesta di un singolo dispositivo in gestione da parte dei moduli Mappe e Progetti. Per soddisfare questo requisito senza mostrare nuovamente l'intera lista dei dispositivi nei moduli Mappe e Progetti è stato implementato il passaggio del dispositivo mobile selezionato dal modulo Dispositivi agli altri.
+Come si può notare dallo schema, il primo modulo utilizzabile dall'utente è il Modulo Dispositivi. La decisione è obbligata dal fatto che un dispositivo non può essere gestito in ambito mappe o progetti senza essere preparato al primo utilizzo perché risulterebbe mancante del workspace adatto alla memorizzazione dei dati. Un ulteriore aspetto da tenere in considerazione riguarda la richiesta di un singolo dispositivo in gestione da parte dei moduli Mappe e Progetti. Per soddisfare questo requisito senza mostrare nuovamente l'intera lista dei dispositivi nei moduli Mappe e Progetti è stato implementato il passaggio del dispositivo mobile selezionato dal modulo Dispositivi agli altri.
 
 \subsection{Comunicazione tra applicativo desktop e dispositivo mobile}
-La principale e fondamentale funzionalità progettata e realizzata è la comunicazione tra l'applicativo desktop e il dispositivo mobile. Nelle fasi iniziali sono sorti problemi riguardanti l'impossibilità di lavorare su un dispositivo Android collegato attraverso un'applicativo java dato che non risultava visibile a quest'ultimo. Una parziale soluzione è stata ottenuta attraverso l'utilizzo dei comandi ADB illustrati nel paragrafo 2.2 ed inseriti all'interno dell'applicativo java, con i quali è possibile gestire in maniera completa un dispositivo Android collegato al computer. L'obbligo di tradurre ed estrarre informazioni utilizzabili dai risultati delle operazioni a riga di comando utilizzate, avrebbe complicato e rallentato eccessivamente lo sviluppo dei progetti, tuttavia attraverso l'inserimento della libreria JMTP descritta nel paragrafo 2.1, è stato raggiunto un buon compromesso. La mancanza di funzionalità nella libreria JMTP ha vincolato l'utilizzo di alcuni comandi ADB ripartendo le funzionalità in questa maniera.
+La principale e fondamentale funzionalità progettata è la comunicazione tra l'applicativo desktop e il dispositivo mobile. Nelle fasi iniziali sono sorti problemi riguardanti l'impossibilità di lavorare su un dispositivo Android collegato, dato che attraverso un semplice applicativo java non risultava visibile. Una parziale soluzione è stata ottenuta attraverso l'utilizzo dei comandi ADB, illustrati nel paragrafo 2.2, inseriti all'interno dell'applicativo java, con i quali è possibile gestire in maniera completa un dispositivo Android collegato al computer. L'obbligo di tradurre ed estrarre informazioni utilizzabili dai risultati delle operazioni a riga di comando, avrebbe però complicato e rallentato eccessivamente lo sviluppo dei progetti; tuttavia attraverso l'inserimento della libreria JMTP, descritta nel paragrafo 2.1, è stato raggiunto un buon compromesso. La mancanza di alcune funzionalità nella libreria JMTP ha vincolato l'utilizzo di alcuni comandi ADB, ripartendo le funzionalità in questa maniera.
 \subsubsection{Funzionalità utilizzate di JMTP}
 \begin{itemize}                     %crea un elenco
 \item Rilevazione dei dispositivi collegati
