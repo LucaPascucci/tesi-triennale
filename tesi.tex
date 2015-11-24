@@ -733,6 +733,7 @@ Come si può notare dallo schema, il primo modulo utilizzabile dall'utente è il M
 
 \subsection{Comunicazione tra applicativo desktop e dispositivo mobile}
 La principale e fondamentale funzionalità progettata è la comunicazione tra l'applicativo desktop e il dispositivo mobile. Nelle fasi iniziali sono sorti problemi riguardanti l'impossibilità di lavorare su un dispositivo Android collegato, dato che attraverso un semplice applicativo java non risultava visibile. Una parziale soluzione è stata ottenuta attraverso l'utilizzo dei comandi ADB, illustrati nel paragrafo 2.2, inseriti all'interno dell'applicativo java, con i quali è possibile gestire in maniera completa un dispositivo Android collegato al computer. L'obbligo di tradurre ed estrarre informazioni utilizzabili dai risultati delle operazioni a riga di comando, avrebbe però complicato e rallentato eccessivamente lo sviluppo dei progetti; tuttavia attraverso l'inserimento della libreria JMTP, descritta nel paragrafo 2.1, è stato raggiunto un buon compromesso. La mancanza di alcune funzionalità nella libreria JMTP ha vincolato l'utilizzo di alcuni comandi ADB, ripartendo le funzionalità in questa maniera.
+
 \subsubsection{Funzionalità utilizzate di JMTP}
 \begin{itemize}                     %crea un elenco
 \item Rilevazione dei dispositivi collegati
@@ -740,6 +741,7 @@ La principale e fondamentale funzionalità progettata è la comunicazione tra l'ap
 \item Creazione ed eliminazione di directory
 \item Trasferimento di file o cartelle dal computer al dispositivo
 \end{itemize}
+
 \subsubsection{Funzionalità utilizzate di ADB}
 \begin{itemize}                     %crea un elenco
 \item Rilevazione dei dispositivi Android collegati
@@ -747,6 +749,7 @@ La principale e fondamentale funzionalità progettata è la comunicazione tra l'ap
 \item Trasferimento di file o cartelle dal dispositivo al computer
 \end{itemize}
 L'utilizzo combinato ha portato alla creazione della classe MobileDevice contente il numero seriale estratto da ADB e l'oggetto della libreria JMTP che rappresenta il dispositivo mobile collegato. Questa necessità deriva dall'obbligo di inserire nel comando ADB il seriale del dispositivo sul quale va effettuata l'operazione. Il seguente diagramma rappresenta la definizione della classe MobileDevice.
+
 \begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
 \begin{center}                          %centra nel mezzo della pagina la figura
 
@@ -757,26 +760,29 @@ L'utilizzo combinato ha portato alla creazione della classe MobileDevice content
 \end{center}
 \end{figure}
 \newpage
-\subsection{Manager}
-L'analisi delle funzionalità presenti in ogni modulo ha riscontrato diversi funzioni in comune come ad esempio la lettura ed il salvataggio di file xml e la navigazione nel filesystem della memoria dei dispositivi collegati. Per questo motivo e per facilitare future funzionalità implementabili sono state create le seguenti classi per evitare la duplicazione del codice:
-\begin{itemize}                     %crea un elenco
-\item {\bf{DeviceManger}}: contenente tutti i metodi necessari alla comunicazione con un dispositivo mobile collegato al computer, alla navigazione nel filesystem del dispositivo, all'estrazione, rimozione o inserimento di file nel dispositivo.
-\item {\bf{FileXMLManger}}: contenente i metodi necessari alla lettura di file xml utilizzati dall'applicativo desktop per analizzare il contenuto del dispositivo mobile ed al salvataggio dei file xml aggiornati in seguito alle modifiche apportate dall'utente.
-\item {\bf{ConfigManger}}: classe contenente i metodi per gestire il file config.xml\footnote{Nel sezione successiva verrà illustrata la struttura di tutti i file XML utilizzati dal applicativo desktop} del dispositivo in gestione permettendo all'applicativo di memorizzare le modifiche effettuate dall'utente ed applicarle alla conclusione delle operazioni.
-\item {\bf{ProjectManger}}: contenente i metodi per gestire il file progetti.xml del dispositivo in gestione permettendo all'applicativo di memorizzare le modifiche effettuate dall'utente ed applicarle alla conclusione delle operazioni.
-\item {\bf{LocalExportManger}}: classe contenente i metodi necessari gestire le mappe contenute dal computer in uso. 
-\end{itemize}
-\subsection{Struttura dei file XML}
-L'analisi dell'applicativo desktop Gestore MapYou prodotto da EBWorld ha rivelato l'utilizzo di numerosi file xml utilizzati per la memorizzazione di diversi tipi di  dati. XML (sigla di eXtensible Markup Language) è un metalinguaggio per la definizione di linguaggi di markup che consente di definire e controllare il significato degli elementi contenuti in un documento o testo.
 
-\lstinputlisting[caption=Esempio.xml, style=XML]{xml/Esempio.xml}
+\subsection{Manager}
+L'analisi delle funzionalità presenti in ogni modulo ha riscontrato diversi funzioni in comune come ad esempio la lettura ed il salvataggio di file xml e la navigazione nel filesystem della memoria dei dispositivi collegati. Per questo motivo e per facilitare future funzionalità implementabili, sono state create le seguenti classi evitando la duplicazione di codice:
+\begin{itemize}                     %crea un elenco
+\item {\bf{DeviceManger}}: contenente tutti i metodi necessari alla comunicazione con un dispositivo mobile collegato al computer, alla navigazione nel filesystem del dispositivo, all'estrazione, rimozione e inserimento di file nel dispositivo.
+\item {\bf{FileXMLManger}}: contenente i metodi necessari alla lettura di file xml, utilizzati dall'applicativo desktop per analizzare il contenuto del dispositivo mobile, ed al salvataggio degli stessi file aggiornati in seguito alle modifiche apportate dall'utente.
+\item {\bf{ConfigManger}}: classe contenente i metodi per gestire i dati ricavati dal file config.xml\footnote{Nel sezione successiva verrà illustrata la struttura di tutti i file XML utilizzati dal applicativo desktop} del dispositivo in gestione, permettendo all'applicativo di memorizzare le modifiche effettuate dall'utente ed applicarle alla comferma.
+\item {\bf{ProjectManger}}: contenente i metodi per gestire i dati ricavati dal file progetti.xml del dispositivo in gestione, permettendo all'applicativo di memorizzare le modifiche effettuate dall'utente ed applicarle alla conferma.
+\item {\bf{LocalExportManger}}: classe contenente i metodi necessari a gestire i dati, utilizzati dall'applicativo desktop, riferiti alle mappe contenute dal computer in uso. 
+\end{itemize}
+
+\subsection{Struttura dei file XML}
+L'analisi dell'applicativo desktop Gestore MapYou prodotto da EBWorld ha rivelato l'utilizzo di numerosi file xml utilizzati per la analizzare il contenuto dei dispositivi mobile collegati. XML (sigla di eXtensible Markup Language) è un metalinguaggio per la definizione di linguaggi di markup che consente di definire e controllare il significato degli elementi contenuti in un documento o testo.
+
+\lstinputlisting[caption=Esempio struttura file XML, style=XML]{xml/Esempio.xml}
 Il nome indica che si tratta di un linguaggio marcatore (markup language) estensibile in quanto permette di creare tag personalizzati come si può notare dal esempio sopra illustrato.
 \\\\Nella progettazione sono stati creati file xml simili a quelli del precedente applicativo perché risultavano comprensibili e di facile utilizzo. Di seguito verranno illustrate e descritte le strutture dei file xml letti dall'applicativo desktop e la definizione delle classi java associate ad essi.
 \newpage
+
 \subsubsection{Current\_export.xml}
 Current\_export.xml è il file di definizione di una mappa, utilizzato dall'applicativo per determinare le estrazioni presenti nel computer in uso.
 \lstinputlisting[caption=Current\_export.xml, style=XML]{xml/current_export.xml}
-La struttura ed il contenuto del file è stato definito in precedenza da EBWorld ed è presente in ogni estrazione con valori differenti per ogni mappa. L'applicativo utilizza i valori dei tag Time e Name e Base\_Versione\_Id per identificare una estrazione memorizzandoli all'interno della classe LocalExport. 
+La struttura ed il contenuto del file è stato definito in precedenza da EBWorld ed è presente in ogni estrazione con valori differenti per ogni mappa. L'applicativo utilizza i valori dei tag Time e Name e Base\_Versione\_Id per identificare una estrazione, memorizzandoli all'interno della classe LocalExport. 
 \newpage
 \subsubsection{Config.xml}
 Config.xml è il principale file utilizzato dall'applicativo mobile per ricavare dati utili alla lettura delle mappe presenti nel dispositivo e dati generici utilizzati dall'applicativo per configurarsi.
@@ -785,15 +791,15 @@ Config.xml è il principale file utilizzato dall'applicativo mobile per ricavare 
 
 Il file raffigurato contiene tre diversi tag:
 \begin{itemize}                     %crea un elenco
-\item {\bf{Config}}: Radice principale del file xml contenente attributi che identificano ad esempio la versione dell'applicativo mobile in utilizzo ed ulteriori valori utilizzati in fase di configurazione.
+\item {\bf{Config}}: Radice principale del file xml, contenente attributi che identificano ad esempio la versione dell'applicativo mobile in utilizzo ed ulteriori valori utilizzati in fase di configurazione.
 \item {\bf{Exports}}: Tag utilizzato come contenitore.
 \item {\bf{Export}}: Tag rappresentativo di una estrazione o mappa all'interno del dispositivo mobile. Gli attributi al suo interno rappresentano tutti i dati necessari all'applicativo per conoscere il nome, la data di creazione e di aggiornamento, il percorso in memoria dei dati della mappa ed il percorso in memoria della cartella contente i lavori e progetti riferirti alla stessa mappa.
 \end{itemize}
 
 \subsubsection{Classi ricavate}
-Come definito dall'analisi, l'applicativo desktop deve essere in grado di gestire il contenuto del file descritto in precedenza, con le modifiche apportate dall'utente durante l'utilizzo del modulo Mappe. A conclusione della gestione delle mappe l'applicativo deve essere in grado di creare il nuovo file Config.xml e sostituirlo al precedente. Per rendere possibile queste operazioni sono state create le seguenti classi Java:
+Come definito dall'analisi, l'applicativo desktop deve essere in grado di gestire il contenuto del file descritto in precedenza, aggiornandolo con le modifiche apportate dall'utente durante l'utilizzo del modulo Mappe. A conclusione della gestione delle mappe l'applicativo deve essere in grado di creare il nuovo file Config.xml e sostituirlo al precedente. Per rendere possibile queste operazioni sono state create le seguenti classi Java:
 \begin{itemize}   
-\item {\bf{ConfigXML}}: classe che raffigura l'intero file xml e contenente la lista di mappe contenute ed i valori degli attributi del tag Config.
+\item {\bf{ConfigXML}}: classe che raffigura l'intero file xml, contenendo la lista di mappe contenute ed i valori degli attributi presenti nel tag Config.
 \item {\bf{ExportTag}}: classe che raffigura il tag Export contenendo tutti i valori dei suoi attributi.
 \end{itemize}
 \subsubsection{Diagramma Classi}
@@ -810,19 +816,19 @@ Di seguito viene proposto il diagramma delle classi definite in precedenza.
 
 %controllare numero paragrafo
 \subsubsection{Progetti.xml}
-Progetti.xml è il file utilizzato dall'applicativo desktop per estrarre le informazioni dei progetti presenti all'interno del dispositivo mobile. Come illustrerà il paragrafo 4.2.3 all'interno del dispositivo mobile esiste un file xml di definizione dei progetti diverso collegato ad ogni mappa presente nel dispositivo.
+Progetti.xml è il file utilizzato dall'applicativo desktop per estrarre le informazioni dei progetti presenti all'interno del dispositivo mobile. Come illustrerà il paragrafo 4.2.3, all'interno del dispositivo mobile esiste un file xml di definizione dei progetti per ogni mappa presente nel dispositivo.
 
 \lstinputlisting[caption=Progetti.xml, style=XML]{xml/Progetti.xml}
 Il file raffigurato contiene due tag:
 \begin{itemize}   
 \item {\bf{Projects}}: Radice principale del file xml che contiene il nome dell'ultimo progetto attivo utilizzato dall'applicativo mobile.
-\item {\bf{Project}}: Tag rappresentativo di un progetto contenente il nome e la data corrispondente all'ultima modifica apportata da parte dell'utente.
+\item {\bf{Project}}: Tag rappresentativo di un progetto, contenente il nome e la data corrispondente all'ultima modifica apportata al progetto da parte dell'utente.
 \end{itemize}
 
 \subsubsection{Classi ricavate}
-Come definito dall'analisi, l'applicativo desktop deve essere in grado di gestire il contenuto del file descritto in precedenza, con le modifiche apportate dall'utente durante l'utilizzo del modulo Progetti. A conclusione della gestione dei progetti l'applicativo deve essere in grado di creare il nuovo file Progetti.xml e sostituirlo al precedente. Per rendere possibile queste operazioni sono state create le seguenti classi Java:
+Come definito dall'analisi, l'applicativo desktop deve essere in grado di gestire il contenuto del file descritto in precedenza, aggiornandolo con le modifiche apportate dall'utente durante l'utilizzo del modulo Progetti. A conclusione della gestione dei progetti l'applicativo deve essere in grado di creare il nuovo file Progetti.xml e sostituirlo al precedente. Per rendere possibile queste operazioni sono state create le seguenti classi Java:
 \begin{itemize}   
-\item {\bf{ProjectsXML}}: classe che raffigura l'intero file xml e contenente la lista di progetti contenuti ed il valori dell'attributo ProgettoAttivo del tag Projects.
+\item {\bf{ProjectsXML}}: classe che raffigura l'intero file xml, contenente la lista di progetti ed il valore dell'attributo ProgettoAttivo del tag Projects.
 \item {\bf{ProjectTag}}: classe che raffigura il tag Project contenendo tutti i valori dei suoi attributi.
 \end{itemize}
 \subsubsection{Diagramma Classi}
@@ -849,10 +855,10 @@ Data la presenza di diversi file gestiti dall'applicativo è stata necessaria la 
 \caption[Struttura workspace locale]{Struttura workspace locale}%\label{fig:prima}
 \end{center}
 \end{figure}
-All'avvio dell'applicativo viene realizzato il workspace strutturato come in figura, nella cartella principale dell'utente collegato al computer in utilizzo. Nella cartella "apk" è presente il file di installazione dell'applicativo mobile che verrà utilizzato alla preparazione di un dispositivo mobile collegato. La cartella "basicFiles" contiente tutti i file che si vogliono inserire nella cartella principale del workspace dell'applicativo mobile, la cui copia verrà eseguita successivamente alla creazione dello stesso. La directory "defaultAppConfig" contiene i file xml definiti nel paragrafo precedente, utilizzati dall'applicativo nel caso risultino mancanti nel dispositivo mobile in gestione. L'ultima directory conterrà i file temporanei prelevati e creati per ogni dispositivo gestito dall'applicativo, organizzati in cartelle univoche nominate con il numero seriale del dispositivo.
+All'avvio dell'applicativo viene realizzato il workspace strutturato come in figura, nella cartella principale dell'utente collegato al computer in utilizzo. Nella cartella "apk" è presente il file di installazione dell'applicativo mobile sviluppato, che verrà utilizzato alla preparazione di un dispositivo mobile collegato. La cartella "basicFiles" contiene tutti i file che si vogliono inserire nella cartella principale del workspace dell'applicativo mobile. La copia dei file viene eseguita successivamente alla creazione del workspace all'interno del dispositivo mobile collegato. La directory "defaultAppConfig" contiene i file xml definiti nel paragrafo precedente, utilizzati dall'applicativo nel caso risultino mancanti nel dispositivo mobile in gestione. L'ultima directory contiene i file temporanei prelevati e creati per ogni dispositivo gestito dall'applicativo, organizzati in cartelle univoche nominate con il numero seriale del dispositivo.
 
 \subsubsection{Sorgente dati}
-Per completare la progettazione del workspace dell'applicativo desktop è necessario illustrare la struttura della directory utilizzata come sorgente dati delle estrazioni o mappe disponibili. \`E stata presa la decisione di dividerla dal workspace principale descritto in precedenza, perché generalmente la clientela di EBWorld utilizza una cartella di rete raggiungibile da tutti i computer in rete, come contenitore di mappe.
+Per completare la progettazione del workspace dell'applicativo desktop è necessario illustrare la struttura della directory utilizzata come sorgente dati delle estrazioni o mappe disponibili. \`E stata presa la decisione di dividerla dal workspace principale descritto in precedenza, perché generalmente la clientela di EBWorld utilizza una cartella di rete raggiungibile da tutti i computer in rete, per contenere le proprie estrazioni.
 \begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
 \begin{center}                          %centra nel mezzo della pagina la figura
 
@@ -865,48 +871,48 @@ Per completare la progettazione del workspace dell'applicativo desktop è necessa
 \\Come si nota dall'esempio in figura, all'interno della directory principale sono presenti due cartelle. "Estrazioni" contiene i dati di tutte le mappe possedute dall'utente e la directory "Lavori" utilizzata dall'applicativo come cartella di destinazione dei progetti esportati dal dispositivo suddividendoli in cartelle nominate come la mappa nella quale sono stati realizzati. Sempre in figura viene mostrato il file current\_export.xml definito nel paragrafo 4.1.5 grazie al quale l'applicativo definisce quali mappe sono presenti nella cartella "Estrazioni".
 
 \subsection{Progettazione GUI}
-La definizione dei view ossia interfacce grafiche utilizzate dall'utente per interagire con i dati contenuti dall'applicativo ed i dispositivi mobile collegati, ha avviato la realizzazione di numerosi mockup sempre più concreti fino ad arrivare alla soluzione ritenuta maggiormente chiara nell'esposizione dei dati e facilmente utilizzabile da parte dell'utente. Di seguito verranno mostrati i risultati.
+La definizione dei view, interfacce grafiche utilizzate dall'utente per interagire con i dati contenuti dall'applicativo ed i dispositivi mobile collegati, ha avviato la realizzazione di numerosi mockup sempre più concreti fino ad arrivare alla soluzione ritenuta maggiormente chiara nell'esposizione dei dati e facilmente utilizzabile da parte dell'utente. Di seguito verranno mostrati i risultati.
 
 \subsubsection{Mockup DevicesView}
 \begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
 \begin{center}                          %centra nel mezzo della pagina la figura
 
-\includegraphics[width=12cm]{immagini/MockupDispositivi.jpg} 
+\includegraphics[width=11.5cm]{immagini/MockupDispositivi.jpg} 
 
 %inserisce la legenda ed etichetta la figura con \label{fig:prima}
 \caption[Mockup interfaccia grafica modulo Dispositivi]{Mockup interfaccia grafica modulo Dispositivi}%\label{fig:prima}
 \end{center}
 \end{figure}
-Il mockup in questione fa risaltare una disposizione molto chiara dei vari elementi che compongono la finestra mettendo subito in evidenzia la lista dei dispositivi collegati e dando la possibilità all'utente di avviare la preparazione di un dispositivo oppure di entrare nei moduli successivi dell'applicativo attraverso l'utilizzo di bottoni posizionati a destra delle lista.
+Il mockup in questione fa risaltare una disposizione molto chiara dei vari elementi che compongono la finestra mettendo subito in evidenzia la lista dei dispositivi collegati e dando la possibilità all'utente di avviare la preparazione di un dispositivo oppure di entrare nei moduli successivi dell'applicativo attraverso l'utilizzo di bottoni posizionati a destra della lista.
 \subsubsection{Mockup ExportsView}
 \begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
 \begin{center}                          %centra nel mezzo della pagina la figura
 
-\includegraphics[width=14cm]{immagini/MockupMappe.jpg}
+\includegraphics[width=13cm]{immagini/MockupMappe.jpg}
 
 %inserisce la legenda ed etichetta la figura con \label{fig:prima}
 \caption[Mockup interfaccia grafica modulo Mappe]{Mockup interfaccia grafica modulo Mappe}%\label{fig:prima}
 \end{center}
 \end{figure}
 
-Il mockup superiore mette in evidenzia la presenza di due liste, la prima a destra contente le mappe presenti sul dispositivo e la seconda a sinistra contenente le mappe presenti sul computer in uso. Sono stati utilizzati due pannelli marcati con bordi evidenti per separare le due liste e gli associati bottoni collegati a specifiche funzionalità in modo da non confondere l'utente. Per agevolare l'utente, le due liste vengono aggiornate automaticamente visualizzando sempre lo stato successivo ad ogni operazione di inserimento o rimozione. All'esterno dei due pannelli sono stati risposti due bottoni con i quali è possibile annullare o confermare le modifiche effettuate.
+Il mockup in figura mette in evidenzia la presenza di due liste, la prima a destra contente le mappe presenti sul dispositivo e la seconda a sinistra contenente le mappe presenti sul computer in uso. Sono stati utilizzati due pannelli marcati con bordi evidenti per separare le due liste ed i bottoni, collegati a specifiche funzionalità, in modo da non confondere l'utente. Per agevolare l'utente, le due liste vengono aggiornate automaticamente per visualizzare lo stato successivo ad ogni operazione di inserimento o rimozione. All'esterno dei due pannelli sono stati risposti due bottoni con i quali è possibile annullare o confermare le modifiche effettuate.
 \subsubsection{Mockup ProjectsView}
 \begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
 \begin{center}                          %centra nel mezzo della pagina la figura
 
-\includegraphics[width=14cm]{immagini/MockupProgetti.jpg} 
+\includegraphics[width=13.5cm]{immagini/MockupProgetti.jpg} 
 
 %inserisce la legenda ed etichetta la figura con \label{fig:prima}
 \caption[Mockup interfaccia grafica modulo Progetti]{Mockup interfaccia grafica modulo Progetti}%\label{fig:prima}
 \end{center}
 \end{figure}
-Il mockup in questione è composto da due pannelli delineati con bordi evidenti per separare la lista delle mappe presenti sul dispositivo alla lista dei progetti presenti nella mappa selezionata. Questa suddivisione avviene anche per le funzioni associate alle liste ad esempio i bottoni relativi all'eliminazione o esportazione dei progetti sono situati all'interno del pannello che contiene la lista dei progetti. Sono presenti due bottoni con i quali è possibile annullare o confermare le modifiche effettuate all'esterno dei due pannelli.
+Il mockup in questione è composto da due pannelli delineati con bordi evidenti per separare la lista delle mappe presenti sul dispositivo alla lista dei progetti presenti nella mappa selezionata. Questa suddivisione avviene anche per le funzioni associate alle liste, ad esempio i bottoni relativi all'eliminazione o esportazione dei progetti sono situati all'interno del pannello contenente la lista dei progetti. Sono presenti due bottoni attraverso i quali è possibile annullare o confermare le modifiche effettuate all'esterno dei due pannelli.
 \newpage
 
 \section{Applicativo mobile}
 
 \subsection{Definizione modulo Progetti}
-L'analisi del modulo Progetti illustrato nel paragrafo  3.6.1 ha comportato la suddivisione delle principali funzionalità in tre settori:
+L'analisi del modulo Progetti, illustrato nel paragrafo 3.6.1, ha comportato la suddivisione delle principali funzionalità in tre settori:
 \begin{itemize}
 \item {\bf{Gestione lista progetti}}
 \item {\bf{Gestione workspace di un progetto}}
@@ -915,9 +921,9 @@ L'analisi del modulo Progetti illustrato nel paragrafo  3.6.1 ha comportato la s
 \subsubsection{Package Project\_Manager}
 La definizione dei settori sopra illustrati ha generato le seguenti classi presenti nel package Project\_Manager dell'applicativo mobile:
 \begin{itemize}
-\item {\bf{ProjectsXML}}: contenente i metodi necessari alla lettura della lista dei progetti disponibili nella mappa attiva sull'applicativo ed il salvataggio della stessa lista in caso vengano creati nuovi progetti.
-\item {\bf{ProjectWorkspace}}: classe contenente i metodi necessari alla creazione del workspace locale di un progetto così da consentire il salvataggio della struttura ed ulteriori file allegati al progetto in gestione.
-\item {\bf{ProjectStructureXML}}: contenente i metodi necessari al caricamento della struttura di un progetto ricreando gli elementi presenti al suo interno e del salvataggio della stessa struttura con le modifiche apportate dall'utente. 
+\item {\bf{ProjectsXML}}: contenente i metodi necessari alla lettura della lista dei progetti disponibili nella mappa attiva sull'applicativo ed il salvataggio della stessa lista in caso vengano modificati o creati progetti.
+\item {\bf{ProjectWorkspace}}: classe contenente i metodi necessari alla creazione del workspace locale di un progetto così da consentire il salvataggio della struttura ed ulteriori file allegati ad esso.
+\item {\bf{ProjectStructureXML}}: contenente i metodi necessari al caricamento della struttura di un progetto, ricreando gli elementi presenti al suo interno, ed al salvataggio della stessa struttura in caso di modifiche apportate dall'utente. 
 \end{itemize}
 Nella pagina seguente è presente il diagramma delle classi sopra elencate.
 
@@ -932,14 +938,14 @@ Nella pagina seguente è presente il diagramma delle classi sopra elencate.
 \end{figure}
 \newpage
 \subsection{Struttura dei file XML}
-L'analisi dell'applicativo mobile MapYou come nell'applicativo desktop, ha rivelato la presenza di diversi file xml utilizzati dall'applicativo mobile per le seguenti finalità:
+L'analisi dell'applicativo mobile MapYou, come nell'applicativo desktop, ha rivelato la presenza di diversi file xml utilizzati dall'applicativo mobile per le seguenti finalità:
 \begin{itemize}
-\item {\bf{Config.xml}}: dal quale vengono prelevati dati di configurazione per l'applicativo e le informazioni riguardanti le mappe presenti nella memoria del dispositivo. 
+\item {\bf{Config.xml}}: dal quale vengono prelevati i dati di configurazione per l'applicativo mobile e le informazioni riguardanti le mappe presenti nella memoria del dispositivo. 
 \item {\bf{Progetti.xml}}: contiene la lista di progetti presenti nel dispositivo, specificando il nome e la data di ultima modifica.
 \item {\bf{Sketches\_config.xml}}: contiene la lista degli elementi disegnabili dall'utente definendo la loro struttura geometrica, il colore ed i valori attribuibili ad essi. 
 \item {\bf{Sketches.xml}}: rappresenta la struttura di un progetto contenendo la definizione degli elementi grafici utilizzati, la lista degli elementi disegnati specificando le coordinate ed i valori attribuiti dall'utente. 
 \end{itemize}
-Il file sketches\_config.xml non verrà illustrato perché utilizzato dal collega Filippo Nicolini per realizzare gli elementi grafici utilizzabili dall'utente
+Il file sketches\_config.xml non verrà illustrato in questa tesi perché utilizzato dal collega Filippo Nicolini per realizzare gli elementi grafici utilizzabili dall'utente
 e la struttura dei primi due file è stata descritta nel paragrafo 4.1.5.
 \subsubsection{Sketches.xml}
 Sketches.xml è il file utilizzato dall'applicativo per memorizzare la struttura di un progetto creato dall'utente e come spiegato in precedenza oltre a contenere la lista degli elementi presenti, definisce anche la loro struttura geometrica utilizzando la stessa struttura presente nel file Sketches\_config.xml. La motivazione collegata a quest'ultima è la possibilità di rimozione di elementi grafici disegnabili, difatti l'utente durante l'utilizzo dell'applicativo potrebbe richiedere ad EBWolrd la creazione, la modifica o la rimozione di elementi di disegno. In caso di caricamento di un'elemento di disegno non più presente nel file degli elementi grafici di default, la presenza della sua definizione nel file di struttura del progetto rende possibile ugualmente la sua visualizzazione ed utilizzo. Di seguito verrà definita la struttura del file Sketches.xml.
