@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.8)  23 NOV 2015 17:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.8)  24 NOV 2015 07:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -76,18 +76,12 @@ File: latin1.def 2015/03/17 v1.2c Input encoding file
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/afterpage.sty
-Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
-\AP@output=\toks16
-\AP@partial=\box26
-\AP@footins=\box27
-)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks17
+\KV@toks@=\toks16
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
@@ -119,7 +113,7 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks18
+\@emptytoks=\toks17
 \symAMSa=\mathgroup5
 \symAMSb=\mathgroup6
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
@@ -135,7 +129,7 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks19
+\@emptytoks=\toks18
 \ex@=\dimen106
 ))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -155,8 +149,8 @@ LaTeX Info: Redefining \overline on input line 306.
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box28
-\strutbox@=\box29
+\Mathstrutbox@=\box26
+\strutbox@=\box27
 \big@size=\dimen108
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
@@ -165,40 +159,40 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \dotsspace@=\muskip10
 \c@parentequation=\count101
 \dspbrk@lvl=\count102
-\tag@help=\toks20
+\tag@help=\toks19
 \row@=\count103
 \column@=\count104
 \maxfields@=\count105
-\andhelp@=\toks21
+\andhelp@=\toks20
 \eqnshift@=\dimen109
 \alignsep@=\dimen110
 \tagshift@=\dimen111
 \tagwidth@=\dimen112
 \totwidth@=\dimen113
 \lineht@=\dimen114
-\@envbody=\toks22
+\@envbody=\toks21
 \multlinegap=\skip53
 \multlinetaggap=\skip54
-\mathdisplay@stack=\toks23
+\mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2015/03/04 v2.20.2
-\thm@style=\toks24
-\thm@bodyfont=\toks25
-\thm@headfont=\toks26
-\thm@notefont=\toks27
-\thm@headpunct=\toks28
+\thm@style=\toks23
+\thm@bodyfont=\toks24
+\thm@headfont=\toks25
+\thm@notefont=\toks26
+\thm@headpunct=\toks27
 \thm@preskip=\skip55
 \thm@postskip=\skip56
 \thm@headsep=\skip57
-\dth@everypar=\toks29
+\dth@everypar=\toks28
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count106
-\lst@gtempboxa=\box30
-\lst@token=\toks30
+\lst@gtempboxa=\box28
+\lst@token=\toks29
 \lst@length=\count107
 \lst@currlwidth=\dimen115
 \lst@column=\count108
@@ -213,7 +207,7 @@ Package: amsthm 2015/03/04 v2.20.2
 File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
 \c@lstnumber=\count112
 \lst@skipnumbers=\count113
-\lst@framebox=\box31
+\lst@framebox=\box29
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2014/09/06 1.5e listings configuration
@@ -266,20 +260,20 @@ Package caption Info: listings package is loaded.
 (./tesi.aux)
 \openout1 = `tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Info: Redefining \it@ocap on input line 101.
-LaTeX Info: Redefining \it@ccap on input line 101.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Info: Redefining \it@ocap on input line 95.
+LaTeX Info: Redefining \it@ccap on input line 95.
 
 
 File italian.ldf warning: 
@@ -287,21 +281,21 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 101.
+italian.ldf    on input line 95.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count115
 \scratchdimen=\dimen126
-\scratchbox=\box32
+\scratchbox=\box30
 \nofMPsegments=\count116
 \nofMParguments=\count117
-\everyMPshowfont=\toks31
+\everyMPshowfont=\toks30
 \MPscratchCnt=\count118
 \MPscratchDim=\dimen127
 \MPnumerator=\count119
 \makeMPintoPDFobject=\count120
-\everyMPtoPDFconversion=\toks32
+\everyMPtoPDFconversion=\toks31
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -353,32 +347,32 @@ e
 \c@lstlisting=\count121
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 110.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 104.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 110.
+LaTeX Font Info:    Try loading font information for U+msa on input line 104.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 110.
+LaTeX Font Info:    Try loading font information for U+msb on input line 104.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (59.55362pt too wide) in paragraph at lines 110--113
+Overfull \hbox (59.55362pt too wide) in paragraph at lines 104--107
  [] 
  []
 
 
-Overfull \hbox (59.55362pt too wide) in paragraph at lines 110--113
+Overfull \hbox (59.55362pt too wide) in paragraph at lines 104--107
  [] 
  []
 
 
-Overfull \hbox (59.55362pt too wide) in paragraph at lines 145--146
+Overfull \hbox (59.55362pt too wide) in paragraph at lines 135--136
  [] 
  []
 
@@ -411,42 +405,42 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 212--224
+Underfull \hbox (badness 10000) in paragraph at lines 202--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--224
+Underfull \hbox (badness 10000) in paragraph at lines 202--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--224
+Underfull \hbox (badness 10000) in paragraph at lines 202--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--224
+Underfull \hbox (badness 10000) in paragraph at lines 202--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--224
+Underfull \hbox (badness 10000) in paragraph at lines 202--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--224
+Underfull \hbox (badness 10000) in paragraph at lines 202--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--224
+Underfull \hbox (badness 10000) in paragraph at lines 202--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--224
+Underfull \hbox (badness 10000) in paragraph at lines 202--214
 
  []
 
@@ -459,44 +453,40 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 225.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 215.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 225.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 215.
  [13] [14
 
 
 ]
 Capitolo 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--246
+Underfull \hbox (badness 10000) in paragraph at lines 234--236
 
  []
 
+[1
 
-Underfull \vbox (badness 2020) has occurred while \output is active []
-
- [1
-
-]
-<immagini/Schema_Piattaforma_GIS.jpg, id=57, 832.10875pt x 722.7pt>
+] <immagini/Schema_Piattaforma_GIS.jpg, id=59, 832.10875pt x 722.7pt>
 File: immagini/Schema_Piattaforma_GIS.jpg Graphic file (type jpg)
 
 <use immagini/Schema_Piattaforma_GIS.jpg>
 Package pdftex.def Info: immagini/Schema_Piattaforma_GIS.jpg used on input line
- 252.
+ 242.
 (pdftex.def)             Requested size: 227.62204pt x 197.68999pt.
  [2 <./immagini/Schema_Piattaforma_GIS.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 270--272
+Underfull \hbox (badness 10000) in paragraph at lines 260--262
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 273--275
+Underfull \hbox (badness 10000) in paragraph at lines 263--265
 
  []
 
@@ -506,10 +496,10 @@ File: immagini/MapYou_SchermataPrincipale.jpg Graphic file (type jpg)
 
 <use immagini/MapYou_SchermataPrincipale.jpg>
 Package pdftex.def Info: immagini/MapYou_SchermataPrincipale.jpg used on input 
-line 285.
+line 275.
 (pdftex.def)             Requested size: 312.9803pt x 353.90622pt.
  [5 <./immagini/MapYou_SchermataPrincipale.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 301--303
+Underfull \hbox (badness 10000) in paragraph at lines 291--293
 
  []
 
@@ -517,7 +507,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 301--303
 File: immagini/Gestore_MapYou.jpg Graphic file (type jpg)
 
 <use immagini/Gestore_MapYou.jpg>
-Package pdftex.def Info: immagini/Gestore_MapYou.jpg used on input line 312.
+Package pdftex.def Info: immagini/Gestore_MapYou.jpg used on input line 302.
 (pdftex.def)             Requested size: 341.43306pt x 167.56953pt.
 
 
@@ -529,17 +519,17 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ]
 Capitolo 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 336--340
+Underfull \hbox (badness 10000) in paragraph at lines 326--330
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 336--340
+Underfull \hbox (badness 10000) in paragraph at lines 326--330
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 336--340
+Underfull \hbox (badness 10000) in paragraph at lines 326--330
 
  []
 
@@ -553,40 +543,40 @@ Underfull \vbox (badness 2293) has occurred while \output is active []
 File: immagini/Sintassi_ADB.jpg Graphic file (type jpg)
 
 <use immagini/Sintassi_ADB.jpg>
-Package pdftex.def Info: immagini/Sintassi_ADB.jpg used on input line 360.
+Package pdftex.def Info: immagini/Sintassi_ADB.jpg used on input line 350.
 (pdftex.def)             Requested size: 227.62204pt x 23.22711pt.
 
 <immagini/Swing_Java.jpg, id=91, 646.415pt x 520.94624pt>
 File: immagini/Swing_Java.jpg Graphic file (type jpg)
 
 <use immagini/Swing_Java.jpg>
-Package pdftex.def Info: immagini/Swing_Java.jpg used on input line 382.
+Package pdftex.def Info: immagini/Swing_Java.jpg used on input line 372.
 (pdftex.def)             Requested size: 341.43306pt x 275.16222pt.
 
 <immagini/TextureScreenShot.jpg, id=92, 662.475pt x 496.85625pt>
 File: immagini/TextureScreenShot.jpg Graphic file (type jpg)
 
 <use immagini/TextureScreenShot.jpg>
-Package pdftex.def Info: immagini/TextureScreenShot.jpg used on input line 391.
+Package pdftex.def Info: immagini/TextureScreenShot.jpg used on input line 381.
 
 (pdftex.def)             Requested size: 341.43306pt x 256.06956pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--397
+Underfull \hbox (badness 10000) in paragraph at lines 368--387
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--397
+Underfull \hbox (badness 10000) in paragraph at lines 368--387
 
  []
 
 [11 <./immagini/Sintassi_ADB.jpg>] [12 <./immagini/Swing_Java.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 399--402
+Underfull \hbox (badness 10000) in paragraph at lines 389--392
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 399--402
+Underfull \hbox (badness 10000) in paragraph at lines 389--392
 
  []
 
@@ -596,12 +586,12 @@ Capitolo 3.
 
 
 ] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 455--458
+Underfull \hbox (badness 10000) in paragraph at lines 445--448
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 455--458
+Underfull \hbox (badness 10000) in paragraph at lines 445--448
 
  []
 
@@ -610,11 +600,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 455--458
 File: immagini/Modulo_Dispositivi.jpg Graphic file (type jpg)
 
 <use immagini/Modulo_Dispositivi.jpg>
-Package pdftex.def Info: immagini/Modulo_Dispositivi.jpg used on input line 564
+Package pdftex.def Info: immagini/Modulo_Dispositivi.jpg used on input line 554
 .
 (pdftex.def)             Requested size: 398.33858pt x 235.86719pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 564--565
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 554--555
  [] 
  []
 
@@ -623,10 +613,10 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 564--565
 File: immagini/Modulo_Mappe.jpg Graphic file (type jpg)
 
 <use immagini/Modulo_Mappe.jpg>
-Package pdftex.def Info: immagini/Modulo_Mappe.jpg used on input line 578.
+Package pdftex.def Info: immagini/Modulo_Mappe.jpg used on input line 568.
 (pdftex.def)             Requested size: 412.56496pt x 231.1245pt.
 
-Overfull \hbox (22.56496pt too wide) in paragraph at lines 578--579
+Overfull \hbox (22.56496pt too wide) in paragraph at lines 568--569
  [] 
  []
 
@@ -638,10 +628,10 @@ Underfull \vbox (badness 2790) has occurred while \output is active []
 File: immagini/Modulo_Progetti.jpg Graphic file (type jpg)
 
 <use immagini/Modulo_Progetti.jpg>
-Package pdftex.def Info: immagini/Modulo_Progetti.jpg used on input line 592.
+Package pdftex.def Info: immagini/Modulo_Progetti.jpg used on input line 582.
 (pdftex.def)             Requested size: 412.56496pt x 247.65883pt.
 
-Overfull \hbox (22.56496pt too wide) in paragraph at lines 592--593
+Overfull \hbox (22.56496pt too wide) in paragraph at lines 582--583
  [] 
  []
 
@@ -651,10 +641,10 @@ File: immagini/Modulo_Progetti_Mobile.jpg Graphic file (type jpg)
 
 <use immagini/Modulo_Progetti_Mobile.jpg>
 Package pdftex.def Info: immagini/Modulo_Progetti_Mobile.jpg used on input line
- 644.
+ 634.
 (pdftex.def)             Requested size: 412.56496pt x 311.229pt.
 
-Overfull \hbox (22.56496pt too wide) in paragraph at lines 644--645
+Overfull \hbox (22.56496pt too wide) in paragraph at lines 634--635
  [] 
  []
 
@@ -669,10 +659,10 @@ Capitolo 4.
 File: immagini/MVC_Process.jpg Graphic file (type jpg)
 
 <use immagini/MVC_Process.jpg>
-Package pdftex.def Info: immagini/MVC_Process.jpg used on input line 671.
+Package pdftex.def Info: immagini/MVC_Process.jpg used on input line 661.
 (pdftex.def)             Requested size: 227.62204pt x 250.35487pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--678
+Underfull \hbox (badness 10000) in paragraph at lines 667--668
 
  []
 
@@ -681,17 +671,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 677--678
 File: immagini/MVC_Moduli.jpg Graphic file (type jpg)
 
 <use immagini/MVC_Moduli.jpg>
-Package pdftex.def Info: immagini/MVC_Moduli.jpg used on input line 684.
+Package pdftex.def Info: immagini/MVC_Moduli.jpg used on input line 674.
 (pdftex.def)             Requested size: 341.43306pt x 242.07567pt.
  [33 <./immagini/MVC_Moduli.jpg>] [34]
 <immagini/Classi_MVC.jpg, id=175, 918.43124pt x 484.81125pt>
 File: immagini/Classi_MVC.jpg Graphic file (type jpg)
 
 <use immagini/Classi_MVC.jpg>
-Package pdftex.def Info: immagini/Classi_MVC.jpg used on input line 708.
+Package pdftex.def Info: immagini/Classi_MVC.jpg used on input line 698.
 (pdftex.def)             Requested size: 426.79134pt x 225.29434pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 708--709
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 698--699
  [] 
  []
 
@@ -700,36 +690,36 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 708--709
 File: immagini/Flusso_Utilizzo.jpg Graphic file (type jpg)
 
 <use immagini/Flusso_Utilizzo.jpg>
-Package pdftex.def Info: immagini/Flusso_Utilizzo.jpg used on input line 721.
+Package pdftex.def Info: immagini/Flusso_Utilizzo.jpg used on input line 711.
 (pdftex.def)             Requested size: 369.88582pt x 225.2936pt.
  [36 <./immagini/Flusso_Utilizzo.jpg>]
 <immagini/Classe_MobileDevice.jpg, id=184, 247.92625pt x 286.06876pt>
 File: immagini/Classe_MobileDevice.jpg Graphic file (type jpg)
 
 <use immagini/Classe_MobileDevice.jpg>
-Package pdftex.def Info: immagini/Classe_MobileDevice.jpg used on input line 74
+Package pdftex.def Info: immagini/Classe_MobileDevice.jpg used on input line 73
 8.
 (pdftex.def)             Requested size: 199.16928pt x 229.81125pt.
  [37] [38 <./immagini/Classe_MobileDevice.jpg>] [39] (/usr/local/texlive/2015/t
 exmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
-Overfull \hbox (6.0pt too wide) in paragraph at lines 767--767
+Overfull \hbox (6.0pt too wide) in paragraph at lines 757--757
  [][][][][][][] 
  []
 
 (./xml/Esempio.xml)
-Underfull \hbox (badness 10000) in paragraph at lines 768--770
+Underfull \hbox (badness 10000) in paragraph at lines 758--760
 
  []
 
 [40]
-Overfull \hbox (6.0pt too wide) in paragraph at lines 773--773
+Overfull \hbox (6.0pt too wide) in paragraph at lines 763--763
  [][][][][][][] 
  []
 
 (./xml/current_export.xml) [41]
-Overfull \hbox (6.0pt too wide) in paragraph at lines 779--779
+Overfull \hbox (6.0pt too wide) in paragraph at lines 769--769
  [][][][][][][] 
  []
 
@@ -741,15 +731,15 @@ Underfull \vbox (badness 2065) has occurred while \output is active []
 File: immagini/Classi_Config.jpg Graphic file (type jpg)
 
 <use immagini/Classi_Config.jpg>
-Package pdftex.def Info: immagini/Classi_Config.jpg used on input line 799.
+Package pdftex.def Info: immagini/Classi_Config.jpg used on input line 789.
 (pdftex.def)             Requested size: 398.33858pt x 178.79482pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 799--800
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 789--790
  [] 
  []
 
 [43 <./immagini/Classi_Config.jpg>]
-Overfull \hbox (6.0pt too wide) in paragraph at lines 810--810
+Overfull \hbox (6.0pt too wide) in paragraph at lines 800--800
  [][][][][][][] 
  []
 
@@ -758,10 +748,10 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 810--810
 File: immagini/Classi_Progetti.jpg Graphic file (type jpg)
 
 <use immagini/Classi_Progetti.jpg>
-Package pdftex.def Info: immagini/Classi_Progetti.jpg used on input line 828.
+Package pdftex.def Info: immagini/Classi_Progetti.jpg used on input line 818.
 (pdftex.def)             Requested size: 398.33858pt x 293.15799pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 828--829
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 818--819
  [] 
  []
 
@@ -770,7 +760,7 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 828--829
 File: immagini/Workspace_Locale.jpg Graphic file (type jpg)
 
 <use immagini/Workspace_Locale.jpg>
-Package pdftex.def Info: immagini/Workspace_Locale.jpg used on input line 841.
+Package pdftex.def Info: immagini/Workspace_Locale.jpg used on input line 831.
 (pdftex.def)             Requested size: 227.62204pt x 179.94804pt.
 
 <immagini/Sorgente_Dati_Esempio.jpg, id=219, 287.0725pt x 259.97125pt>
@@ -778,7 +768,7 @@ File: immagini/Sorgente_Dati_Esempio.jpg Graphic file (type jpg)
 
 <use immagini/Sorgente_Dati_Esempio.jpg>
 Package pdftex.def Info: immagini/Sorgente_Dati_Esempio.jpg used on input line 
-854.
+844.
 (pdftex.def)             Requested size: 199.16928pt x 180.37206pt.
 
 Underfull \vbox (badness 6188) has occurred while \output is active []
@@ -791,7 +781,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: immagini/MockupDispositivi.jpg Graphic file (type jpg)
 
 <use immagini/MockupDispositivi.jpg>
-Package pdftex.def Info: immagini/MockupDispositivi.jpg used on input line 869.
+Package pdftex.def Info: immagini/MockupDispositivi.jpg used on input line 859.
 
 (pdftex.def)             Requested size: 341.43306pt x 289.69351pt.
  [48 <./immagini/MockupDispositivi.jpg>]
@@ -799,10 +789,10 @@ Package pdftex.def Info: immagini/MockupDispositivi.jpg used on input line 869.
 File: immagini/MockupMappe.jpg Graphic file (type jpg)
 
 <use immagini/MockupMappe.jpg>
-Package pdftex.def Info: immagini/MockupMappe.jpg used on input line 880.
+Package pdftex.def Info: immagini/MockupMappe.jpg used on input line 870.
 (pdftex.def)             Requested size: 398.33858pt x 303.3116pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 880--881
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 870--871
  [] 
  []
 
@@ -811,47 +801,47 @@ Overfull \hbox (8.33858pt too wide) in paragraph at lines 880--881
 File: immagini/MockupProgetti.jpg Graphic file (type jpg)
 
 <use immagini/MockupProgetti.jpg>
-Package pdftex.def Info: immagini/MockupProgetti.jpg used on input line 892.
+Package pdftex.def Info: immagini/MockupProgetti.jpg used on input line 882.
 (pdftex.def)             Requested size: 398.33858pt x 323.79794pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 892--893
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 882--883
  [] 
  []
 
 [50 <./immagini/MockupProgetti.jpg>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 919.
+               Default added (so using `!tbp') on input line 909.
 
 <immagini/Classi_Project_Manager.jpg, id=239, 576.1525pt x 653.44125pt>
 File: immagini/Classi_Project_Manager.jpg Graphic file (type jpg)
 
 <use immagini/Classi_Project_Manager.jpg>
 Package pdftex.def Info: immagini/Classi_Project_Manager.jpg used on input line
- 922.
+ 912.
 (pdftex.def)             Requested size: 398.33858pt x 451.79225pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 922--923
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 912--913
  [] 
  []
 
 [51] [52 <./immagini/Classi_Project_Manager.jpg>] [53]
-Overfull \hbox (6.0pt too wide) in paragraph at lines 942--942
+Overfull \hbox (6.0pt too wide) in paragraph at lines 932--932
  [][][][][][][] 
  []
 
 (./xml/Struttura_Sketches.xml)
-Overfull \hbox (6.0pt too wide) in paragraph at lines 945--945
+Overfull \hbox (6.0pt too wide) in paragraph at lines 935--935
  [][][][][][][] 
  []
 
 (./xml/Struttura_Interna_Points.xml) [54]
-Overfull \hbox (6.0pt too wide) in paragraph at lines 948--948
+Overfull \hbox (6.0pt too wide) in paragraph at lines 938--938
  [][][][][][][] 
  []
 
 (./xml/Esempio_Stile_Linea.xml) [55]
-Overfull \hbox (6.0pt too wide) in paragraph at lines 951--951
+Overfull \hbox (6.0pt too wide) in paragraph at lines 941--941
  [][][][][][][] 
  []
 
@@ -860,7 +850,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 951--951
 File: immagini/Workspace_Mobile.jpg Graphic file (type jpg)
 
 <use immagini/Workspace_Mobile.jpg>
-Package pdftex.def Info: immagini/Workspace_Mobile.jpg used on input line 970.
+Package pdftex.def Info: immagini/Workspace_Mobile.jpg used on input line 960.
 (pdftex.def)             Requested size: 227.62204pt x 158.22351pt.
  [58 <./immagini/Workspace_Mobile.jpg>]
 <immagini/Workspace_Mobile_Lavori.jpg, id=266, 306.14375pt x 230.8625pt>
@@ -868,7 +858,7 @@ File: immagini/Workspace_Mobile_Lavori.jpg Graphic file (type jpg)
 
 <use immagini/Workspace_Mobile_Lavori.jpg>
 Package pdftex.def Info: immagini/Workspace_Mobile_Lavori.jpg used on input lin
-e 983.
+e 973.
 (pdftex.def)             Requested size: 256.0748pt x 193.11647pt.
  [59 <./immagini/Workspace_Mobile_Lavori.jpg>] [60
 
@@ -876,12 +866,12 @@ e 983.
 ]
 Capitolo 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1001--1003
+Underfull \hbox (badness 10000) in paragraph at lines 991--993
 
  []
 
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1003--1003
+Overfull \hbox (6.0pt too wide) in paragraph at lines 993--993
  [][][][][][][] 
  []
 
@@ -898,7 +888,7 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1.
 ) [62]
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1009--1009
+Overfull \hbox (6.0pt too wide) in paragraph at lines 999--999
  [][][][][][][] 
  []
 
@@ -907,7 +897,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [63])
 [64]
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1015--1015
+Overfull \hbox (6.0pt too wide) in paragraph at lines 1005--1005
  [][][][][][][] 
  []
 
@@ -916,10 +906,10 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 1015--1015
 File: immagini/Schema_DOM.jpg Graphic file (type jpg)
 
 <use immagini/Schema_DOM.jpg>
-Package pdftex.def Info: immagini/Schema_DOM.jpg used on input line 1025.
+Package pdftex.def Info: immagini/Schema_DOM.jpg used on input line 1015.
 (pdftex.def)             Requested size: 341.43306pt x 167.94911pt.
  [66 <./immagini/Schema_DOM.jpg>]
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1037--1037
+Overfull \hbox (6.0pt too wide) in paragraph at lines 1027--1027
  [][][][][][][] 
  []
 
@@ -927,7 +917,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 1037--1037
 Underfull \vbox (badness 7963) has occurred while \output is active []
 
  [68]
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1041--1041
+Overfull \hbox (6.0pt too wide) in paragraph at lines 1031--1031
  [][][][][][][] 
  []
 
@@ -937,10 +927,10 @@ File: immagini/Dispositivi_JTattoo.jpg Graphic file (type jpg)
 
 <use immagini/Dispositivi_JTattoo.jpg>
 Package pdftex.def Info: immagini/Dispositivi_JTattoo.jpg used on input line 10
-47.
+37.
 (pdftex.def)             Requested size: 398.33858pt x 219.77347pt.
 
-Overfull \hbox (8.33858pt too wide) in paragraph at lines 1047--1048
+Overfull \hbox (8.33858pt too wide) in paragraph at lines 1037--1038
  [] 
  []
 
@@ -949,32 +939,32 @@ Underfull \vbox (badness 2057) has occurred while \output is active []
 
  [69]
 [70 <./immagini/Dispositivi_JTattoo.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 1063--1067
+Underfull \hbox (badness 10000) in paragraph at lines 1053--1057
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1063--1067
+Underfull \hbox (badness 10000) in paragraph at lines 1053--1057
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1072--1079
+Underfull \hbox (badness 10000) in paragraph at lines 1062--1069
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1072--1079
+Underfull \hbox (badness 10000) in paragraph at lines 1062--1069
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1072--1079
+Underfull \hbox (badness 10000) in paragraph at lines 1062--1069
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1072--1079
+Underfull \hbox (badness 10000) in paragraph at lines 1062--1069
 
  []
 
@@ -1002,10 +992,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ] (./tesi.aux) ) 
 Here is how much of TeX's memory you used:
- 7095 strings out of 493089
- 100600 string characters out of 6134842
- 263577 words of memory out of 5000000
- 10379 multiletter control sequences out of 15000+600000
+ 7075 strings out of 493089
+ 100284 string characters out of 6134842
+ 263102 words of memory out of 5000000
+ 10362 multiletter control sequences out of 15000+600000
  16518 words of font info for 67 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  38i,12n,50p,1082b,1778s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1021,7 +1011,7 @@ pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></
 usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on tesi.pdf (93 pages, 2123245 bytes).
+Output written on tesi.pdf (93 pages, 2123203 bytes).
 PDF statistics:
  380 PDF objects out of 1000 (max. 8388607)
  243 compressed objects within 3 object streams

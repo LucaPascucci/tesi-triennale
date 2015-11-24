@@ -22,12 +22,6 @@
 %libreria per avere l'indentazione all'inizio dei capitoli, ...
 \usepackage{indentfirst}
 
-\usepackage{afterpage}
-\newcommand\blankpage{%
- \null
- \thispagestyle{empty}%\addtocounter{page}{-1}%
- \newpage}
-
 %libreria per inserire grafici
 \usepackage{graphicx}
 
@@ -113,18 +107,14 @@ stringstyle=\color{red}
 {\small SCUOLA DI SCIENZE\\
 Corso di Laurea in Ingegneria e Scienze Informatiche}
 \end{center}
-\vspace{15mm}
+\vspace{20mm}
 \begin{center}
 {\LARGE{\bf SINCRONIZZAZIONE DI UNA}}\\
 \vspace{3mm}
 {\LARGE{\bf APPLICAZIONE OFFLINE}}\\
 \vspace{3mm}
 {\LARGE{\bf CON I SISTEMI DI BACK-END}}\\
-\vspace{3mm}
-{\LARGE{\bf E ALLINEAMENTO DELLE}}\\
-\vspace{3mm}
-{\LARGE{\bf INFORMAZIONI ACQUISITE IN CAMPO}}\\
-\vspace{10mm}
+\vspace{15mm}
 {\it Relazione finale in}\\
 PROGRAMMAZIONE DI SISTEMI MOBILE
 \end{center}
@@ -210,22 +200,22 @@ Alla mia famiglia\\
 \addcontentsline{toc}{chapter}{Introduzione}
 
 Il 9 gennaio 2007 ha segnato l'inizio di un'enorme cambiamento in numerosi ambiti e settori partendo ovviamente dalle tecnologie mobili fino ad arrivare alla pi\`u semplice quotidianità, migliorando la cooperazione, lo scambio di informazioni e l'interazione tra persone.
-Durante lo sviluppo dei nuovi scenari creati da quel particolare evento, il mondo del lavoro è notevolmente cambiato, gli smartphone si sono diffusi per la loro praticità, affidabilità, velocità e semplicità di utilizzo. Impiegati in svariati modi, possono ad esempio essere utilizzati da un rappresentante per rimanere in contatto con la propria azienda, con clienti e fornitori oppure da un tecnico esterno per memorizzare gli interventi effettuati e poi presentarli in sede centrale.
+Durante lo sviluppo dei nuovi scenari creati da quel particolare evento, il mondo del lavoro è notevolmente cambiato, gli smartphone si sono diffusi per la loro praticità, affidabilità, velocità e semplicità di utilizzo. Impiegati in svariati modi, possono ad esempio essere utilizzati da un rappresentante per rimanere in contatto con la propria azienda, clienti e fornitori oppure da un tecnico esterno per memorizzare gli interventi effettuati e poi presentarli in sede centrale.
 \\\\Quest'ultimo caso rappresenta al meglio ciò che verrà spiegato nella tesi ed illustrato attraverso i progetti collegati, difatti lo scopo è di sviluppare due applicativi, uno desktop ed uno mobile che permettano ad un tecnico di preparare un dispositivo mobile contenente i dati necessari alla sua attività esterna, la possibilità di creare e salvare nuovi dati riguardanti i lavori svolti ed una volta concluse le operazioni di poterli importare in sede centrale.
 \\\\Il software desktop richiesto deve fornire una interfaccia grafica semplice ed intuitiva che visualizzi i dispositivi collegati, i dati locali da importare sui dispositivi e quelli presenti sui dispositivi da esportare in locale. L'applicazione mobile deve fornire gli strumenti adatti per visualizzare ed interagire con i dati locali al dispositivo e crearne nuovi che identifichino l'operato dell'utente. 
-\\\\Gli aspetti visti sopra saranno descritti attraverso un'analisi del problema ed una progettazione architetturale. In particolare verranno evidenziati aspetti riguardanti la comunicazione tra l'applicativo desktop ed un dispositivo mobile collegato al computer che permetteranno la sincronizzazione dei contenuti.
-\\\\La possibilità di effettuare questo percorso è stata concessa dall'azienda EBWorld s.r.l., che dal 1983 supporta lo sviluppo di grandi e piccole aziende fornendo piattaforme e applicazioni semplici ma potenti che sfruttano le informazioni geografiche dell'organizzazione per progettare e gestire reti tecnologiche sul territorio.
-Dato il grande sviluppo che l'azienda sta avendo, ricevendo anche la nomina di Cool Vendor 2015 in "Communications Service Provider Operational and Business Infrastructure" da Gartner, società internazionale leader nella consulenza strategica, nella ricerca e nell'analisi nel settore hi-tech; EBWorld ha espresso l'esigenza di un applicazione che sostituisse una precedente versione realizzata su Windows Mobile ed utilizzasse i moderni dispositivi mobile disponibili sul mercato. 
-\\\\La sfida più importante é sicuramente quella di rendere l'applicativo desktop capace di visualizzare e gestire un dispositivo mobile collegato al PC, infatti non tutti i sistemi operativi, come ad esempio MAC OS X, riescono ad individuare un dispositivo Android e quindi garantire un collegamento stabile anche in presenza di una grossa mole di dati da interscambiare. Lo sviluppo di questo aspetto corrisponde al punto di forza dell'applicativo desktop.
-\\\\Gli applicativi realizzati soddisfano tutti i requisiti iniziali richiesti dall'azienda, riuscendo a gestire senza alcun problema tutti i dispositivi Android collegati senza subire rallentamenti o perdite durante il trasferimento dati e dando la possibilità all'utente dell'applicativo mobile di visualizzare e creare i dati riguardanti gli interventi effettuati.
-\\\\Il progetto desktop è stato realizzato interamente dal sottoscritto invece la parte mobile è stata sviluppata in team con il mio collega Filippo Nicolini, suddividendo attentamente i compiti tra i due. Questo elaborato di tesi tratta quindi dell'intera progettazione e implementazione dell'applicativo desktop e nella parte mobile dello sviluppo riguardante i dati creati dall'utente. Il mio collega si è occupato invece della realizzazione dell'interfaccia grafica con analisi della usability, dei workflow e del contesto operativo dell'utente.
+\\\\Gli aspetti visti sopra saranno descritti attraverso un'analisi del problema ed una progettazione architetturale. In particolare verranno evidenziati gli aspetti riguardanti la comunicazione tra l'applicativo desktop ed un dispositivo mobile collegato al computer che permetteranno la sincronizzazione dei contenuti.
+\\\\La possibilità di effettuare questo percorso è stata concessa dall'azienda EBWorld s.r.l., che dal 1983 supporta lo sviluppo di grandi e piccole aziende, fornendo piattaforme e applicazioni semplici ma potenti che sfruttano le informazioni geografiche dell'organizzazione per progettare e gestire reti tecnologiche sul territorio.
+Dato il grande sviluppo che l'azienda sta avendo, avvalorato dalla nomina di Cool Vendor 2015 in "Communications Service Provider Operational and Business Infrastructure" ricevuta da Gartner, società internazionale leader nella consulenza strategica, nella ricerca e nell'analisi nel settore hi-tech, EBWorld ha espresso l'esigenza di un applicazione che sostituisse una precedente versione realizzata su Windows Mobile ed utilizzasse i moderni dispositivi mobile disponibili sul mercato. 
+\\\\La sfida più importante è sicuramente quella di rendere l'applicativo desktop capace di visualizzare e gestire un dispositivo mobile collegato al computer; infatti non tutti i sistemi operativi, come ad esempio MAC OS X, riescono ad individuare un dispositivo Android e quindi garantire un collegamento stabile anche in presenza di una grossa mole di dati da interscambiare. Lo sviluppo di questo aspetto corrisponde al punto di forza dell'applicativo desktop.
+\\\\Gli applicativi realizzati soddisfano tutti i requisiti iniziali richiesti dall'azienda, riuscendo pienamente a gestire tutti i dispositivi Android collegati senza subire rallentamenti o perdite durante il trasferimento dati e dando la possibilità all'utente dell'applicativo mobile di visualizzare e creare i dati riguardanti gli interventi effettuati.
+\\\\Il progetto desktop è stato realizzato interamente dal sottoscritto mentre la parte mobile è stata sviluppata in team con il mio collega Filippo Nicolini, suddividendo attentamente i compiti tra i due. Questo elaborato di tesi tratta quindi dell'intera progettazione e implementazione dell'applicativo desktop e nella parte mobile, della memorizzazione dei dati creati dall'utente. Il mio collega si è occupato invece della realizzazione dell'interfaccia grafica con analisi della usability, dei workflow e del contesto operativo dell'utente.
 \\\\La tesi è suddivisa in cinque capitoli:
 %crea un elenco puntato
 \begin{itemize}                         
-\item Nel primo capitolo verrà introdotta l'azienda EBWorld s.r.l. e fatta un'analisi sulle precedenti soluzioni sviluppate evidenziando in linea generale le loro caratteristiche.
+\item Nel primo capitolo verrà introdotta l'azienda EBWorld s.r.l. ed eseguita un'analisi sulle precedenti soluzioni sviluppate evidenziando in linea generale le loro caratteristiche.
 \item Il secondo capitolo espone le tecnologie utilizzate dagli applicativi e nello sviluppo software.
-\item Il terzo capitolo tratta l'analisi del problema, definendo le operazioni principali e mettendo in discussione la tematica dell'offline.
-\item La progettazione è descritta nel quarto capitolo, dove viene esposta la struttura finale dei progetti da sviluppare.
+\item Il terzo capitolo tratta l'analisi del problema, definendo le operazioni principali e mettendo a confronto le i due aspetti: applicativi offline e applicativi online.
+\item La progettazione è descritta nel quarto capitolo, dove vengono esposte le scelte progettuali e la struttura finale dei progetti da sviluppare.
 \item Il quinto capitolo contiene i dettagli implementativi delle soluzioni sviluppate, focalizzandosi su alcune parti di codice molto importanti nei progetti.
 \end{itemize}
 Segue poi una breve conclusione.
@@ -238,14 +228,14 @@ Segue poi una breve conclusione.
 
 %mette i numeri arabi
 \pagenumbering{arabic}                  
-Questo capitolo introduce l'azienda EBWorld s.r.l., descrive sinteticamente le precedenti soluzioni sviluppate per comprendere meglio il progetto che si intende sviluppare.
+Questo capitolo introduce l'azienda EBWorld s.r.l., illustra la struttura si un sistema GIS e descrive sinteticamente le precedenti soluzioni sviluppate per comprendere meglio il progetto che si intende sviluppare.
 %crea la sezione
 \section{EBWorld s.r.l.}
-EBWorld opera dal 1983 nel settore dell'informatica applicata all'impiego di informazioni geografiche e tecnologiche correlate ai processi di acquisizione, elaborazione e gestione di dati georiferiti. La consolidata competenza ed esperienza nella realizzazione di Sistemi Informativi Territoriali (SIT) e nell'integrazione di piattaforme GIS con sistemi ed applicazione, fanno di EBWorld il partner ideale per chi gestisce reti tecnologiche.
-\\\\Importanti Aziende e Pubbliche Amministrazioni Italiane hanno scelto EBWorl per l'integrazione, la manutenzione e lo sviluppo dei loro sistemi IT. Dal 1995 EBWorld è Distributore e VAR per l'Italia dei prodotti Smallworld attualmente prodotti e distribuiti da GE Energy. \`E una dinamica azienda ICT capace di dare forma e sostanza al più grande patrimonio di ogni Azienda: {\bf{l'informazione}}.
+EBWorld opera dal 1983 nel settore dell'informatica applicata all'impiego di informazioni geografiche e tecnologiche correlate ai processi di acquisizione, elaborazione e gestione di dati georiferiti. La consolidata esperienza e competenza nella realizzazione di Sistemi Informativi Territoriali (SIT) e nell'integrazione di piattaforme GIS con sistemi ed applicazioni, fanno di EBWorld il partner ideale per chi gestisce reti tecnologiche.
+\\\\Importanti aziende e Pubbliche Amministrazioni Italiane hanno scelto EBWorld per l'integrazione, la manutenzione e lo sviluppo dei loro sistemi informativi territoriali. Dal 1995 EBWorld è distributore per l'Italia dei prodotti Smallworld attualmente realizzati e distribuiti da GE\footnote{General Electric} Energy. \`E una dinamica azienda ICT\footnote{Information and Communications Technology} capace di dare forma e sostanza al più grande patrimonio di ogni Azienda: {\bf{l'informazione}}.
 
 \section{Geographic Information System}
-Il GIS\footnote{Geographic Information System} è un sistema informativo computerizzato che permette l'acquisizione, la registrazione, l'analisi, la visualizzazione e la rappresentazione di informazioni derivanti da dati geografici (geo-referenziati) solitamente memorizzandole in strutture del tipo DBMS\footnote{Database Management System} che gestiscono anche la spazialità, o in singoli file.
+Il GIS\footnote{Geographic Information System} è un sistema informativo computerizzato che permette l'acquisizione, la registrazione, l'analisi, la visualizzazione e la rappresentazione di informazioni derivanti da dati geografici (geo-referenziati) memorizzandole in strutture del tipo DBMS\footnote{Database Management System} che gestiscono anche la spazialità, oppure in singoli file.
 \begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
 \begin{center}                          %centra nel mezzo della pagina la figura
 
@@ -258,25 +248,25 @@ Il GIS\footnote{Geographic Information System} è un sistema informativo computer
 \\L'immagine raffigura le principali componenti di un sistema GIS:
 \begin{itemize}
 \item {\bf{Hardware}}: costituito da computer, periferiche grafiche come plotter per la stampa di carte tematiche prodotte dalle elaborazioni GIS e server per la condivisione online di mappe. Le prestazioni hardware influiscono sulla capacità e velocità di elaborazione dei dati e variano a seconda della dimensione geografica del territorio che si intende memorizzare.
-\item {\bf{Software}}: Esistono vari software GIS. La scelta di quale pacchetto utilizzare dipende dalle esigenze del progetto, dalla necessità di avere delle interfacce più o meno "user-friendly" come anche da vincoli di spesa.
+\item {\bf{Software}}: Esistono vari software GIS. La scelta di quale pacchetto utilizzare dipende dalle esigenze del progetto, dalla necessità di avere delle interfacce più o meno "user-friendly" e da vincoli di spesa.
 \item {\bf{Dati}}: Elementi fondamentali del sistema, devono essere completi, possibilmente senza errori e forniti con una scala dimensionale.  I dati maneggiabili con un sistema GIS possono essere di natura diversa difatti si possono introdurre dati vettoriali, dati raster, immagini da satellite ed anche documenti digitalizzati.
 \item {\bf{Persone}}: L'utilizzatore del sistema GIS deve farsi carico di trovare i dati, deve progettare l'ambiente in cui costruire le mappe e l'analisi, deve progettare le metodologie e le procedure per analizzare i dati e deve scegliere il modo migliore per rappresentarle e comunicarle.
 \item {\bf{Procedure}}: Utilizzo o creazione di linee guida al fine di trattare correttamente ed efficacemente i dati disponibili.
 \item {\bf{Analisi}}: Risultato dell'aggregazione e trattamento dei dati.
 \end{itemize}
 \subsection{Modello dei dati}
-Il modello dei dati rappresenta tutti gli oggetti che esistono nel mondo fisico (punti, linee, superficie, volumi, etc) ed è in grado di elaborare le loro combinazioni.Vengono memorizzate anche le informazioni riguardanti le relazioni tra gli oggetti (adiacenza, inclusioni, sovrapposizioni, etc.) ovvero la loro topologia. La caratteristica fondamentale di un GIS è la capacità di geo-referenziale i dati quindi ad ogni elemento vengono associate le sue coordinate spaziali reali del sistema di riferimento in cui realmente è situato l'oggetto.
+Il modello dei dati rappresenta tutti gli oggetti che esistono nel mondo fisico (punti, linee, superficie e volumi) ed è in grado di elaborare le loro combinazioni. Vengono memorizzate anche le informazioni riguardanti le relazioni tra gli oggetti (adiacenza, inclusioni, sovrapposizioni, etc.) ovvero la loro topologia. La caratteristica fondamentale di un GIS è la capacità di geo-referenziale i dati quindi ad ogni elemento vengono associate le sue coordinate spaziali reali del sistema di riferimento in cui realmente è situato l'oggetto.
 \section{Gli applicativi esistenti}
-Gli applicativi realizzati in precedenza dall'azienda sono stati mostrati prima di iniziare il percorso di analisi, progettazione e sviluppo necessario alla realizzazione degli obiettivi prefissati consentendo una migliore comprensione del lavoro da svolgere. 
+Gli applicativi realizzati in precedenza dall'azienda sono stati mostrati prima di iniziare il percorso di analisi, progettazione e sviluppo necessario alla realizzazione degli obiettivi prefissati, consentendo una migliore comprensione del lavoro da svolgere. 
 \\\\La motivazione principale che ha convinto EBWorld ad intraprendere questo percorso, è stata la modernizzazione di applicativi sempre maggiormente utilizzati per renderli compatibili con i moderni dispositivi disponibili sul mercato.
 \subsection{MapYou}
 MapYou, la soluzione mobile ideata da EBWorld nel 2008, è stata sviluppata per la piattaforma Windows Mobile rendendo disponibile uno strumento per la consultazione e la gestione di dati georeferenziati.
 \\\\Le principali funzionalità riguardano:
 \begin{itemize}
-\item {\bf{Selezione Mappa}} abilitando l'utente alla selezione della mappa da visualizzare, scegliendola tra quelle disponibili sul dispositivo.
-\item {\bf{Creazione Progetti}} consentendo all'utente di inserire nuovi elementi sulla mappa che identifichino il suo operato o un futuro intervento da effettuare in quella determinata posizione
-\item {\bf{Ricerca Elementi}} con la quale l'utente può cercare ed evidenziare uno o più oggetti presenti sulla mappa.
-\item {\bf{Utilizzo GPS o coordinate manuali}} consentendo di posizionare in automatico la mappa nel punto in cui si trova o desidera l'utente.
+\item {\bf{Selezione Mappa}}: abilitando l'utente alla selezione della mappa da visualizzare, scegliendola tra quelle disponibili sul dispositivo.
+\item {\bf{Creazione Progetti}}: consentendo all'utente di inserire nuovi elementi sulla mappa che identifichino il suo operato o un futuro intervento da effettuare in quella determinata posizione.
+\item {\bf{Ricerca Elementi}}: con la quale l'utente può cercare ed evidenziare uno o più elementi georiferiti presenti sulla mappa.
+\item {\bf{Utilizzo GPS o coordinate manuali}}: consentendo di posizionare in automatico la mappa nel punto in cui si trova o desidera l'utente.
 \end{itemize}
 \newpage
 \begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
@@ -290,15 +280,15 @@ MapYou, la soluzione mobile ideata da EBWorld nel 2008, è stata sviluppata per l
 \end{figure}
 La schermata principale dell'applicazione è costituita da cinque elementi principali:
 \begin{enumerate}
-\item {\bf{Mappa}}, sulla quale è visualizzata l'area d'interesse;
-\item {\bf{Toolbar superiore}} contenete strumenti utili per la navigazione e l'interazione con la mappa;
-\item {\bf{Pannello laterale}}, a destra della mappa, le cui icone e collegate funzioni variano a seconda dello strumento selezionato nella toolbar superiore;
-\item {\bf{Campi di informazioni}} sotto la mappa, nei quali sono riportate le informazioni relative alla mappa visualizzata, ovvero la scala di visualizzazione e la scala nominale;
+\item {\bf{Mappa}} sulla quale è visualizzata l'area d'interesse.
+\item {\bf{Toolbar superiore}} contenete strumenti utili per la navigazione e l'interazione con la mappa.
+\item {\bf{Pannello laterale}} a destra della mappa, le cui icone e collegate funzioni variano a seconda dello strumento selezionato nella toolbar superiore.
+\item {\bf{Campi di informazioni}} sotto la mappa, nei quali sono riportate le informazioni relative alla mappa visualizzata, ovvero la scala di visualizzazione e la scala nominale.
 \item {\bf{Pannello inferiore}} contenente i diversi TAB corrispondenti alle diverse sezioni dell'applicazione.
 \end{enumerate}
-Durante la progettazione e lo sviluppo è stata tenuta in considerazione l'importanza di realizzare strumenti semplici garantendo pieno supporto alle funzionalità di navigazione e consultazione come anche di disegno e di progettazione, il tutto in presenza e in assenza di connettività internet.
+Durante la progettazione e lo sviluppo di MapYou, è stata tenuta in considerazione l'importanza di realizzare strumenti semplici, garantendo pieno supporto alle funzionalità di navigazione e consultazione, di disegno e di progettazione, il tutto in presenza e in assenza di connettività internet.
 \subsection{Gestore MapYou}
-In contemporanea allo sviluppo di MapYou è stata ideato il Gestore MapYou necessario alla preparazione del dispositivo mobile per il primo utilizzo.
+In contemporanea allo sviluppo di MapYou è stato ideato il Gestore MapYou necessario alla preparazione del dispositivo mobile per il primo utilizzo.
 \\\\L'applicazione si propone quale strumento di gestione di MapYou, in quanto consente:
 \begin{itemize}
 \item Il caricamento e l'aggiornamento dei dati che risiedono sul dispositivo mobile.
@@ -318,10 +308,10 @@ I prerequisiti richiesti dall'applicativo riguardano il sistema operativo, utili
 \newpage
 L'applicativo presenta cinque diverse schede:
 \begin{enumerate}
-\item {\bf{Generale}} riportante alcune informazioni relative all'applicazione;
-\item {\bf{Destinazioni}}, in cui sono elencate le possibili destinazioni dei dati sul dispositivo mobile;
-\item {\bf{Mappe caricate}} contente l'elenco di tutti le mappe presenti sul dispositivo mobile. Le funzionalità disponibili consentono all'utente di aggiungere o rimuovere mappe, di aggiornarle e modificarne le proprietà. Da questo pannello è possibile anche accedere alla funzionalità che consente di scaricare dal dispositivo mobile gli aggiornamenti effettuati sul campo e i progetti;
-\item {\bf{Mappe disponibili}}, in cui sono elencate le mappe disponibili per il caricamento sul dispositivo mobile;
+\item {\bf{Generale}} riportante alcune informazioni relative all'applicazione.
+\item {\bf{Destinazioni}}, in cui sono elencate le possibili destinazioni dei dati sul dispositivo mobile.
+\item {\bf{Mappe caricate}} contente l'elenco di tutti le mappe presenti sul dispositivo mobile. Le funzionalità disponibili consentono all'utente di aggiungere o rimuovere mappe, di aggiornarle e modificarne le proprietà. Da questo pannello è possibile anche accedere alla funzionalità che consente di scaricare dal dispositivo mobile gli aggiornamenti effettuati sul campo e i progetti.
+\item {\bf{Mappe disponibili}}, in cui sono elencate le mappe disponibili per il caricamento sul dispositivo mobile.
 \item {\bf{Aggiornamenti}} attraverso il quale l'utente può rinnovare la licenza d'uso o installare la versione più recente dell'applicazione.
 \end{enumerate}
 
@@ -347,7 +337,7 @@ Questa libreria è stata largamente utilizzata nell'applicativo desktop per la pa
 \section{Android Debug Bridge}                 %crea la sezione
 Android Debug Bridge (ADB) è uno strumento a riga di comando che permette di comunicare con un dispositivo collegato o un'emulatore Android attivo. Si tratta di un programma client-server formato da tre componenti:
 \begin{enumerate}
-\item Un client, che viene eseguito sul computer che intende comunicare col dispositivo. \`E possibile richiamarlo attraverso una shell utilizzando un comando adb;
+\item Un client eseguito sul computer che intende comunicare col dispositivo. \`E possibile richiamarlo attraverso una shell utilizzando un comando adb;
 \item Un server eseguito come processo in background sul computer che gestisce la comunicazione tra il client e il demone adb in esecuzione su un emulatore o dispositivo;
 \item Un demone eseguito come processo in background su ogni istanza di emulatore o dispositivo. 
 \end{enumerate}
@@ -367,15 +357,15 @@ Android Debug Bridge (ADB) è uno strumento a riga di comando che permette di com
 \subsection{Principali funzionalità}
 La gamma di comandi a disposizione degli sviluppatori, rende possibile numerose operazioni, tra le più importanti sono presenti:
 \begin{itemize}                     %crea un elenco
-  \item {\bf{Rilevazione dei dispositivi Android connessi}} Genera una lista di dispositivi collegati al server ADB, specificando due diverse informazioni, il numero seriale del dispositivo ed il suo stato.
-  \item {\bf{Installazione di una applicazione}} Rende possibile l'installazione forzata di un file in formato apk, su un dispositivo specifico.
-  \item {\bf{Gestione dei file del dispositivo}} Attraverso i comandi pull e push è possibile copiare file dal computer al dispositivo o viceversa, quindi permettendo.
-  \item {\bf{Utilizzo Wireless}} Solitamente ADB è utilizzato attraverso un collegamento USB, tuttavia è possibile effettuare le stesse operazioni su Wi-Fi utilizzando la stessa rete. 
+  \item {\bf{Rilevazione dei dispositivi Android connessi}}: genera una lista di dispositivi collegati al server ADB, specificando due diverse informazioni, il numero seriale del dispositivo ed il suo stato.
+  \item {\bf{Installazione di una applicazione}}: rende possibile l'installazione forzata di un file in formato apk, su un dispositivo specifico.
+  \item {\bf{Gestione dei file del dispositivo}}: attraverso i comandi pull e push è possibile copiare file dal computer al dispositivo o viceversa.
+  \item {\bf{Utilizzo Wireless}}: solitamente ADB è utilizzato attraverso un collegamento USB, tuttavia è possibile effettuare le stesse operazioni su Wi-Fi utilizzando la stessa rete. 
 \end{itemize}
 Questi comandi sono stati utilizzati nell'applicativo desktop per ovviare alle mancanze della libreria JMTP.
 
 \section{Libreria JTattoo}                 %crea la sezione
-JTattoo è stata sviluppata con l'intento di modificare l'interfaccia grafica standard offerta da JDK (Java Development Kit). La prima release pubblica è rilasciata nel Gennaio 2006 e ricevendo in seguito numerosi aggiornamenti sono stati sistemati vari problemi presenti in fase iniziale.\\\\
+JTattoo è stata sviluppata con l'intento di modificare l'interfaccia grafica standard offerta da JDK (Java Development Kit). La prima release pubblica è stata rilasciata nel Gennaio 2006, dopo numerosi aggiornamenti sono stati sistemati vari problemi presenti in fase iniziale.\\\\
 \begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
 \begin{center}                          %centra nel mezzo della pagina la figura
 
@@ -384,7 +374,7 @@ JTattoo è stata sviluppata con l'intento di modificare l'interfaccia grafica sta
 \caption[Esempio Swing, standard GUI Java]{Esempio Swing, standard GUI Java}%\label{fig:prima}
 \end{center}
 \end{figure}
-\\\\Consente ad uno sviluppatore il miglioramento dell'aspetto degli elementi grafici disponibili su Swing\footnote{Libreria ufficiale per la realizzazione di interfacce grafiche in Java} utilizzando temi predefiniti composti da diversi aspetti grafici, offrendo anche la possibilità di personalizzare liberamente le proprietà della GUI inglobando successivamente queste modifiche nei temi già offerti da JTattoo.
+\\\\Consente ad uno sviluppatore la modifica dell'aspetto degli elementi grafici disponibili su Swing\footnote{Libreria ufficiale per la realizzazione di interfacce grafiche in Java} utilizzando temi predefiniti composti da diversi aspetti grafici ed offrendo anche la possibilità di personalizzare liberamente le proprietà della GUI inglobando successivamente queste modifiche nei temi già offerti da JTattoo.
 \begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
 \begin{center}                          %centra nel mezzo della pagina la figura
 
@@ -397,7 +387,7 @@ JTattoo è stata sviluppata con l'intento di modificare l'interfaccia grafica sta
 
 \section{Mercurial}                 %crea la sezione
 Mercurial è un software di controllo della versione del codice sorgente versatile e performante, distribuito gratuitamente ed efficientemente gestisce progetti di qualsiasi dimensione. \`E stato sviluppato quasi completamente in Python, con parti in C per motivi prestazionali, così rendendolo multipiattaforma difatti è disponibile su tutte le principali piattaforme.
-\\\\Nello sviluppo software è stato necessario utilizzarlo questo perché, trattandosi di un lavoro in team, era fondamentale condividere il codice in modo corretto e tenere continuamente traccia di tutte le modifiche.
+\\\\Nello sviluppo software è stato necessario utilizzarlo perché, trattandosi di un lavoro in team, era fondamentale condividere il codice in modo corretto e tenere continuamente traccia di tutte le modifiche.
 \\\\Tutto il codice sorgente dei due progetti è stato memorizzato su due repository Mercurial di www.bitbucket.org
 \subsubsection{Bitbucket}
 Bitbucket è un servizio di hosting web-based che permette di memorizzare in internet progetti che utilizzano Mercurial o Git. Fornisce la possibilità di creare repository pubbliche, che tutti possono vedere e nelle quali, normalmente, è possibile contribuire al codice, e repository private, come quelle utilizzate per questi progetti, dove soltanto chi ha l'accesso può leggere e modificare i file.
