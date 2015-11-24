@@ -133,7 +133,7 @@ LUCA PASCUCCI}
 \vspace{10mm}
 \begin{center}
 \rule[0.1cm]{15.8cm}{0.1mm}
-{\large Terza Sessione di Laurea\\
+{\large Seconda Sessione di Laurea\\
 Anno Accademico 2014 - 2015}
 \end{center}
 %fine frontespizio da sostituire
@@ -213,7 +213,7 @@ Dato il grande sviluppo che l'azienda sta avendo, avvalorato dalla nomina di Coo
 %crea un elenco puntato
 \begin{itemize}                         
 \item Nel primo capitolo verrà introdotta l'azienda EBWorld s.r.l. ed eseguita un'analisi sulle precedenti soluzioni sviluppate evidenziando in linea generale le loro caratteristiche.
-\item Il secondo capitolo espone le tecnologie utilizzate dagli applicativi e nello sviluppo software.
+\item Il secondo capitolo espone le tecnologie utilizzate durante lo sviluppo degli applicativi.
 \item Il terzo capitolo tratta l'analisi del problema, definendo le operazioni principali e mettendo a confronto le i due aspetti: applicativi offline e applicativi online.
 \item La progettazione è descritta nel quarto capitolo, dove vengono esposte le scelte progettuali e la struttura finale dei progetti da sviluppare.
 \item Il quinto capitolo contiene i dettagli implementativi delle soluzioni sviluppate, focalizzandosi su alcune parti di codice molto importanti nei progetti.
@@ -256,15 +256,41 @@ Il GIS\footnote{Geographic Information System} è un sistema informativo computer
 \end{itemize}
 \subsection{Modello dei dati}
 Il modello dei dati rappresenta tutti gli oggetti che esistono nel mondo fisico (punti, linee, superficie e volumi) ed è in grado di elaborare le loro combinazioni. Vengono memorizzate anche le informazioni riguardanti le relazioni tra gli oggetti (adiacenza, inclusioni, sovrapposizioni, etc.) ovvero la loro topologia. La caratteristica fondamentale di un GIS è la capacità di geo-referenziale i dati quindi ad ogni elemento vengono associate le sue coordinate spaziali reali del sistema di riferimento in cui realmente è situato l'oggetto.
+
+\subsection{Proiezioni e sistemi di riferimento}
+Il concetto di proiezione è richiesto per rappresentare uno spazio tridimensionale su una carta a due dimensioni infatti le mappe e di dati visualizzati a monitor sono nella maggior parte visualizzate su un piano anche se nella realtà compongono un globo. Durante il processo di proiezione dei dati reali su un foglio di carta sono introdotti inevitabilmente degli errori.
+
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=10cm]{immagini/Proiezioni.jpg} %inserisce una figura larga 7cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Proiezioni globo terrestre]{Proiezioni globo terrestre}%\label{fig:prima}
+\end{center}
+\end{figure}
+Non esiste un sistema di proiezione preferibile in assoluto, l'adozione di un sistema piuttosto che un altro dipende dall'uso cui è destinata la cartografia e dalla estensione della zona da rappresentare.
+Il sistema di riferimento è l'insieme dei riferimenti o coordinate utilizzate per individuare la posizione di un oggetto nello spazio. Il più conosciuto sistema di coordinate è l'Universale Trasverso Mercatore (UTM), ma vengono spesso definiti sistemi piani a livello locale. È un sistema molto pratico dal punto di vista operativo e abbastanza accurato su piccole distanze, il che facilita le misure di lunghezze, angoli ed aree. I sistemi di coordinate cartesiane sono fortemente legati alle proiezioni. 
+\begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
+\begin{center}                          %centra nel mezzo della pagina la figura
+
+\includegraphics[width=10cm]{immagini/Reticolato_UTM.jpg} %inserisce una figura larga 7cm
+
+%inserisce la legenda ed etichetta la figura con \label{fig:prima}
+\caption[Reticolato UTM italiano]{Reticolato UTM italiano}%\label{fig:prima}
+\end{center}
+\end{figure}
+\\\\Come illustrato in figura, per la rappresentazione della cartografia italiana sono principalmente utilizzati i sistemi di coordinate UTM32 e UMT33 che corrispondono ad una proiezione cilindrica della terra.
 \section{Gli applicativi esistenti}
-Gli applicativi realizzati in precedenza dall'azienda sono stati mostrati prima di iniziare il percorso di analisi, progettazione e sviluppo necessario alla realizzazione degli obiettivi prefissati, consentendo una migliore comprensione del lavoro da svolgere. 
-\\\\La motivazione principale che ha convinto EBWorld ad intraprendere questo percorso, è stata la modernizzazione di applicativi sempre maggiormente utilizzati per renderli compatibili con i moderni dispositivi disponibili sul mercato.
+Gli applicativi realizzati in precedenza dall'azienda sono stati mostrati prima di iniziare il percorso di analisi, progettazione e sviluppo necessario alla realizzazione degli obiettivi prefissati, consentendo una migliore comprensione del lavoro da svolgere.
+\newpage
+La motivazione principale che ha convinto EBWorld ad intraprendere questo percorso, è stata la modernizzazione di applicativi maggiormente utilizzati per renderli compatibili con i moderni dispositivi disponibili sul mercato.
 \subsection{MapYou}
-MapYou, la soluzione mobile ideata da EBWorld nel 2008, è stata sviluppata per la piattaforma Windows Mobile rendendo disponibile uno strumento per la consultazione e la gestione di dati georeferenziati.
+MapYou, la soluzione mobile ideata da EBWorld nel 2008, è stata sviluppata per la piattaforma Windows Mobile rendendo disponibile uno strumento per la consultazione e la gestione di dati georeferenziati. Nonostante le prestazioni limitate offerte dal dispositivo, è possibile considerarlo un sistema GIS capace di rappresentare tutti gli aspetti elencati in precedenza.
 \\\\Le principali funzionalità riguardano:
 \begin{itemize}
 \item {\bf{Selezione Mappa}}: abilitando l'utente alla selezione della mappa da visualizzare, scegliendola tra quelle disponibili sul dispositivo.
-\item {\bf{Creazione Progetti}}: consentendo all'utente di inserire nuovi elementi sulla mappa che identifichino il suo operato o un futuro intervento da effettuare in quella determinata posizione.
+\item {\bf{Creazione Progetti}}: consentendo all'utente di inserire nuovi elementi sulla mappa che identifichino il suo operato oppure un futuro intervento da effettuare in una determinata posizione.
 \item {\bf{Ricerca Elementi}}: con la quale l'utente può cercare ed evidenziare uno o più elementi georiferiti presenti sulla mappa.
 \item {\bf{Utilizzo GPS o coordinate manuali}}: consentendo di posizionare in automatico la mappa nel punto in cui si trova o desidera l'utente.
 \end{itemize}
@@ -280,13 +306,13 @@ MapYou, la soluzione mobile ideata da EBWorld nel 2008, è stata sviluppata per l
 \end{figure}
 La schermata principale dell'applicazione è costituita da cinque elementi principali:
 \begin{enumerate}
-\item {\bf{Mappa}} sulla quale è visualizzata l'area d'interesse.
-\item {\bf{Toolbar superiore}} contenete strumenti utili per la navigazione e l'interazione con la mappa.
-\item {\bf{Pannello laterale}} a destra della mappa, le cui icone e collegate funzioni variano a seconda dello strumento selezionato nella toolbar superiore.
-\item {\bf{Campi di informazioni}} sotto la mappa, nei quali sono riportate le informazioni relative alla mappa visualizzata, ovvero la scala di visualizzazione e la scala nominale.
-\item {\bf{Pannello inferiore}} contenente i diversi TAB corrispondenti alle diverse sezioni dell'applicazione.
+\item {\bf{Mappa}}: sulla quale è visualizzata l'area d'interesse.
+\item {\bf{Toolbar superiore}}: contenente strumenti utili per la navigazione e l'interazione con la mappa.
+\item {\bf{Pannello laterale}}: a destra della mappa, le cui icone e collegate funzioni variano a seconda dello strumento selezionato nella toolbar superiore.
+\item {\bf{Campi di informazione}}: sotto la mappa, nei quali sono riportate le informazioni relative alla mappa visualizzata, ovvero la scala di visualizzazione e la scala nominale.
+\item {\bf{Pannello inferiore}}: contenente i diversi TAB corrispondenti alle diverse sezioni dell'applicazione.
 \end{enumerate}
-Durante la progettazione e lo sviluppo di MapYou, è stata tenuta in considerazione l'importanza di realizzare strumenti semplici, garantendo pieno supporto alle funzionalità di navigazione e consultazione, di disegno e di progettazione, il tutto in presenza e in assenza di connettività internet.
+Durante la progettazione e lo sviluppo di MapYou, è stata tenuta in considerazione l'importanza di realizzare strumenti semplici, garantendo pieno supporto alle funzionalità di navigazione e consultazione, di disegno e di progettazione, il tutto in presenza o in assenza di connettività internet.
 \subsection{Gestore MapYou}
 In contemporanea allo sviluppo di MapYou è stato ideato il Gestore MapYou necessario alla preparazione del dispositivo mobile per il primo utilizzo.
 \\\\L'applicazione si propone quale strumento di gestione di MapYou, in quanto consente:
@@ -308,11 +334,11 @@ I prerequisiti richiesti dall'applicativo riguardano il sistema operativo, utili
 \newpage
 L'applicativo presenta cinque diverse schede:
 \begin{enumerate}
-\item {\bf{Generale}} riportante alcune informazioni relative all'applicazione.
-\item {\bf{Destinazioni}}, in cui sono elencate le possibili destinazioni dei dati sul dispositivo mobile.
-\item {\bf{Mappe caricate}} contente l'elenco di tutti le mappe presenti sul dispositivo mobile. Le funzionalità disponibili consentono all'utente di aggiungere o rimuovere mappe, di aggiornarle e modificarne le proprietà. Da questo pannello è possibile anche accedere alla funzionalità che consente di scaricare dal dispositivo mobile gli aggiornamenti effettuati sul campo e i progetti.
-\item {\bf{Mappe disponibili}}, in cui sono elencate le mappe disponibili per il caricamento sul dispositivo mobile.
-\item {\bf{Aggiornamenti}} attraverso il quale l'utente può rinnovare la licenza d'uso o installare la versione più recente dell'applicazione.
+\item {\bf{Generale}}: riportante alcune informazioni relative all'applicazione.
+\item {\bf{Destinazioni}}: in cui sono elencate le possibili destinazioni dei dati sul dispositivo mobile.
+\item {\bf{Mappe caricate}}: contente l'elenco di tutte le mappe presenti sul dispositivo mobile. Le funzionalità disponibili consentono all'utente di aggiungere o rimuovere mappe, di aggiornarle e modificarne le proprietà. Da questo pannello è possibile anche accedere alla funzionalità che consente di scaricare dal dispositivo mobile gli aggiornamenti ed i progetti effettuati sul campo.
+\item {\bf{Mappe disponibili}}: in cui sono elencate le mappe disponibili per il caricamento sul dispositivo mobile.
+\item {\bf{Aggiornamenti}}: attraverso il quale l'utente può rinnovare la licenza d'uso ed installare la versione più recente dell'applicazione.
 \end{enumerate}
 
 \clearpage{\pagestyle{empty}\cleardoublepage} %non numera l'ultima pagina sinistra
@@ -323,9 +349,9 @@ L'applicativo presenta cinque diverse schede:
 \lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries TECNOLOGIE UTILIZZATE}}
 In questo capitolo vengono descritte le tecnologie e librerie utilizzate nel corso dello sviluppo dei progetti.
 \section{Libreria JMTP}                 %crea la sezione
-Per le ragioni progettuali che verranno esplicate nell'opportuno capitolo è stata di grande importanza nello sviluppo software la libreria JMTP, integrata con il linguaggio di programmazione Java.
-\\\\JMTP è un progetto finalizzato a consentire un accesso di tipo MTP (Media Transfer Protocol) compatibile con lettori multimediali portatili ed è stato progettato con l'obiettivo di supportare i principali ambienti come Windows, Linux e Mac OS X utilizzando la stessa API.
-\\\\Nato nel 2008 attraverso il primo rilascio di una beta, ora il progetto risulta archiviato senza ricevere ulteriori sviluppi ed aggiornamenti. L'ultima release, sempre in versione beta, risale al 2010. La libreria priva di una valida documentazione e di istruzioni per il corretto utilizzo ha creato un notevole impegno per il suo impiego nella realizzazione del progetto.
+Per le ragioni progettuali che verranno esplicate nell'opportuno capitolo, è stata di grande importanza nello sviluppo software la libreria JMTP, integrata con il linguaggio di programmazione Java.
+\\\\JMTP è un progetto finalizzato a consentire un accesso di tipo MTP\footnote{Media Transfer Protocol} compatibile con lettori multimediali portatili ed è stato progettato con l'obiettivo di supportare i principali ambienti come Windows, Linux e Mac OS X utilizzando la stessa API\footnote{Application Programming Interface}.
+\\\\Nato nel 2008 attraverso il primo rilascio di una beta, ora il progetto risulta archiviato senza ricevere ulteriori sviluppi ed aggiornamenti. L'ultima release, sempre in versione beta, risale al 2010. La libreria priva di una valida documentazione e di istruzioni per il corretto utilizzo ha creato un notevole impegno nella realizzazione del progetto.
 \\\\Le principali funzionalità fornite agli sviluppatori sono:
 \begin{itemize}                     %crea un elenco descrittivo
 \item Rilevazione dei dispositivi multimediali collegati.
@@ -335,15 +361,15 @@ Per le ragioni progettuali che verranno esplicate nell'opportuno capitolo è stat
 Questa libreria è stata largamente utilizzata nell'applicativo desktop per la parte di gestione di un dispositivo Android ad esso collegato.
 
 \section{Android Debug Bridge}                 %crea la sezione
-Android Debug Bridge (ADB) è uno strumento a riga di comando che permette di comunicare con un dispositivo collegato o un'emulatore Android attivo. Si tratta di un programma client-server formato da tre componenti:
+ ADB\footnote{Android Debug Bridge} è uno strumento a riga di comando che permette di comunicare con un dispositivo collegato o un'emulatore Android attivo. Si tratta di un programma client-server formato da tre componenti:
 \begin{enumerate}
-\item Un client eseguito sul computer che intende comunicare col dispositivo. \`E possibile richiamarlo attraverso una shell utilizzando un comando adb;
+\item Un client eseguito sul computer che intende comunicare col dispositivo. \`E possibile richiamarlo attraverso una shell utilizzando il comando adb;
 \item Un server eseguito come processo in background sul computer che gestisce la comunicazione tra il client e il demone adb in esecuzione su un emulatore o dispositivo;
 \item Un demone eseguito come processo in background su ogni istanza di emulatore o dispositivo. 
 \end{enumerate}
 \newpage
 \subsection{Sintassi}
-\`E possibile utilizzare i comandi adb da riga di comando o su di uno scritp. La sintassi generica è:
+\`E possibile utilizzare i comandi adb da riga di comando o su di uno script. La sintassi generica è:
 \begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
 \begin{center}                          %centra nel mezzo della pagina la figura
 
@@ -358,14 +384,14 @@ Android Debug Bridge (ADB) è uno strumento a riga di comando che permette di com
 La gamma di comandi a disposizione degli sviluppatori, rende possibile numerose operazioni, tra le più importanti sono presenti:
 \begin{itemize}                     %crea un elenco
   \item {\bf{Rilevazione dei dispositivi Android connessi}}: genera una lista di dispositivi collegati al server ADB, specificando due diverse informazioni, il numero seriale del dispositivo ed il suo stato.
-  \item {\bf{Installazione di una applicazione}}: rende possibile l'installazione forzata di un file in formato apk, su un dispositivo specifico.
+  \item {\bf{Installazione di una applicazione}}: rende possibile l'installazione di un file in formato apk, su un dispositivo specifico.
   \item {\bf{Gestione dei file del dispositivo}}: attraverso i comandi pull e push è possibile copiare file dal computer al dispositivo o viceversa.
-  \item {\bf{Utilizzo Wireless}}: solitamente ADB è utilizzato attraverso un collegamento USB, tuttavia è possibile effettuare le stesse operazioni su Wi-Fi utilizzando la stessa rete. 
+  \item {\bf{Utilizzo Wireless}}: solitamente ADB è utilizzato con un collegamento USB, tuttavia è possibile effettuare le stesse operazioni attraverso un collegamento Wi-Fi, a patto che entrambi i dispositivi utilizzino la stessa rete. 
 \end{itemize}
 Questi comandi sono stati utilizzati nell'applicativo desktop per ovviare alle mancanze della libreria JMTP.
 
 \section{Libreria JTattoo}                 %crea la sezione
-JTattoo è stata sviluppata con l'intento di modificare l'interfaccia grafica standard offerta da JDK (Java Development Kit). La prima release pubblica è stata rilasciata nel Gennaio 2006, dopo numerosi aggiornamenti sono stati sistemati vari problemi presenti in fase iniziale.\\\\
+JTattoo è stata sviluppata con l'intento di modificare l'interfaccia grafica standard offerta da JDK\footnote{Java Development Kit}. La prima release pubblica è stata rilasciata nel Gennaio 2006, dopo numerosi aggiornamenti sono stati sistemati vari problemi presenti in fase iniziale.\\\\
 \begin{figure}[h]                       %crea l'ambiente figura; [h] sta per here, cioè la figura va qui
 \begin{center}                          %centra nel mezzo della pagina la figura
 
@@ -386,29 +412,18 @@ JTattoo è stata sviluppata con l'intento di modificare l'interfaccia grafica sta
 \\Questa libreria è stata utilizzata nell'applicativo desktop per modificare l'aspetto dell'interfaccia grafica standard di Java.
 
 \section{Mercurial}                 %crea la sezione
-Mercurial è un software di controllo della versione del codice sorgente versatile e performante, distribuito gratuitamente ed efficientemente gestisce progetti di qualsiasi dimensione. \`E stato sviluppato quasi completamente in Python, con parti in C per motivi prestazionali, così rendendolo multipiattaforma difatti è disponibile su tutte le principali piattaforme.
-\\\\Nello sviluppo software è stato necessario utilizzarlo perché, trattandosi di un lavoro in team, era fondamentale condividere il codice in modo corretto e tenere continuamente traccia di tutte le modifiche.
+Mercurial è un software di controllo della versione del codice sorgente versatile e performante, distribuito gratuitamente ed efficientemente gestisce progetti di qualsiasi dimensione. \`E stato sviluppato quasi completamente in Python, con parti in C per motivi prestazionali, rendendolo multipiattaforma difatti è disponibile su tutte le principali piattaforme.
+\newpage
+Durante lo sviluppo software è stato necessario utilizzarlo perché, trattandosi di un lavoro in team, era fondamentale condividere il codice in modo corretto e tenere continuamente traccia di tutte le modifiche.
 \\\\Tutto il codice sorgente dei due progetti è stato memorizzato su due repository Mercurial di www.bitbucket.org
 \subsubsection{Bitbucket}
-Bitbucket è un servizio di hosting web-based che permette di memorizzare in internet progetti che utilizzano Mercurial o Git. Fornisce la possibilità di creare repository pubbliche, che tutti possono vedere e nelle quali, normalmente, è possibile contribuire al codice, e repository private, come quelle utilizzate per questi progetti, dove soltanto chi ha l'accesso può leggere e modificare i file.
-
-\clearpage
-
-%\newpage
-%\thispagestyle{empty}
-%\mbox{}
-
-%\mbox{}
-%\thispagestyle{empty}
-%\newpage
-%\afterpage{\null\newpage}
-%\clearpage{\pagestyle{empty}\cleardoublepage} %non numera l'ultima pagina sinistra
+Bitbucket è un servizio di hosting web-based che permette di memorizzare in internet progetti che utilizzano Mercurial o Git. Fornisce la possibilità di creare repository pubbliche, che tutti possono vedere e nelle quali è possibile contribuire al codice, e repository private, come quelle utilizzate per questi progetti, dove soltanto chi ha l'accesso può leggere e modificare i file.
 
 \chapter{Analisi}                %crea il capitolo
 %imposta l'intestazione di pagina
 \rhead[\fancyplain{}{\bfseries ANALISI}]{\fancyplain{}{\bfseries\thepage}}
 \lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries ANALISI}}
-In questo capitolo verranno descritti i requisiti che le applicazioni devono rispettare e le funzionalità che queste devono implementare.
+In questo capitolo verranno descritti i requisiti che le applicazioni devono rispettare, le funzionalità che queste devono implementare e motivato lo sviluppo di applicativi offiline.
 \section{Descrizione generale}                 %crea la sezione
 \subsection{Prospettiva del prodotto desktop}
 Il software progettato e sviluppato è un'applicazione per la preparazione e gestione di dispositivi Android collegati e dei dati utilizzati dall'applicazione mobile spiegata in seguito.
@@ -423,12 +438,12 @@ Il software progettato e sviluppato è un'applicazione per la preparazione e gest
 \end{itemize}
 
 \subsection{Prospettiva del prodotto mobile}
-Il progetto sviluppato in team con il collega Filippo Nicolini consiste in un'applicazione mobile per la visualizzazione ed interazione con dati georiferiti locali al dispositivo. Di seguito verranno elencate tutte le funzionalità del sistema, nonostante alcune di esse siano state implementate dal collega. Nel paragrafo 3.5 verranno analizzate nel dettaglio le funzionalità attinenti alla tesi.
+Il progetto sviluppato in team con il collega Filippo Nicolini consiste in una applicazione mobile per la visualizzazione ed interazione con dati georiferiti locali al dispositivo. Di seguito verranno elencate tutte le funzionalità del sistema, nonostante alcune di esse siano state implementate dal collega. Nel paragrafo 3.5 verranno analizzate nel dettaglio le funzionalità attinenti alla tesi.
 
 \subsection{Funzioni del prodotto mobile}
 \begin{itemize}                     %crea un elenco
   \item Visualizzazione della mappa contente i dati georiferiti
-  \item Ricerca e visualizzazione di elementi contenuti nei dati georiferiti
+  \item Selezione e visualizzazione di elementi contenuti nei dati georiferiti
   \item Inserimento di elementi grafici per misurazione e progettazione
   \item Visualizzazione di progetti esistenti sul dispositivo
   \item Creazione e salvataggio di progetti
@@ -436,38 +451,38 @@ Il progetto sviluppato in team con il collega Filippo Nicolini consiste in un'ap
 
 \subsection{Caratteristiche dell'utente finale}
 L'utente finale è generalmente un tecnico che effettua interventi esterni utilizzando l'applicativo mobile per interagire con le informazioni contenute e l'applicativo desktop per esportare progetti e lavori effettuati durante la giornata lavorativa.
-Dato che l'utente è gia abituato all'utilizzo delle precedenti soluzioni prodotte da EBWorld, è necessario implementare le principali funzionalità in modo analogo alla versione precedente dell'applicazione desktop e mobile.
+Dato che l'utente è gia abituato all'utilizzo delle precedenti soluzioni prodotte da EBWorld, è necessario implementare le principali funzionalità in modo analogo alle precedenti versioni degli applicativi desktop e mobile.
 
 \subsection{Ambiente d'utilizzo dei progetti}
-Il software desktop deve essere eseguibile, con buone prestazioni, su computer di fascia media di mercato che eseguono un sistema operativo Windows, Mac o Linux. L'ambiente d'utilizzo per l'applicativo mobile dev'essere uno smartphone o un tablet Android di fascia media.
+Il software desktop deve essere eseguibile, con buone prestazioni, su computer di fascia media di mercato che eseguono un sistema operativo Windows, Mac o Linux. L'ambiente d'utilizzo per l'applicativo mobile deve essere uno smartphone o un tablet Android di fascia media.
 
 \subsection{Linguaggio e ambienti di sviluppo}
-La scelta del linguaggio di programmazione è stata vincolata dalle richieste e dalla piattaforma di sviluppo utilizzata per l'applicativo mobile. Questo perché era necessario utilizzare un linguaggio che coincidesse ad entrambe fornendo anche il requisito di multi-piattaforma all'applicativo desktop.
+La scelta del linguaggio di programmazione è stata vincolata dalle richieste da parte dell'azienda e dalla piattaforma di sviluppo utilizzata per l'applicativo mobile. Questo perché era necessario utilizzare un linguaggio che coincidesse ad entrambe, fornendo anche il requisito di multipiattaforma all'applicativo desktop.
 \\\\Il linguaggio di programmazione scelto per implementare i progetti è Java con l'utilizzo di librerie esterne per migliorare e velocizzare lo sviluppo degli applicativi.
-\\\\Per quanto riguarda la scelta degli ambienti di sviluppo si sono considerati gli IDE con maggiore diffusione ed ufficialità facendo ricadere la scelta su Android Studio risultante ambiente di sviluppo ufficiale per la piattaforma Android ed Eclipse per il progetto desktop in quanto principalmente utilizzato per lo sviluppo di applicativi Java.
+\\\\Per quanto riguarda la scelta degli ambienti di sviluppo si sono considerati gli IDE con maggiore diffusione ed ufficialità facendo ricadere la scelta su Android Studio, risultante ambiente di sviluppo ufficiale per la piattaforma Android, ed Eclipse per il progetto desktop, in quanto principalmente utilizzato per lo sviluppo di applicativi Java.
 
 \section{Applicativi online o offline}                 %crea la sezione
 Sempre un maggior numero di applicazioni sia desktop che mobile vengono portate online grazie all'enorme diffusione di Internet ed alla semplicità di connettersi ad esso. La tematica di applicativi online o offline è stata affrontata prima di avviare la progettazione e lo sviluppo. Di seguito vengono analizzati vantaggi e svantaggi dei due casi sopra citati.
 
 \subsection{Vantaggi e svantaggi online}
-Lo sviluppo di un applicazione collegata alla rete rende possibile l'inserimento di un vasto numero di funzionalità, dal più semplice collegamento ai social network al più complesso sviluppo di un protocollo per interscambio dati. Un ambito da tenere in considerazione è la sicurezza, difatti un'applicativo in rete che ha l'accesso ai dati dell'utente potrebbe causare notevoli danni in caso di utilizzo da utenti non autorizzati. Un ulteriore elemento a favore è la gestione dei dati che può avvenire real-time rendendoli disponibilii per ulteriori applicativi online sfruttando il collegamento alla rete. Queste possibilità possono sicuramente migliorare la sua utilità ma allo stesso tempo obbligano ad un aumento del tempo di progettazione, di implementazione e del relativo costo di sviluppo. 
+Lo sviluppo di un applicativo collegata alla rete rende possibile l'inserimento di un vasto numero di funzionalità, dal più semplice collegamento ai social network al più complesso sviluppo di un protocollo per interscambio dati. Un ulteriore elemento a favore è la gestione dei dati che può avvenire real-time rendendoli disponibilii per ulteriori applicativi online sfruttando il collegamento alla rete. Un ambito da tenere in considerazione è la sicurezza, difatti un'applicativo in rete, avendo un'accesso diretto ai dati dell'utente, potrebbe causare notevoli danni in caso di utilizzo da utenti non autorizzati.  Queste possibilità possono sicuramente migliorare la sua utilità ma allo stesso tempo obbligano ad un aumento del tempo di progettazione, di implementazione e del relativo costo di sviluppo. 
 
 %aggiungere riepilogo
 \subsection{Vantaggi e svantaggi offline}
-Le caratteristiche del dispositivo sul quale si sviluppa un applicativo offline limitano notevolmente le funzionalità implementabili. Per la gestione dei dati tra differenti dispositivi è necessario instaurare un collegamento fisico e creare un protocollo di rilevazione e comunicazione in caso di presenza di differenti sistemi utilizzati dai dispositivi. L'ambito della sicurezza in un applicativo offline risulta allo stesso modo importante tuttavia va considerato che, a differenza di applicativi online, i soli dati contenuti sono locali e quindi in caso di utilizzo dello stesso da parte di un utente non autorizzato i danni risulterebbero limitati. La riduzione del numero di funzionalità disponibili per un'applicazione offline generalmente equivale ad un minor tempo di progettazione ed implementazione riducendo così il costo di realizzazione.
+Le caratteristiche del dispositivo sul quale si sviluppa un applicativo offline limitano notevolmente le funzionalità implementabili. Per la gestione dei dati tra differenti dispositivi è necessario instaurare un collegamento fisico e creare un protocollo di rilevazione e comunicazione in caso di presenza di differenti sistemi operativi utilizzati dai dispositivi. L'ambito della sicurezza in un applicativo offline risulta allo stesso modo importante tuttavia va considerato che, a differenza di applicativi online, i soli dati contenuti sono locali e quindi in caso di utilizzo dello stesso da parte di un utente non autorizzato i danni risulterebbero limitati. La riduzione del numero di funzionalità disponibili per un'applicazione offline generalmente equivale ad un minor tempo di progettazione ed implementazione riducendo così il costo di realizzazione.
 
 \subsection{Scelta per applicativi sviluppati}
-L'analisi effettuata sulle condizioni di utilizzo dell'applicativo mobile ha fatto ricadere la scelta sullo sviluppo di applicativi offline. La principale motivazione difatti riguarda gli ambienti nei quali il tecnico esterno opera, normalmente sono scantinati di edifici, interventi sotto il manto stradale oppure anche luoghi fuori città. In queste situazioni è raramente assicurata la presenza di una connessione stabile alla rete e quindi la sincronizzazione dei dati attraverso essa risulterebbe precaria. Oltre all'invio, anche il caricamento potrebbe avere rallentamenti o blocchi lasciando l'operatore senza dati da visualizzare bloccando così l'intervento. Attraverso l'utilizzo di un'applicativo offline con la persistenza dei dati in locale, le operazioni effettuate possono essere salvate in qualsiasi condizione con il solo obbligo di esportarle in sede centrale per inserirle nella sorgente dati.
+L'analisi effettuata sulle condizioni di utilizzo dell'applicativo mobile ha fatto ricadere la scelta sullo sviluppo di applicativi offline. La principale motivazione difatti riguarda gli ambienti nei quali il tecnico esterno opera, che normalmente sono scantinati di edifici, interventi sotto il manto stradale oppure anche luoghi fuori città. In queste situazioni è raramente assicurata la presenza di una connessione stabile alla rete e quindi la sincronizzazione dei dati attraverso essa risulterebbe precaria. Oltre all'invio, anche il caricamento potrebbe avere rallentamenti o blocchi lasciando l'operatore senza dati da visualizzare impedendo così l'intervento. Attraverso l'utilizzo di un applicativo offline con la persistenza dei dati in locale, le operazioni effettuate possono essere salvate in qualsiasi condizione con il solo obbligo di esportarle in sede centrale per inserirle nella sorgente dati.
 
 \section{Funzionalità del sistema desktop}              %crea la sezione
-Verrà analizzato il software desktop descrivendo nel dettaglio le funzionalità a cui deve provvedere, esplicando i requisiti funzionali che queste implicano.
+Verrà analizzato il software desktop descrivendo nel dettaglio le funzionalità a cui deve provvedere ed esplicando i requisiti funzionali che queste implicano.
 
 \subsection{Visualizzazione e selezione dispositivi}
 {\bf{Descrizione}}: Il software deve essere in grado di controllare all'avvio quali sono i dispositivi connessi specificando quali sono già stati preparati al primo utilizzo, mostrarne la lista ed abilitare l'utente alla selezione di un dispositivo.
 \subsubsection{Requisiti funzionali}
 \begin{enumerate}
 \item All'avvio il sistema deve provvedere alla verifica dei dispositivi connessi.
-\item Il sistema deve controllare quali dispositivi risultano già pronti per il primo utilizzo
+\item Il sistema deve controllare quali dispositivi risultano già pronti per il primo utilizzo.
 \item Il sistema deve fornire all'utente una lista di dispositivi connessi.
 \item Il sistema deve fornire all'utente un'interfaccia per selezionare il dispositivo desiderato.
 \end{enumerate}
@@ -476,7 +491,7 @@ Verrà analizzato il software desktop descrivendo nel dettaglio le funzionalità a
 {\bf{Descrizione}}: Il sistema deve connettersi al dispositivo selezionato ed avviare l'installazione dell'applicazione mobile creando successivamente il workspace utilizzato dallo stesso applicativo.
 \subsubsection{Requisiti funzionali}
 \begin{enumerate}
-\item Il sistema deve installare l'applicativo mobile presente in locale sul dispositivo selezionato.
+\item Il sistema deve installare l'applicativo mobile presente in locale sul dispositivo mobile selezionato.
 \item Il sistema deve creare le cartelle principale all'interno della memoria interna del dispositivo selezionato.
 \item Il sistema deve copiare i file fondamentali utilizzati dall'applicativo mobile dentro il dispositivo selezionato.
 \end{enumerate}
