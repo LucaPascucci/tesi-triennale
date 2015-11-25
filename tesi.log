@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.8)  24 NOV 2015 22:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.8)  25 NOV 2015 07:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -712,8 +712,13 @@ File: immagini/Classe_MobileDevice.jpg Graphic file (type jpg)
 Package pdftex.def Info: immagini/Classe_MobileDevice.jpg used on input line 75
 6.
 (pdftex.def)             Requested size: 199.16928pt x 229.81125pt.
- [40 <./immagini/Classe_MobileDevice.jpg>] [41] (/usr/local/texlive/2015/texmf-
-dist/tex/latex/listings/lstlang1.sty
+ [40 <./immagini/Classe_MobileDevice.jpg>]
+Overfull \hbox (0.71265pt too wide) in paragraph at lines 775--776
+[]\OT1/cmr/m/n/12 L'analisi del-l'ap-pli-ca-ti-vo de-sk-top Ge-sto-re Ma-pY-ou,
+ pro-dot-to da EB-World,
+ []
+
+[41] (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
 Overfull \hbox (6.0pt too wide) in paragraph at lines 777--777
@@ -996,28 +1001,32 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [80] [81
 
-] (./tesi.aux) ) 
+] (./tesi.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
  7098 strings out of 493089
  100743 string characters out of 6134842
- 263408 words of memory out of 5000000
+ 263380 words of memory out of 5000000
  10383 multiletter control sequences out of 15000+600000
  16518 words of font info for 67 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  38i,12n,50p,1083b,1778s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.
-pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on tesi.pdf (95 pages, 2264083 bytes).
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on tesi.pdf (95 pages, 2264108 bytes).
 PDF statistics:
  388 PDF objects out of 1000 (max. 8388607)
  247 compressed objects within 3 object streams
