@@ -17,9 +17,9 @@ jobs:
         id: latex
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: Report.tex
+          root_file: tesi.tex
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: Report.pdf
+          files: tesi.pdf
 
