@@ -1,0 +1,25 @@
+name: New release from tag
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Github Action for LaTeX
+        id: latex
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: Report.tex
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: Report.pdf
+
